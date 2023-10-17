@@ -1,13 +1,13 @@
 import { StackContext, StaticSite, use } from "sst/constructs";
 import { ApiStack } from "./ApiStack";
 
-export function AdminStack({ stack, app }: StackContext) {
+export function WebSiteStack({ stack, app }: StackContext) {
   const { api } = use(ApiStack);
 
   // Define our React app
-  const site = new StaticSite(stack, "AdminSite", {
-    path: "apps/admin",
-    buildCommand: "yarn build",
+  const site = new StaticSite(stack, "WebSite", {
+    path: "apps/web",
+    buildCommand: "pnpm run build",
     buildOutput: "dist",
     // Pass in our environment variables
     environment: {
@@ -17,7 +17,7 @@ export function AdminStack({ stack, app }: StackContext) {
 
   // Show the url in the output
   stack.addOutputs({
-    AdminSiteUrl: site.url,
+    WebSiteUrl: site.url,
   });
 
   return {

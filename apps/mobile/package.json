@@ -46,7 +46,6 @@
     "@expo/config-plugins": "^7.2.5",
     "@acme/api": "^0.1.0",
     "@acme/backend": "^0.1.0",
-    "@acme/db": "^0.1.0",
     "@acme/eslint-config": "^0.2.0",
     "@acme/prettier-config": "^0.1.0",
     "@acme/tailwind-config": "^0.1.0",

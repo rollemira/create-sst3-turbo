@@ -2,9 +2,9 @@ import { name } from "@acme/api";
 import { api } from "../utils/api";
 import { Link } from "react-router-dom";
 
-function Home() {
+function About() {
   const { data, error, isLoading } = api.greet.greeting.useQuery({
-    name: "web",
+    name: "about",
   });
 
   if (isLoading) return <p className="text-center">Loading...</p>;
@@ -12,16 +12,16 @@ function Home() {
 
   return (
     <div className="flex w-full flex-col gap-4 text-center">
-      <h1 className="text-4xl">Web</h1>
+      <h1 className="text-4xl">About</h1>
       <h2 className="text-xl">Loaded package</h2>
       <p>{name}</p>
       <h2 className="text-xl">tRPC Query</h2>
       <pre>{data.reply}</pre>
       <p>
-        <Link to="/about">Go to About</Link>
+        <Link to="/">Go to Home</Link>
       </p>
     </div>
   );
 }
 
-export default Home;
+export default About;

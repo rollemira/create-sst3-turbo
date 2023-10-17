@@ -254,7 +254,7 @@ importers:
         specifier: ^8.4.31
         version: 8.4.31
       sst:
-        specifier: ^2.28.1
+        specifier: ^2.29.2
         version: 2.29.2(@types/react@18.2.28)
       tailwindcss:
         specifier: 3.3.2

@@ -6,9 +6,8 @@ import { greetRouter } from "./router/greet";
 import { createTRPCRouter } from "./trpc";
 
 function createContext({
-  event,
-} //context,
-: CreateAWSLambdaContextOptions<APIGatewayProxyEvent>) {
+  event, //context,
+}: CreateAWSLambdaContextOptions<APIGatewayProxyEvent>) {
   return {
     event: event,
     apiVersion: (event as { version?: string }).version ?? "1.0",

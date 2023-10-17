@@ -4,13 +4,13 @@
 
 Make the real readme file explaining how to get the project started from a fresh `git cone` command.
 
-## Install pnpm & aws-cli
+## Install nvm pnpm aws-cli
 
-`brew install pnpm awscli`
+`brew install nvm pnpm awscli`
 
 ### If you have them maybe upgrade?
 
-`brew upgrade pnpm awscli`
+`brew upgrade nvm pnpm awscli`
 
 ## Configure aws-cli
 

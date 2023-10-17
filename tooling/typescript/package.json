@@ -1,0 +1,9 @@
+{
+  "name": "@acme/tsconfig",
+  "private": true,
+  "license": "UNLICENSED",
+  "version": "0.1.0",
+  "files": [
+    "base.json"
+  ]
+}

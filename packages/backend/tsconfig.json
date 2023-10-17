@@ -1,0 +1,20 @@
+{
+  "extends": "@acme/tsconfig/base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
+    "lib": ["esnext", "dom"],
+    "target": "esnext",
+    "esModuleInterop": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "noEmit": true,
+    "paths": {
+      "@acme": ["../../tooling", "../../packages"]
+    }
+  },
+  "include": ["*.ts", "src"],
+  "exclude": ["node_modules"],
+  "paths": {
+    "@acme/*": ["../packages/*"]
+  }
+}

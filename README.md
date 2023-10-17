@@ -4,9 +4,19 @@
 
 Make the real readme file explaining how to get the project started from a fresh `git cone` command.
 
-## Instal AWS-CLI
+## Install pnpm & aws-cli
 
-[Install and configure the aws-cli](https://sst.dev/chapters/configure-the-aws-cli.html#install-the-aws-cli)
+`brew install pnpm awscli`
+
+### If you have them maybe upgrade?
+
+`brew upgrade pnpm awscli`
+
+## Configure aws-cli
+
+[Create an IAM user](https://sst.dev/chapters/create-an-iam-user.html)
+
+[Configure the aws-cli](https://sst.dev/chapters/configure-the-aws-cli.html#add-your-access-key-to-aws-cli)
 
 ## Check your AWS profile (skip if single AWS account)
 

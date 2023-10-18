@@ -2,12 +2,6 @@
   "extends": "@acme/tsconfig/base.json",
   "compilerOptions": {
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
-    "lib": ["esnext", "dom"],
-    "target": "esnext",
-    "esModuleInterop": true,
-    "strict": true,
-    "moduleResolution": "node",
-    "noEmit": true,
     "baseUrl": ".",
     "paths": {
       "@acme": ["../../tooling", "../../packages"]

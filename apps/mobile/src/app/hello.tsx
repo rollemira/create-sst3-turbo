@@ -1,24 +1,24 @@
 import React from "react";
 import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Link, Stack } from "expo-router";
+import { Stack } from "expo-router";
 
 import { name } from "@acme/calcs";
 
 import { api } from "~/utils/api";
 
-const Index = () => {
+const Hello = () => {
   const { data, error, isLoading } = api.greet.greeting.useQuery({
-    name: "mobile",
+    name: "hello",
   });
 
   return (
     <SafeAreaView className="bg-[#1F104A]">
       {/* Changes page title visible on the header */}
-      <Stack.Screen options={{ title: "Home Page" }} />
+      <Stack.Screen options={{ title: "Hello" }} />
       <View className="h-full w-full p-4">
         <Text className="mx-auto pb-2 text-5xl font-bold text-white">
-          Mobile App
+          Hello
         </Text>
         <Text className="text-center text-white">Imported package {name}</Text>
         {isLoading && (
@@ -28,15 +28,9 @@ const Index = () => {
           <Text className="text-center text-white">Error: {error.message}</Text>
         )}
         {data && <Text className="text-center text-white">{data.reply}</Text>}
-        <Link
-          href="/hello"
-          className="m-5 bg-slate-600 p-2 text-center text-gray-100"
-        >
-          Go to About
-        </Link>
       </View>
     </SafeAreaView>
   );
 };
 
-export default Index;
+export default Hello;

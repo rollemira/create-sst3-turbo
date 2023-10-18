@@ -11,6 +11,7 @@
     "clean": "git clean -xdf node_modules .sst .turbo",
     "clean:workspaces": "turbo clean",
     "format": "turbo format --continue -- --cache --cache-location='node_modules/.cache/.prettiercache'",
+    "format:fix": "turbo format --continue -- --write . --cache --cache-location='node_modules/.cache/.prettiercache'",
     "lint": "turbo lint --continue -- --cache --cache-location 'node_modules/.cache/.eslintcache' && manypkg check",
     "lint:fix": "turbo lint --continue -- --fix --cache --cache-location 'node_modules/.cache/.eslintcache' && manypkg fix",
     "typecheck": "turbo typecheck"
@@ -23,7 +24,7 @@
     "aws-cdk-lib": "2.95.1",
     "constructs": "10.2.69",
     "prettier": "^3.0.3",
-    "sst": "^2.28.1",
+    "sst": "^2.29.2",
     "turbo": "^1.10.15",
     "typescript": "^5.2.2"
   },

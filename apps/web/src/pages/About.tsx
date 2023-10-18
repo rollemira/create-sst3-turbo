@@ -1,4 +1,4 @@
-import { name } from "@acme/api";
+import { name } from "@acme/calcs";
 import { api } from "../utils/api";
 import { Link } from "react-router-dom";
 

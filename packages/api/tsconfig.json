@@ -1,11 +1,8 @@
 {
   "extends": "@acme/tsconfig/base.json",
   "compilerOptions": {
-    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
-    "paths": {
-      "@acme": ["../../tooling", "../../packages"]
-    }
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
   },
-  "include": ["*.ts", "src"],
+  "include": ["."],
   "exclude": ["node_modules"]
 }

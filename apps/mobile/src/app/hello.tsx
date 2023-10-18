@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Stack } from "expo-router";
 
-import { name } from "@acme/api";
+import { name } from "@acme/calcs";
 
 import { api } from "~/utils/api";
 

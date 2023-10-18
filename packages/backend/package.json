@@ -12,6 +12,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@acme/api": "^0.1.0",
     "@trpc/server": "^10.40.0",
     "zod": "^3.22.4"
   },

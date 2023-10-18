@@ -13,11 +13,12 @@ export function ApiStack({ stack }: StackContext) {
     //     bind: [bus],
     //   },
     // },
-    cors: {
-      allowOrigins: ["*"],
-      allowMethods: ["OPTIONS", "GET", "POST"],
-      allowHeaders: ["*"],
-    },
+    // cors: {
+    //   allowOrigins: ["*"],
+    //   allowMethods: ["OPTIONS", "GET", "POST"],
+    //   allowHeaders: ["*"],
+    //   allowCredentials: true,
+    // },
     routes: {
       "OPTIONS /trpc/{proxy+}": "packages/backend/src/options.handler",
       "GET /trpc/{proxy+}": "packages/backend/src/server.handler",

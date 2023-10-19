@@ -24,7 +24,7 @@
     "aws-cdk-lib": "2.95.1",
     "constructs": "10.2.69",
     "prettier": "^3.0.3",
-    "sst": "^2.29.2",
+    "sst": "^2.30.3",
     "turbo": "^1.10.15",
     "typescript": "^5.2.2"
   },

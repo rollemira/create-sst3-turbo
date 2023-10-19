@@ -1,7 +1,7 @@
 import { StackContext, StaticSite, use } from "sst/constructs";
 import { ApiStack } from "./ApiStack";
 
-export function WebSiteStack({ stack, app }: StackContext) {
+export function WebSiteStack({ stack }: StackContext) {
   const { api } = use(ApiStack);
 
   // Define our React app

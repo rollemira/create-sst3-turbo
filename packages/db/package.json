@@ -9,17 +9,21 @@
     "clean": "git clean -xdf .turbo node_modules",
     "lint": "eslint .",
     "format": "prettier --check \"**/*.{mjs,ts,md,json}\"",
+    "generate": "drizzle-kit generate:pg",
+    "studio": "drizzle-kit studio --port 1337",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "pg": "^8.11.3",
-    "reflect-metadata": "^0.1.13",
-    "typeorm": "^0.3.17"
+    "drizzle-orm": "^0.28.6",
+    "drizzle-orm-pg": "0.15.2-2b4d90d",
+    "sst": "^2.29.2"
   },
   "devDependencies": {
     "@acme/eslint-config": "0.2.0",
     "@acme/prettier-config": "^0.1.0",
     "@acme/tsconfig": "^0.1.0",
+    "@aws-sdk/client-rds-data": "^3.431.0",
+    "drizzle-kit": "^0.19.13",
     "eslint": "^8.50.0",
     "typescript": "^5.2.2"
   },

@@ -1,24 +1,21 @@
-import { StackContext, Api, EventBus } from "sst/constructs";
+import { StackContext, Api, use } from "sst/constructs";
+import { DbStack } from "./DbStack";
 
 export function ApiStack({ stack }: StackContext) {
-  // const bus = new EventBus(stack, "bus", {
-  //   defaults: {
-  //     retries: 10,
-  //   },
-  // });
+  const { rds } = use(DbStack);
 
   const api = new Api(stack, "api", {
-    // defaults: {
-    //   function: {
-    //     bind: [bus],
-    //   },
-    // },
-    // cors: {
-    //   allowOrigins: ["*"],
-    //   allowMethods: ["OPTIONS", "GET", "POST"],
-    //   allowHeaders: ["*"],
-    //   allowCredentials: true,
-    // },
+    defaults: {
+      function: {
+        bind: [rds],
+        copyFiles: [
+          {
+            from: "packages/db/migrations",
+            to: "migrations",
+          },
+        ],
+      },
+    },
     routes: {
       "OPTIONS /trpc/{proxy+}": "packages/backend/src/options.handler",
       "GET /trpc/{proxy+}": "packages/backend/src/server.handler",
@@ -26,12 +23,11 @@ export function ApiStack({ stack }: StackContext) {
     },
   });
 
-  // bus.subscribe("todo.created", {
-  //   handler: "packages/functions/src/events/todo-created.handler",
-  // });
-
   stack.addOutputs({
     ApiEndpoint: api.url,
+    RDS_ARN: rds.clusterArn,
+    RDS_SECRET: rds.secretArn,
+    RDS_DATABASE: rds.defaultDatabaseName,
   });
 
   // Return the API resource

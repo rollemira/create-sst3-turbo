@@ -27,7 +27,7 @@
     "constructs": "10.2.69",
     "prettier": "^3.0.3",
     "sst": "^2.29.2",
-    "turbo": "^1.10.15",
+    "turbo": "^1.10.16",
     "typescript": "^5.2.2"
   },
   "workspaces": [

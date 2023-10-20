@@ -8,15 +8,17 @@ export function ApiStack({ stack }: StackContext) {
     defaults: {
       function: {
         bind: [rds],
+        // HACK: copy the migrations to known folder in root
         copyFiles: [
           {
-            from: "packages/db/migrations",
+            from: "packages/data/migrations",
             to: "migrations",
           },
         ],
       },
     },
     routes: {
+      "GET /migrate": "packages/backend/src/migrator.handler",
       "OPTIONS /trpc/{proxy+}": "packages/backend/src/options.handler",
       "GET /trpc/{proxy+}": "packages/backend/src/server.handler",
       "POST /trpc/{proxy+}": "packages/backend/src/server.handler",

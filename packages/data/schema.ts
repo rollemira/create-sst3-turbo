@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { integer, numeric, pgTable, text } from "drizzle-orm-pg";
+import { integer, pgTable, text } from "drizzle-orm-pg";
 
 export const leads = pgTable("leads", {
   id: integer("id").primaryKey(),
@@ -14,6 +13,6 @@ export const leads = pgTable("leads", {
   zip: text("zip"),
   county: text("county"),
   country: text("country"),
-  lat: numeric("lat"),
-  long: numeric("long"),
+  //lat: numeric("lat"),
+  //long: numeric("long"),
 });

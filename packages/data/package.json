@@ -1,5 +1,5 @@
 {
-  "name": "@acme/db",
+  "name": "@acme/data",
   "version": "0.1.0",
   "private": true,
   "main": "./index.ts",
@@ -9,13 +9,13 @@
     "clean": "git clean -xdf .turbo node_modules",
     "lint": "eslint .",
     "format": "prettier --check \"**/*.{mjs,ts,md,json}\"",
-    "generate": "drizzle-kit generate:pg",
+    "generate": "drizzle-kit generate --dialect=pg --schema=src/sql --out=migrations",
     "studio": "drizzle-kit studio --port 1337",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@aws-sdk/credential-providers": "^3.431.0",
     "drizzle-orm": "^0.28.6",
-    "drizzle-orm-pg": "0.15.2-2b4d90d",
     "sst": "^2.29.2"
   },
   "devDependencies": {
@@ -23,6 +23,8 @@
     "@acme/prettier-config": "^0.1.0",
     "@acme/tsconfig": "^0.1.0",
     "@aws-sdk/client-rds-data": "^3.431.0",
+    "@types/node": "^18.16.16",
+    "@types/pg": "^8.10.7",
     "drizzle-kit": "^0.19.13",
     "eslint": "^8.50.0",
     "typescript": "^5.2.2"

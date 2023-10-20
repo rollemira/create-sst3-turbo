@@ -265,9 +265,9 @@ importers:
 
   packages/api:
     dependencies:
-      '@acme/data':
+      '@acme/db':
         specifier: ^0.1.0
-        version: link:../data
+        version: link:../db
       '@trpc/client':
         specifier: ^10.40.0
         version: 10.40.0(@trpc/server@10.40.0)
@@ -302,9 +302,9 @@ importers:
       '@acme/api':
         specifier: ^0.1.0
         version: link:../api
-      '@acme/data':
+      '@acme/db':
         specifier: ^0.1.0
-        version: link:../data
+        version: link:../db
       '@trpc/server':
         specifier: ^10.40.0
         version: 10.40.0
@@ -373,7 +373,7 @@ importers:
         specifier: ^5.2.2
         version: 5.2.2
 
-  packages/data:
+  packages/db:
     dependencies:
       '@aws-sdk/credential-providers':
         specifier: ^3.431.0
@@ -551,14 +551,14 @@ packages:
   /@aws-cdk/asset-node-proxy-agent-v6@2.0.1:
     resolution: {integrity: sha512-DDt4SLdLOwWCjGtltH4VCST7hpOI5DzieuhGZsBpZ+AgJdSI2GCjklCXm0GCTwJG/SolkL5dtQXyUKgg9luBDg==}
 
-  /@aws-cdk/aws-apigatewayv2-alpha@2.101.1-alpha.0(aws-cdk-lib@2.95.1)(constructs@10.2.69):
+  /@aws-cdk/aws-apigatewayv2-alpha@2.101.1-alpha.0(aws-cdk-lib@2.101.1)(constructs@10.2.69):
     resolution: {integrity: sha512-nDdxdcJ97jC80F8dxO+wH2ufkq0w2hfsZ3RZKrdGo913/BPO2ebBSowFykpKSl2cPqm4g5NwoUIGZcawvGcpGQ==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
       aws-cdk-lib: ^2.101.1
       constructs: ^10.0.0
     dependencies:
-      aws-cdk-lib: 2.95.1(constructs@10.2.69)
+      aws-cdk-lib: 2.101.1(constructs@10.2.69)
       constructs: 10.2.69
     dev: false
 
@@ -581,7 +581,7 @@ packages:
       aws-cdk-lib: ^2.101.1
       constructs: ^10.0.0
     dependencies:
-      '@aws-cdk/aws-apigatewayv2-alpha': 2.101.1-alpha.0(aws-cdk-lib@2.95.1)(constructs@10.2.69)
+      '@aws-cdk/aws-apigatewayv2-alpha': 2.101.1-alpha.0(aws-cdk-lib@2.101.1)(constructs@10.2.69)
       aws-cdk-lib: 2.101.1(constructs@10.2.69)
       constructs: 10.2.69
     dev: false
@@ -607,7 +607,7 @@ packages:
       aws-cdk-lib: ^2.101.1
       constructs: ^10.0.0
     dependencies:
-      '@aws-cdk/aws-apigatewayv2-alpha': 2.101.1-alpha.0(aws-cdk-lib@2.95.1)(constructs@10.2.69)
+      '@aws-cdk/aws-apigatewayv2-alpha': 2.101.1-alpha.0(aws-cdk-lib@2.101.1)(constructs@10.2.69)
       aws-cdk-lib: 2.101.1(constructs@10.2.69)
       constructs: 10.2.69
     dev: false
@@ -16022,7 +16022,7 @@ packages:
       '@sls-next/lambda-at-edge':
         optional: true
     dependencies:
-      '@aws-cdk/aws-apigatewayv2-alpha': 2.101.1-alpha.0(aws-cdk-lib@2.95.1)(constructs@10.2.69)
+      '@aws-cdk/aws-apigatewayv2-alpha': 2.101.1-alpha.0(aws-cdk-lib@2.101.1)(constructs@10.2.69)
       '@aws-cdk/aws-apigatewayv2-authorizers-alpha': 2.101.1-alpha.0(@aws-cdk/aws-apigatewayv2-alpha@2.101.1-alpha.0)(aws-cdk-lib@2.101.1)(constructs@10.2.69)
       '@aws-cdk/aws-apigatewayv2-integrations-alpha': 2.101.1-alpha.0(@aws-cdk/aws-apigatewayv2-alpha@2.101.1-alpha.0)(aws-cdk-lib@2.101.1)(constructs@10.2.69)
       '@aws-cdk/cloud-assembly-schema': 2.101.1

@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-//import { schema } from "@acme/data";
+//import { schema } from "@acme/db";
 
 import { createTRPCRouter, publicProcedure } from "../trpc";
 

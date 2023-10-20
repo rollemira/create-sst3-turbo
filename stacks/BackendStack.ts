@@ -15,8 +15,8 @@ export function BackendStack({ stack, app }: StackContext) {
         : {
             // for dev
             autoPause: true,
-            minCapacity: "ACU_1",
-            maxCapacity: "ACU_1",
+            minCapacity: "ACU_2",
+            maxCapacity: "ACU_2",
           },
   });
 

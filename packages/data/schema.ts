@@ -1,4 +1,6 @@
-import { integer, pgTable, text } from "drizzle-orm-pg";
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import { integer, pgTable, text } from "drizzle-orm/pg-core";
 
 export const leads = pgTable("leads", {
   id: integer("id").primaryKey(),

@@ -1,8 +1,9 @@
 import { initTRPC, TRPCError } from "@trpc/server";
 import type { APIGatewayProxyEvent } from "aws-lambda";
-//import type { PgDatabase } from "drizzle-orm-pg/aws-datapi";
 import superjson from "superjson";
 import { ZodError } from "zod";
+
+import { db } from "@acme/data";
 
 export interface Session {
   user: string;
@@ -12,12 +13,12 @@ interface CreateContextOptions {
   event?: APIGatewayProxyEvent;
   apiVersion?: string;
   user?: string;
-  //db?: PgDatabase;
 }
 
 const createInnerTRPCContext = (opts: CreateContextOptions) => {
   return {
     ...opts,
+    db,
   };
 };
 

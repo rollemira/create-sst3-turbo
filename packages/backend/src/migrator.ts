@@ -1,16 +1,16 @@
+import path from "path";
 import { ApiHandler } from "sst/node/api";
 
-//import { migrate } from "@acme/data";
+import { migrate } from "@acme/data";
 
-// eslint-disable-next-line @typescript-eslint/require-await
 export const handler = ApiHandler(async (_evt, _ctx) => {
   // HACK: this folder lives becasuse we copy migrations to the root
   // inside the ApiStack
-  //const pathToMIgrations = "migrations";
+  const pathToMIgrations = path.join(__dirname, "../../../", "migrations");
 
-  //await migrate(pathToMIgrations);
+  await migrate(pathToMIgrations);
 
   return {
-    body: "Migrated! (Still under construction)",
+    body: "Migrated!",
   };
 });

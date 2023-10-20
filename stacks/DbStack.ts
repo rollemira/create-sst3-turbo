@@ -20,11 +20,12 @@ export function DbStack({ stack, app }: StackContext) {
           },
   });
 
-  stack.addOutputs({
-    RDS_ARN: rds.clusterArn,
-    RDS_SECRET: rds.secretArn,
-    RDS_DATABASE: rds.defaultDatabaseName,
-  });
+  // this is done in the ApiStack
+  // stack.addOutputs({
+  //   RDS_ARN: rds.clusterArn,
+  //   RDS_SECRET: rds.secretArn,
+  //   RDS_DATABASE: rds.defaultDatabaseName,
+  // });
 
   return { rds };
 }

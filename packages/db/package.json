@@ -9,15 +9,17 @@
     "clean": "git clean -xdf .turbo node_modules",
     "lint": "eslint .",
     "format": "prettier --check \"**/*.{mjs,ts,md,json}\"",
-    "check": "drizzle-kit check:pg",
-    "generate": "drizzle-kit generate --dialect=pg --schema=schema.ts --out=migrations",
-    "push": "drizzle-kit push:pg --driver=mysql2 --schema=schema.ts",
-    "studio": "drizzle-kit studio --port 1337",
+    "db:check": "drizzle-kit check:pg",
+    "db:generate": "drizzle-kit generate:pg",
+    "db:pull": "drizzle-kit introspect:pg",
+    "db:push": "drizzle-kit push:pg",
+    "db:studio": "drizzle-kit studio --port 1337",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@aws-sdk/credential-providers": "^3.431.0",
     "drizzle-orm": "^0.28.6",
+    "pg": "^8.11.3",
     "sst": "^2.29.2"
   },
   "devDependencies": {
@@ -27,6 +29,7 @@
     "@aws-sdk/client-rds-data": "^3.431.0",
     "@types/node": "^18.16.16",
     "@types/pg": "^8.10.7",
+    "dotenv-cli": "^7.3.0",
     "drizzle-kit": "^0.19.13",
     "eslint": "^8.50.0",
     "typescript": "^5.2.2"

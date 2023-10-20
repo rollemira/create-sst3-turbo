@@ -11,7 +11,7 @@ export function ApiStack({ stack }: StackContext) {
         // HACK: copy the migrations to known folder in root
         copyFiles: [
           {
-            from: "packages/data/migrations",
+            from: "/packages/db/migrations/",
             to: "migrations",
           },
         ],

@@ -40,14 +40,11 @@ nvm use
 pnpm i
 ```
 
-## Migrations setup (if new database)
+## Database Setup (if needed)
 
-```
-CREATE USER migrator WITH PASSWORD '$omething$ecret';
-GRANT rds_superuser TO migrator;
-GRANT CONNECT ON DATABASE acme TO migrator;
-#GRANT USAGE ON SCHEMA public TO migrator;
-```
+Make a database at [PlanetScale](https://planetscale.com/)
+Go to Settings -> Passwords -> New Password
+Set your DATABASE_URL in .env
 
 ## Running
 

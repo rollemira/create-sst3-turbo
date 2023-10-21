@@ -4,8 +4,8 @@
   "version": "5",
   "dialect": "mysql",
   "tables": {
-    "ghcalc_leads": {
-      "name": "ghcalc_leads",
+    "leads": {
+      "name": "leads",
       "columns": {
         "id": {
           "autoincrement": true,
@@ -115,11 +115,9 @@
         }
       },
       "compositePrimaryKeys": {
-        "ghcalc_leads_id": {
-          "name": "ghcalc_leads_id",
-          "columns": [
-            "id"
-          ]
+        "leads_id": {
+          "name": "leads_id",
+          "columns": ["id"]
         }
       },
       "indexes": {},

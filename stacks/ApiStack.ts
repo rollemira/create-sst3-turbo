@@ -14,7 +14,9 @@ export function ApiStack({ stack }: StackContext) {
     //     ],
     //   },
     // },
+    cors: true,
     routes: {
+      "GET /health": "packages/backend/src/health.handler",
       "OPTIONS /trpc/{proxy+}": "packages/backend/src/options.handler",
       "GET /trpc/{proxy+}": "packages/backend/src/server.handler",
       "POST /trpc/{proxy+}": "packages/backend/src/server.handler",

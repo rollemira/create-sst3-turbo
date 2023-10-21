@@ -6,6 +6,8 @@ import { RDS } from "sst/node/rds";
 
 import * as schema from "./schema";
 
+export * from "./schema";
+
 export * from "drizzle-orm";
 
 const rdsClient = new RDSDataClient({

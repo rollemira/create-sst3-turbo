@@ -42,6 +42,7 @@ export function BackendStack({ stack, app }: StackContext) {
   });
 
   stack.addOutputs({
+    RDS_HOST: rds.clusterEndpoint.hostname,
     RDS_ARN: rds.clusterArn,
     RDS_SECRET: rds.secretArn,
     RDS_DATABASE: rds.defaultDatabaseName,

@@ -9,18 +9,28 @@
     "clean": "git clean -xdf .turbo node_modules",
     "lint": "eslint .",
     "format": "prettier --check \"**/*.{mjs,ts,md,json}\"",
+    "db:check": "drizzle-kit check:mysql",
+    "db:generate": "drizzle-kit generate:mysql",
+    "db:pull": "drizzle-kit introspect:mysql",
+    "db:push": "drizzle-kit push:mysql",
+    "db:studio": "drizzle-kit studio --port 1337",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "pg": "^8.11.3",
-    "reflect-metadata": "^0.1.13",
-    "typeorm": "^0.3.17"
+    "@planetscale/database": "^1.11.0",
+    "drizzle-orm": "^0.28.6"
   },
   "devDependencies": {
     "@acme/eslint-config": "0.2.0",
     "@acme/prettier-config": "^0.1.0",
     "@acme/tsconfig": "^0.1.0",
+    "@aws-sdk/client-rds-data": "^3.431.0",
+    "@types/node": "^18.16.16",
+    "@types/pg": "^8.10.7",
+    "dotenv-cli": "^7.3.0",
+    "drizzle-kit": "^0.19.13",
     "eslint": "^8.50.0",
+    "mysql2": "^3.6.2",
     "typescript": "^5.2.2"
   },
   "eslintConfig": {

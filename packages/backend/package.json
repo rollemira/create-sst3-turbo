@@ -13,7 +13,9 @@
   },
   "dependencies": {
     "@acme/api": "^0.1.0",
+    "@acme/db": "^0.1.0",
     "@trpc/server": "^10.40.0",
+    "drizzle-zod": "^0.5.1",
     "zod": "^3.22.4"
   },
   "devDependencies": {

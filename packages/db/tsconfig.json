@@ -6,6 +6,6 @@
       "@acme": ["../../tooling", "../../packages"]
     }
   },
-  "include": ["*.ts", "src"],
+  "include": ["**/*.ts", "../../.sst/types"],
   "exclude": ["node_modules"]
 }

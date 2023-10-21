@@ -6,11 +6,15 @@ Make the real readme file explaining how to get the project started from a fresh
 
 ## Install nvm pnpm aws-cli
 
-`brew install nvm pnpm awscli`
+```
+brew install nvm pnpm awscli
+```
 
 ### If you have them maybe upgrade?
 
-`brew upgrade nvm pnpm awscli`
+```
+brew upgrade nvm pnpm awscli
+```
 
 ## Configure aws-cli
 
@@ -20,22 +24,38 @@ Make the real readme file explaining how to get the project started from a fresh
 
 ## Check your AWS profile (skip if single AWS account)
 
-`scripts/init.sh`
+```
+code ~/.aws/credentials # set default
+```
 
 ## Setup your node version
 
-`nvm use`
+```
+nvm use
+```
 
 ## Install deps
 
-`pnpm i`
+```
+pnpm i
+```
+
+## Database Setup (if needed)
+
+Make a database at [PlanetScale](https://planetscale.com/)
+Go to Settings -> Passwords -> New Password
+Set your DATABASE_URL in .env
 
 ## Running
 
 Terminal_1: Start backend server
 
-`<root>$ pnpm run dev`
+```
+<project_root>$ pnpm run dev
+```
 
 Terminal_2: Start your frontend of choice
 
-`<root>/apps/<app-name>$ pnpm run dev`
+```
+<project_root>/apps/<app-name>$ pnpm run dev
+```

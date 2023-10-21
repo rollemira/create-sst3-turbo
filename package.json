@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "sst dev",
+    "cdk:bootstrap": "npx cdk bootstrap",
     "build": "sst build",
     "deploy": "sst deploy",
     "down": "sst remove",
     "console": "sst console",
-    "clean": "git clean -xdf node_modules .sst .turbo",
+    "clean": "git clean -xdf node_modules .turbo",
+    "clean:sst": "git clean -xdf .sst",
     "clean:workspaces": "turbo clean",
     "format": "turbo format --continue -- --cache --cache-location='node_modules/.cache/.prettiercache'",
     "format:fix": "turbo format --continue -- --write . --cache --cache-location='node_modules/.cache/.prettiercache'",
@@ -25,7 +27,7 @@
     "constructs": "10.2.69",
     "prettier": "^3.0.3",
     "sst": "^2.29.2",
-    "turbo": "^1.10.15",
+    "turbo": "^1.10.16",
     "typescript": "^5.2.2"
   },
   "workspaces": [

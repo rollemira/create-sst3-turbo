@@ -3,6 +3,8 @@ import type { APIGatewayProxyEvent } from "aws-lambda";
 import superjson from "superjson";
 import { ZodError } from "zod";
 
+import { db } from "@acme/db";
+
 export interface Session {
   user: string;
 }
@@ -16,6 +18,7 @@ interface CreateContextOptions {
 const createInnerTRPCContext = (opts: CreateContextOptions) => {
   return {
     ...opts,
+    db,
   };
 };
 

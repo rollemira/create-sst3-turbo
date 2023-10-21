@@ -1,5 +1,5 @@
 import { SSTConfig } from "sst";
-import { BackendStack } from "./stacks/BackendStack";
+import { ApiStack } from "./stacks/ApiStack";
 import { WebSiteStack } from "./stacks/WebStack";
 
 export default {
@@ -10,6 +10,6 @@ export default {
     };
   },
   stacks(app) {
-    app.stack(BackendStack).stack(WebSiteStack);
+    app.stack(ApiStack).stack(WebSiteStack);
   },
 } satisfies SSTConfig;

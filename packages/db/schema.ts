@@ -1,14 +1,14 @@
 import { sql } from "drizzle-orm";
 import {
-  bigserial,
-  numeric,
-  pgTable,
+  float,
+  mysqlTable,
+  serial,
   timestamp,
   varchar,
-} from "drizzle-orm/pg-core";
+} from "drizzle-orm/mysql-core";
 
-export const leads = pgTable("leads", {
-  id: bigserial("id", { mode: "bigint" }).primaryKey(),
+export const leads = mysqlTable("leads", {
+  id: serial("id").primaryKey(),
   firstName: varchar("firstName", { length: 256 }),
   lastName: varchar("lastName", { length: 256 }),
   email: varchar("email", { length: 256 }),
@@ -20,9 +20,9 @@ export const leads = pgTable("leads", {
   zip: varchar("zip", { length: 20 }),
   county: varchar("county", { length: 256 }),
   country: varchar("country", { length: 256 }),
-  lat: numeric("lat"),
-  long: numeric("long"),
+  lat: float("lat"),
+  long: float("long"),
   createdAt: timestamp("createdAt")
-    .notNull()
-    .default(sql`now()`),
+    .default(sql`CURRENT_TIMESTAMP`)
+    .notNull(),
 });

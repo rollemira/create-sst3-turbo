@@ -45,7 +45,7 @@ pnpm i
 ```
 CREATE USER migrator WITH PASSWORD '$omething$ecret';
 GRANT rds_superuser TO migrator;
-#GRANT CONNECT ON DATABASE acme TO myuser;
+GRANT CONNECT ON DATABASE acme TO migrator;
 #GRANT USAGE ON SCHEMA public TO migrator;
 ```
 

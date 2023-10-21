@@ -12,7 +12,7 @@ console.log("Using DB URL: ", dbUrl);
 export default {
   schema: "./schema.ts",
   out: "./migrations",
-  driver: "pg",
+  driver: "mysql2",
   dbCredentials: {
     connectionString: dbUrl,
   },

@@ -1,1 +1,13 @@
-{ "version": "5", "dialect": "pg", "entries": [] }
+{
+  "version": "5",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1697918721417,
+      "tag": "0000_wide_cloak",
+      "breakpoints": true
+    }
+  ]
+}

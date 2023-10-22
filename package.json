@@ -33,6 +33,7 @@
   },
   "workspaces": [
     "apps/*",
+    "functions/*",
     "packages/*",
     "tooling/*"
   ]

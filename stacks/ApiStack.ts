@@ -2,28 +2,16 @@ import { StackContext, Api } from "sst/constructs";
 
 export function ApiStack({ stack }: StackContext) {
   const api = new Api(stack, "api", {
-    // defaults: {
-    //   function: {
-    //     bind: ["db"],
-    //     // HACK: copy the migrations to known folder in root
-    //     copyFiles: [
-    //       {
-    //         from: "/packages/db/migrations/",
-    //         to: "migrations",
-    //       },
-    //     ],
-    //   },
-    // },
     cors: {
       allowHeaders: ["*"],
       allowOrigins: ["*"],
       allowMethods: ["GET", "POST", "OPTIONS"],
     },
     routes: {
-      "GET /health": "packages/backend/src/health.handler",
-      "OPTIONS /trpc/{proxy+}": "packages/backend/src/options.handler",
-      "GET /trpc/{proxy+}": "packages/backend/src/server.handler",
-      "POST /trpc/{proxy+}": "packages/backend/src/server.handler",
+      "GET /health": "functions/backend/src/health.handler",
+      "OPTIONS /trpc/{proxy+}": "functions/backend/src/options.handler",
+      "GET /trpc/{proxy+}": "functions/backend/src/server.handler",
+      "POST /trpc/{proxy+}": "functions/backend/src/server.handler",
     },
   });
 
@@ -31,7 +19,6 @@ export function ApiStack({ stack }: StackContext) {
     ApiEndpoint: api.url,
   });
 
-  // Return the API resource
   return {
     api,
   };

@@ -6,9 +6,9 @@
   "main": "index.tsx",
   "scripts": {
     "clean": "git clean -xdf .expo .turbo node_modules",
-    "dev": "yarn with-env expo start --ios",
-    "dev:android": "yarn with-env expo start --android",
-    "dev:ios": "yarn with-env expo start --ios",
+    "dev": "pnpm with-env expo start --ios",
+    "dev:android": "pnpm with-env expo start --android",
+    "dev:ios": "pnpm with-env expo start --ios",
     "lint": "eslint .",
     "format": "prettier --check \"**/*.{js,cjs,mjs,ts,tsx,md,json}\"",
     "typecheck": "tsc --noEmit",

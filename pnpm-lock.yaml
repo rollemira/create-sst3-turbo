@@ -162,6 +162,9 @@ importers:
       '@acme/api':
         specifier: ^0.1.0
         version: link:../../packages/api
+      '@acme/calcs':
+        specifier: ^0.1.0
+        version: link:../../packages/calcs
       '@acme/db':
         specifier: ^0.1.0
         version: link:../../packages/db

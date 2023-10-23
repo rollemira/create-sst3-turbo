@@ -11,7 +11,7 @@ export function WebSiteStack({ stack }: StackContext) {
     buildOutput: "dist",
     // Pass in our environment variables
     environment: {
-      VITE_BACKEND_URL: api.url,
+      VITE_API_URL: api.url,
     },
   });
 

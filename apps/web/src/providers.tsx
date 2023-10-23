@@ -32,7 +32,7 @@ export function TRPCReactProvider(props: {
             (opts.direction === "down" && opts.result instanceof Error),
         }),
         httpBatchLink({
-          url: `${import.meta.env.VITE_BACKEND_URL}/trpc`,
+          url: `${import.meta.env.VITE_API_URL}/trpc`,
           headers() {
             const headers = new Map(props.headers);
             headers.set("x-trpc-source", "vite-react");

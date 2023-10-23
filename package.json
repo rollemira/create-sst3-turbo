@@ -16,7 +16,8 @@
     "format:fix": "turbo format --continue -- --write . --cache --cache-location='node_modules/.cache/.prettiercache'",
     "lint": "turbo lint --continue -- --cache --cache-location 'node_modules/.cache/.eslintcache' && manypkg check",
     "lint:fix": "turbo lint --continue -- --fix --cache --cache-location 'node_modules/.cache/.eslintcache' && manypkg fix",
-    "typecheck": "turbo typecheck"
+    "typecheck": "turbo typecheck",
+    "check": "turbo build lint format typecheck"
   },
   "dependencies": {
     "@acme/prettier-config": "^0.1.0",
@@ -32,6 +33,7 @@
   },
   "workspaces": [
     "apps/*",
+    "functions/*",
     "packages/*",
     "tooling/*"
   ]

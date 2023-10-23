@@ -37,6 +37,7 @@ const config = {
     "**/*.config.js",
     "**/*.config.cjs",
     ".next",
+    ".open-next",
     "dist",
     "pnpm-lock.yaml",
   ],

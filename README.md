@@ -46,6 +46,10 @@ Make a database at [PlanetScale](https://planetscale.com/)
 Go to Settings -> Passwords -> New Password
 Set your DATABASE_URL in .env
 
+Don't want a 3rd party service? Use Lightsail instances on AWS.
+
+PlanetScale is free to start.
+
 ## Running
 
 Terminal_1: Start backend server
@@ -59,3 +63,7 @@ Terminal_2: Start your frontend of choice
 ```
 <project_root>/apps/<app-name>$ pnpm run dev
 ```
+
+## Databese management
+
+Use the scripts in packages/db

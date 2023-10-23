@@ -1,11 +1,13 @@
+"use client";
+
 import { useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { ReactQueryStreamedHydration } from "@tanstack/react-query-next-experimental";
 import { httpBatchLink, loggerLink } from "@trpc/client";
 import superjson from "superjson";
 
-//import { env } from "./env";
-import { api } from "./utils/api";
+import { api } from "~/utils/api";
 
 export function TRPCReactProvider(props: {
   children: React.ReactNode;
@@ -19,7 +21,7 @@ export function TRPCReactProvider(props: {
             staleTime: 5 * 1000,
           },
         },
-      })
+      }),
   );
 
   const [trpcClient] = useState(() =>
@@ -32,21 +34,30 @@ export function TRPCReactProvider(props: {
             (opts.direction === "down" && opts.result instanceof Error),
         }),
         httpBatchLink({
-          url: `${import.meta.env.VITE_API_URL}/trpc`,
+          url: `${process.env.NEXT_PUBLIC_API_URL}/trpc`,
           headers() {
             const headers = new Map(props.headers);
-            headers.set("x-trpc-source", "vite-react");
+            headers.set("x-trpc-source", "nextjs-react");
             return Object.fromEntries(headers);
           },
+          // unstable_httpBatchStreamLink({
+          //   url: `${process.env.NEXT_PUBLIC_API_URL}/trpc`,
+          //   headers() {
+          //     const headers = new Map(props.headers);
+          //     headers.set("x-trpc-source", "nextjs-react");
+          //     return Object.fromEntries(headers);
+          //   },
         }),
       ],
-    })
+    }),
   );
 
   return (
     <api.Provider client={trpcClient} queryClient={queryClient}>
       <QueryClientProvider client={queryClient}>
-        {props.children}
+        <ReactQueryStreamedHydration transformer={superjson}>
+          {props.children}
+        </ReactQueryStreamedHydration>
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </api.Provider>

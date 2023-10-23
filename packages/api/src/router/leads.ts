@@ -1,4 +1,3 @@
-//import { TRPCError } from "@trpc/server";
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 
@@ -10,7 +9,6 @@ import { createTRPCRouter, publicProcedure } from "../trpc";
 
 export const leadsRouter = createTRPCRouter({
   all: publicProcedure.query(({ ctx }) => {
-    // return ctx.db.select().from(schema.post).orderBy(desc(schema.post.id));
     return ctx.db.query.leads.findMany({ orderBy: desc(leads.id) });
   }),
   byId: publicProcedure

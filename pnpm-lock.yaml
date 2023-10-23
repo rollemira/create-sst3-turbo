@@ -274,12 +274,6 @@ importers:
       '@trpc/server':
         specifier: ^10.40.0
         version: 10.40.0
-      drizzle-zod:
-        specifier: ^0.5.1
-        version: 0.5.1(drizzle-orm@0.28.6)(zod@3.22.4)
-      zod:
-        specifier: ^3.22.4
-        version: 3.22.4
     devDependencies:
       '@acme/eslint-config':
         specifier: 0.2.0
@@ -335,6 +329,9 @@ importers:
       '@trpc/server':
         specifier: ^10.40.0
         version: 10.40.0
+      drizzle-zod:
+        specifier: ^0.5.1
+        version: 0.5.1(drizzle-orm@0.28.6)(zod@3.22.4)
       superjson:
         specifier: ^1.13.1
         version: 1.13.3

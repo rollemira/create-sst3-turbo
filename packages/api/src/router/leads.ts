@@ -3,13 +3,13 @@ import { z } from "zod";
 
 import { desc, eq, leads, sql } from "@acme/db";
 
-import { pagedRequestSchema } from "../common/requests";
-import { createdResponse } from "../common/responses";
+import { pagedInput } from "../common/inputs";
+import { createdOutput } from "../common/outputs";
 import { insertLeadSchema, selectLeadSchema } from "../models";
 import { createTRPCRouter, publicProcedure } from "../trpc";
 
 export const leadsRouter = createTRPCRouter({
-  all: publicProcedure.input(pagedRequestSchema).query(({ input, ctx }) => {
+  all: publicProcedure.input(pagedInput).query(({ input, ctx }) => {
     const { page, limit, orderBy } = input;
     return {
       page: page,
@@ -42,6 +42,6 @@ export const leadsRouter = createTRPCRouter({
     //.output(selectLeadSchema)
     .mutation(async ({ input, ctx }) => {
       await ctx.db.insert(leads).values(input);
-      return createdResponse;
+      return createdOutput;
     }),
 });

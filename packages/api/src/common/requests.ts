@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const pagedRequestSchema = z.object({
-  offset: z.number().default(0),
-  limit: z.number().default(10),
+  page: z.number().positive().int().default(1),
+  limit: z.number().positive().int().default(10),
   orderBy: z.string().optional(),
 });

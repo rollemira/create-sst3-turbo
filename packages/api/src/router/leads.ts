@@ -1,7 +1,7 @@
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 
-import { desc, eq, leads } from "@acme/db";
+import { desc, eq, leads, sql } from "@acme/db";
 
 import { pagedRequestSchema } from "../common/requests";
 import { createdResponse } from "../common/responses";
@@ -10,11 +10,17 @@ import { createTRPCRouter, publicProcedure } from "../trpc";
 
 export const leadsRouter = createTRPCRouter({
   all: publicProcedure.input(pagedRequestSchema).query(({ input, ctx }) => {
-    return ctx.db.query.leads.findMany({
-      offset: input.offset,
-      limit: input.limit,
-      orderBy: desc(leads.id),
-    });
+    const { page, limit, orderBy } = input;
+    return {
+      page: page,
+      limit: limit,
+      orderBy: orderBy,
+      data: ctx.db.query.leads.findMany({
+        offset: (page - 1) * limit,
+        limit: limit,
+        orderBy: desc(sql`${orderBy ?? "id"}`),
+      }),
+    };
   }),
   byId: publicProcedure
     .input(z.object({ id: z.number() }))

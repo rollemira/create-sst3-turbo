@@ -1,1 +1,4 @@
-export * from "./responses";
+export const createdResponse = {
+  statusCode: 201,
+  created: true,
+};

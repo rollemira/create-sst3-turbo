@@ -3,13 +3,18 @@ import { z } from "zod";
 
 import { desc, eq, leads } from "@acme/db";
 
+import { pagedRequestSchema } from "../common/requests";
 import { createdResponse } from "../common/responses";
 import { insertLeadSchema, selectLeadSchema } from "../models";
 import { createTRPCRouter, publicProcedure } from "../trpc";
 
 export const leadsRouter = createTRPCRouter({
-  all: publicProcedure.query(({ ctx }) => {
-    return ctx.db.query.leads.findMany({ orderBy: desc(leads.id) });
+  all: publicProcedure.input(pagedRequestSchema).query(({ input, ctx }) => {
+    return ctx.db.query.leads.findMany({
+      offset: input.offset,
+      limit: input.limit,
+      orderBy: desc(leads.id),
+    });
   }),
   byId: publicProcedure
     .input(z.object({ id: z.number() }))

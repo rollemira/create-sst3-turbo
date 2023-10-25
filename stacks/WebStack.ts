@@ -38,11 +38,11 @@ export function WebSiteStack({ stack }: StackContext) {
   // Show the url in the output
   stack.addOutputs({
     viteSiteUrl: viteSite.url,
-    viteFriendlyUrl: `${
+    viteFriendlyUrl: `https://${
       stack.stage === "prod" ? "vite" : `${stack.stage}-vite`
     }.rollemtech.app`,
     nextSiteUrl: nextSite.url,
-    nextFriendlyUrl: `${
+    nextFriendlyUrl: `https://${
       stack.stage === "prod" ? "next" : `${stack.stage}-next`
     }.rollemtech.app`,
   });

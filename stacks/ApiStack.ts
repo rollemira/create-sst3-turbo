@@ -32,13 +32,13 @@ export function ApiStack({ stack }: StackContext) {
 
   stack.addOutputs({
     ApiEndpoint: api.url,
-    StageUrl: `${
+    StageUrl: `https://${
       stack.stage === "prod" ? "api" : `${stack.stage}-api`
     }.rollemtech.app`,
   });
 
   return {
-    stageUrl: `${
+    stageUrl: `https://${
       stack.stage === "prod" ? "api" : `${stack.stage}-api`
     }.rollemtech.app`,
     api,

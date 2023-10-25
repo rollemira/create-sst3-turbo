@@ -2,7 +2,7 @@ import { NextjsSite, StackContext, StaticSite, use } from "sst/constructs";
 import { ApiStack } from "./ApiStack";
 
 export function WebSiteStack({ stack }: StackContext) {
-  const { api } = use(ApiStack);
+  const { api, stageUrl: apiUrl } = use(ApiStack);
 
   // Define our React app
   const viteSite = new StaticSite(stack, "WebSite", {
@@ -17,7 +17,7 @@ export function WebSiteStack({ stack }: StackContext) {
     buildOutput: "dist",
     // Pass in our environment variables
     environment: {
-      VITE_API_URL: api.url,
+      VITE_API_URL: apiUrl,
     },
   });
 
@@ -31,14 +31,20 @@ export function WebSiteStack({ stack }: StackContext) {
     path: "apps/nextjs",
     // Pass in our environment variables
     environment: {
-      NEXT_PUBLIC_API_URL: api.url,
+      NEXT_PUBLIC_API_URL: apiUrl,
     },
   });
 
   // Show the url in the output
   stack.addOutputs({
     viteSiteUrl: viteSite.url,
+    viteFriendlyUrl: `${
+      stack.stage === "prod" ? "vite" : `${stack.stage}-vite`
+    }.rollemtech.app`,
     nextSiteUrl: nextSite.url,
+    nextFriendlyUrl: `${
+      stack.stage === "prod" ? "next" : `${stack.stage}-next`
+    }.rollemtech.app`,
   });
 
   return {

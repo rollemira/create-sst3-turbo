@@ -8,7 +8,7 @@ import { name } from "@acme/calcs";
 import { api } from "~/utils/api";
 
 const Index = () => {
-  const { data, error, isLoading } = api.greet.greeting.useQuery({
+  const { data, error, isLoading } = api.pinger.ping.useQuery({
     name: "mobile",
   });
 

@@ -3,7 +3,7 @@
 import { createInsertSchema, createSelectSchema } from "drizzle-zod";
 import type { z } from "zod";
 
-import { leads } from "@acme/db";
+import { leads } from "@acme/db/schema";
 
 export const insertLeadSchema = createInsertSchema(leads);
 

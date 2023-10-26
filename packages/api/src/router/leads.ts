@@ -1,7 +1,8 @@
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 
-import { desc, eq, leads, sql } from "@acme/db";
+import { desc, eq, sql } from "@acme/db";
+import { leads } from "@acme/db/schema";
 
 import { pagedInput } from "../common/inputs";
 import { createdOutput } from "../common/outputs";

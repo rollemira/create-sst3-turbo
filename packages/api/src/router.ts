@@ -1,9 +1,9 @@
-import { greetRouter } from "./router/greet";
 import { leadsRouter } from "./router/leads";
+import { pingRouter } from "./router/ping";
 import { createTRPCRouter } from "./trpc";
 
 export const appRouter = createTRPCRouter({
-  greet: greetRouter,
+  pinger: pingRouter,
   leads: leadsRouter,
 });
 

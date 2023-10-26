@@ -8,11 +8,14 @@ export function WebSiteStack({ stack }: StackContext) {
   const viteDomain = `${
     stack.stage === "prod" ? "vite" : `${stack.stage}-vite`
   }.rollemtech.app`;
+  const viteCustomDomain = {
+    domainName: viteDomain,
+    hostedZone: "rollemtech.app",
+  };
   const viteSite = new StaticSite(stack, "WebSite", {
-    customDomain: {
-      domainName: viteDomain,
-      hostedZone: "rollemtech.app",
-    },
+    customDomain: ["test", "prod"].includes(stack.stage)
+      ? viteCustomDomain
+      : undefined,
     path: "apps/web",
     buildCommand: "pnpm run build",
     buildOutput: "dist",
@@ -25,11 +28,14 @@ export function WebSiteStack({ stack }: StackContext) {
   const nextDomain = `${
     stack.stage === "prod" ? "next" : `${stack.stage}-next`
   }.rollemtech.app`;
+  const nextCustomDomain = {
+    domainName: viteDomain,
+    hostedZone: "rollemtech.app",
+  };
   const nextSite = new NextjsSite(stack, "NextWebsite", {
-    customDomain: {
-      domainName: nextDomain,
-      hostedZone: "rollemtech.app",
-    },
+    customDomain: ["test", "prod"].includes(stack.stage)
+      ? nextCustomDomain
+      : undefined,
     path: "apps/nextjs",
     // Pass in our environment variables
     environment: {

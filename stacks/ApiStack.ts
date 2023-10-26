@@ -4,11 +4,14 @@ export function ApiStack({ stack }: StackContext) {
   const domainName = `${
     stack.stage === "prod" ? "api" : `${stack.stage}-api`
   }.rollemtech.app`;
+  const customDomain = {
+    domainName,
+    hostedZone: "rollemtech.app",
+  };
   const api = new Api(stack, "api", {
-    customDomain: {
-      domainName,
-      hostedZone: "rollemtech.app",
-    },
+    customDomain: ["test", "prod"].includes(stack.stage)
+      ? customDomain
+      : undefined,
     cors: {
       allowHeaders: ["*"],
       allowOrigins: [

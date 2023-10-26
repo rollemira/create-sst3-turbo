@@ -1,13 +1,9 @@
 import { sql } from "drizzle-orm";
-import {
-  float,
-  mysqlTable,
-  serial,
-  timestamp,
-  varchar,
-} from "drizzle-orm/mysql-core";
+import { float, serial, timestamp, varchar } from "drizzle-orm/mysql-core";
 
-export const leads = mysqlTable("leads", {
+import { tableCreator } from "./_table";
+
+export const leads = tableCreator("leads", {
   id: serial("id").primaryKey(),
   firstName: varchar("firstName", { length: 256 }),
   lastName: varchar("lastName", { length: 256 }),

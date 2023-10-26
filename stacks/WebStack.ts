@@ -2,7 +2,7 @@ import { NextjsSite, StackContext, StaticSite, use } from "sst/constructs";
 import { ApiStack } from "./ApiStack";
 
 export function WebSiteStack({ stack }: StackContext) {
-  const { api, stageUrl: apiUrl } = use(ApiStack);
+  const { stageUrl: apiUrl } = use(ApiStack);
 
   // Define our React app
   const viteDomain = `${

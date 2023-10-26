@@ -6,9 +6,10 @@
     "dev": "sst dev",
     "cdk:bootstrap": "npx cdk bootstrap",
     "build": "sst build",
+    "check": "turbo build lint format typecheck",
+    "console": "sst console",
     "deploy": "pnpm with-env sst deploy",
     "down": "sst remove",
-    "console": "sst console",
     "clean": "git clean -xdf node_modules .turbo",
     "clean:sst": "git clean -xdf .sst",
     "clean:workspaces": "turbo clean",
@@ -16,8 +17,8 @@
     "format:fix": "turbo format --continue -- --write . --cache --cache-location='node_modules/.cache/.prettiercache'",
     "lint": "turbo lint --continue -- --cache --cache-location 'node_modules/.cache/.eslintcache' && manypkg check",
     "lint:fix": "turbo lint --continue -- --fix --cache --cache-location 'node_modules/.cache/.eslintcache' && manypkg fix",
+    "secrets": "ts-node ./secrets.ts",
     "typecheck": "turbo typecheck",
-    "check": "turbo build lint format typecheck",
     "with-env": "dotenv -e .env --"
   },
   "dependencies": {

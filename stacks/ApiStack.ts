@@ -42,12 +42,12 @@ export function ApiStack({ stack }: StackContext) {
 
   const apiUrl = `https://${domainName}`;
   stack.addOutputs({
-    ApiEndpoint: api.url,
+    ApiHost: api.url,
     StageUrl: apiUrl,
   });
 
   return {
-    stageUrl: apiUrl,
     api,
+    stageUrl: apiUrl,
   };
 }

@@ -47,16 +47,16 @@ export function WebSiteStack({ stack }: StackContext) {
   const viteStageUrl = `https://${viteDomain}`;
   const nextStageUrl = `https://${nextDomain}`;
   stack.addOutputs({
-    viteSiteUrl: viteSite.url,
-    viteFriendlyUrl: viteStageUrl,
-    nextSiteUrl: nextSite.url,
-    nextFriendlyUrl: nextStageUrl,
+    ViteHost: viteSite.url,
+    ViteStageUrl: viteStageUrl,
+    NextHost: nextSite.url,
+    NextStageurl: nextStageUrl,
   });
 
   return {
-    viteStageUrl,
-    viteSite: viteSite,
-    nextStageUrl,
     nextSite: nextSite,
+    nextStageUrl,
+    viteSite: viteSite,
+    viteStageUrl,
   };
 }

@@ -1,6 +1,7 @@
-import { StackContext, Api } from "sst/constructs";
+import { StackContext, Api, Config } from "sst/constructs";
 
 export function ApiStack({ stack }: StackContext) {
+  const DATABASE_URL = new Config.Secret(stack, "DATABASE_URL");
   const domainName = `${
     stack.stage === "prod" ? "api" : `${stack.stage}-api`
   }.rollemtech.app`;
@@ -12,6 +13,11 @@ export function ApiStack({ stack }: StackContext) {
     customDomain: ["test", "prod"].includes(stack.stage)
       ? customDomain
       : undefined,
+    defaults: {
+      function: {
+        bind: [DATABASE_URL],
+      },
+    },
     cors: {
       allowHeaders: ["*"],
       allowOrigins: [

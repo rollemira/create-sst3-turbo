@@ -1,6 +1,7 @@
 import { awsLambdaRequestHandler } from "@trpc/server/adapters/aws-lambda";
 import type { CreateAWSLambdaContextOptions } from "@trpc/server/adapters/aws-lambda";
 import type { APIGatewayProxyEvent } from "aws-lambda";
+import { Config } from "sst/node/config";
 
 import { appRouter } from "@acme/api";
 import { db } from "@acme/db";
@@ -14,7 +15,8 @@ function createContext({
     event: event,
     apiVersion: (event as { version?: string }).version ?? "1.0",
     user: event.headers["x-user"],
-    db,
+    // @ts-expect-error: HACK: the build server doesn't get SST types
+    db: db(Config.DATABASE_URL as string),
   };
 }
 

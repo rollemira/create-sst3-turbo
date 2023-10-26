@@ -1,10 +1,6 @@
 {
-  "availability-zones:account=372869020582:region=us-east-1": [
-    "us-east-1a",
-    "us-east-1b",
-    "us-east-1c",
-    "us-east-1d",
-    "us-east-1e",
-    "us-east-1f"
-  ]
+  "hosted-zone:account=372869020582:domainName=rollemtech.app:region=us-east-1": {
+    "Id": "/hostedzone/Z070640339QXEWTFQ9JWI",
+    "Name": "rollemtech.app."
+  }
 }

@@ -1,9 +1,11 @@
-import { name } from "@acme/calcs";
-import { api } from "../utils/api";
 import { Link } from "react-router-dom";
 
+import { name } from "@acme/calcs";
+
+import { api } from "../utils/api";
+
 function About() {
-  const { data, error, isLoading } = api.greet.greeting.useQuery({
+  const { data, error, isLoading } = api.pinger.ping.useQuery({
     name: "about",
   });
 

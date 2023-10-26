@@ -4,10 +4,10 @@ import { name } from "@acme/calcs";
 
 import { api } from "../utils/api";
 
-export const runtime = "edge";
+//export const runtime = "edge";
 
 export default function HomePage() {
-  const { data, error, isLoading } = api.greet.greeting.useQuery({
+  const { data, error, isLoading } = api.pinger.ping.useQuery({
     name: "nextjs",
   });
 

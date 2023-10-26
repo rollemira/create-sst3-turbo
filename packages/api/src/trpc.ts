@@ -18,7 +18,7 @@ interface CreateContextOptions {
 const createInnerTRPCContext = (opts: CreateContextOptions) => {
   return {
     ...opts,
-    db,
+    db: db(),
   };
 };
 

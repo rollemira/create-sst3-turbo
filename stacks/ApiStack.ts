@@ -1,11 +1,12 @@
 import { StackContext, Api } from "sst/constructs";
 
 export function ApiStack({ stack }: StackContext) {
+  const domainName = `${
+    stack.stage === "prod" ? "api" : `${stack.stage}-api`
+  }.rollemtech.app`;
   const api = new Api(stack, "api", {
     customDomain: {
-      domainName: `${
-        stack.stage === "prod" ? "api" : `${stack.stage}-api`
-      }.rollemtech.app`,
+      domainName,
       hostedZone: "rollemtech.app",
     },
     cors: {
@@ -30,17 +31,14 @@ export function ApiStack({ stack }: StackContext) {
     },
   });
 
+  const apiUrl = `https://${domainName}`;
   stack.addOutputs({
     ApiEndpoint: api.url,
-    StageUrl: `https://${
-      stack.stage === "prod" ? "api" : `${stack.stage}-api`
-    }.rollemtech.app`,
+    StageUrl: apiUrl,
   });
 
   return {
-    stageUrl: `https://${
-      stack.stage === "prod" ? "api" : `${stack.stage}-api`
-    }.rollemtech.app`,
+    stageUrl: apiUrl,
     api,
   };
 }

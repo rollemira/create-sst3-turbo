@@ -5,11 +5,12 @@ export function WebSiteStack({ stack }: StackContext) {
   const { api, stageUrl: apiUrl } = use(ApiStack);
 
   // Define our React app
+  const viteDomain = `${
+    stack.stage === "prod" ? "vite" : `${stack.stage}-vite`
+  }.rollemtech.app`;
   const viteSite = new StaticSite(stack, "WebSite", {
     customDomain: {
-      domainName: `${
-        stack.stage === "prod" ? "vite" : `${stack.stage}-vite`
-      }.rollemtech.app`,
+      domainName: viteDomain,
       hostedZone: "rollemtech.app",
     },
     path: "apps/web",
@@ -21,11 +22,12 @@ export function WebSiteStack({ stack }: StackContext) {
     },
   });
 
+  const nextDomain = `${
+    stack.stage === "prod" ? "next" : `${stack.stage}-next`
+  }.rollemtech.app`;
   const nextSite = new NextjsSite(stack, "NextWebsite", {
     customDomain: {
-      domainName: `${
-        stack.stage === "prod" ? "next" : `${stack.stage}-next`
-      }.rollemtech.app`,
+      domainName: nextDomain,
       hostedZone: "rollemtech.app",
     },
     path: "apps/nextjs",
@@ -36,19 +38,19 @@ export function WebSiteStack({ stack }: StackContext) {
   });
 
   // Show the url in the output
+  const viteStageUrl = `https://${viteDomain}`;
+  const nextStageUrl = `https://${nextDomain}`;
   stack.addOutputs({
     viteSiteUrl: viteSite.url,
-    viteFriendlyUrl: `https://${
-      stack.stage === "prod" ? "vite" : `${stack.stage}-vite`
-    }.rollemtech.app`,
+    viteFriendlyUrl: viteStageUrl,
     nextSiteUrl: nextSite.url,
-    nextFriendlyUrl: `https://${
-      stack.stage === "prod" ? "next" : `${stack.stage}-next`
-    }.rollemtech.app`,
+    nextFriendlyUrl: nextStageUrl,
   });
 
   return {
+    viteStageUrl,
     viteSite: viteSite,
+    nextStageUrl,
     nextSite: nextSite,
   };
 }

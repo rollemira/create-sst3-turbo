@@ -22,10 +22,26 @@ brew upgrade nvm pnpm awscli
 
 [Configure the aws-cli](https://sst.dev/chapters/configure-the-aws-cli.html#add-your-access-key-to-aws-cli)
 
-## Check your AWS profile (skip if single AWS account)
+### Check your AWS profile (skip if single AWS account)
 
 ```
-code ~/.aws/credentials # set default
+code ~/.aws/credentials # set a default and profiles
+```
+
+### Setting profiles in a shell
+
+To set a profile to be used in your shell you can use the command below
+
+```
+export AWS_PROFILE=<profile_name>
+```
+
+## Environment variables
+
+Use the command below to make a .env and fill it in with the correct settings
+
+```
+cp .env.example .env
 ```
 
 ## Setup your node version
@@ -50,20 +66,35 @@ Don't want a 3rd party service? Use Lightsail instances on AWS.
 
 PlanetScale is free to start.
 
+## Secrets
+
+Some lambda functions require secrets. ([more about them here](https://sst.dev/chapters/handling-secrets-in-sst.html))
+To setup secrets, once you've filled in your .env file you can run the command below to set them in your AWS environment.
+
+```
+pnpm secrets
+```
+
 ## Running
 
 Terminal_1: Start backend server
 
 ```
-<project_root>$ pnpm run dev
+<wsroot>$ pnpm run dev
 ```
 
 Terminal_2: Start your frontend of choice
 
 ```
-<project_root>/apps/<app-name>$ pnpm run dev
+<wsroot>/apps/<appname>$ pnpm run dev
 ```
 
 ## Databese management
 
 Use the scripts in packages/db
+
+```
+cd <wsroot>/packages/db
+pnpm db:pull
+pnpm db:studio
+```

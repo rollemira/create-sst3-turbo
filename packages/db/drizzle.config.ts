@@ -16,5 +16,5 @@ export default {
   dbCredentials: {
     connectionString: dbUrl,
   },
-  tablesFilter: ["rollemtech_*"],
+  tablesFilter: ["acme_*"],
 } satisfies Config;

@@ -4,8 +4,8 @@
   "version": "5",
   "dialect": "mysql",
   "tables": {
-    "leads": {
-      "name": "leads",
+    "acme_leads": {
+      "name": "acme_leads",
       "columns": {
         "id": {
           "autoincrement": true,
@@ -115,8 +115,8 @@
         }
       },
       "compositePrimaryKeys": {
-        "leads_id": {
-          "name": "leads_id",
+        "acme_leads_id": {
+          "name": "acme_leads_id",
           "columns": ["id"]
         }
       },

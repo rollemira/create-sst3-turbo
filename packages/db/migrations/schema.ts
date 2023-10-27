@@ -8,8 +8,8 @@ import {
   varchar,
 } from "drizzle-orm/mysql-core";
 
-export const leads = mysqlTable(
-  "leads",
+export const acmeLeads = mysqlTable(
+  "acme_leads",
   {
     id: serial("id").notNull(),
     firstName: varchar("firstName", { length: 256 }),
@@ -31,7 +31,7 @@ export const leads = mysqlTable(
   },
   (table) => {
     return {
-      leadsId: primaryKey(table.id),
+      acmeLeadsId: primaryKey(table.id),
     };
   },
 );

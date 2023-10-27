@@ -6,4 +6,4 @@ import { mysqlTableCreator } from "drizzle-orm/mysql-core";
  *
  * @see https://orm.drizzle.team/docs/goodies#multi-project-schema
  */
-export const tableCreator = mysqlTableCreator((name) => `rollemtech_${name}`);
+export const tableCreator = mysqlTableCreator((name) => `acme_${name}`);

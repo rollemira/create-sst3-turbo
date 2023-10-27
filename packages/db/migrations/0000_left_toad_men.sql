@@ -1,7 +1,7 @@
 -- Current sql file was generated after introspecting the database
 -- If you want to run this migration please uncomment this code before executing migrations
 /*
-CREATE TABLE `leads` (
+CREATE TABLE `acme_leads` (
 	`id` serial AUTO_INCREMENT NOT NULL,
 	`firstName` varchar(256),
 	`lastName` varchar(256),
@@ -17,7 +17,7 @@ CREATE TABLE `leads` (
 	`lat` float,
 	`long` float,
 	`createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	CONSTRAINT `leads_id` PRIMARY KEY(`id`)
+	CONSTRAINT `acme_leads_id` PRIMARY KEY(`id`)
 );
 
 */

@@ -20,12 +20,8 @@ const { values } = parseArgs({
 });
 
 console.log("Setting up secrets...");
-const keys = [
-  "DATABASE_URL",
-  "EXPO_PUBLIC_API_URL",
-  "NEXT_PUBLIC_API_URL",
-  "VITE_API_URL",
-];
+// only env stuff needed in lambdas and stuff
+const keys = ["DATABASE_URL"];
 
 if (values["remove"]) {
   keys.forEach((key) =>

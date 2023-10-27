@@ -4,6 +4,9 @@
 
 Make the real readme file explaining how to get the project started from a fresh `git cone` command.
 
+## More docs
+[You can find more docs in Notion here](https://www.notion.so/rollemira/Create-SST3-Turbo-55cb58971dcf40cd8371ca3de24aebef?pvs=4)
+
 ## Install nvm pnpm aws-cli
 
 ```

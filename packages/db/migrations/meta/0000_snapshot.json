@@ -117,9 +117,7 @@
       "compositePrimaryKeys": {
         "acme_leads_id": {
           "name": "acme_leads_id",
-          "columns": [
-            "id"
-          ]
+          "columns": ["id"]
         }
       },
       "indexes": {},

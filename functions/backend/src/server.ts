@@ -1,3 +1,5 @@
+import "./fetch-polyfill"; // global fetch polyfill
+
 import { awsLambdaRequestHandler } from "@trpc/server/adapters/aws-lambda";
 import type { CreateAWSLambdaContextOptions } from "@trpc/server/adapters/aws-lambda";
 import type { APIGatewayProxyEvent } from "aws-lambda";

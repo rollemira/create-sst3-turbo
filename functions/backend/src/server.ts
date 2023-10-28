@@ -17,7 +17,7 @@ function createContext({
     event: event,
     apiVersion: (event as { version?: string }).version ?? "1.0",
     user: event.headers["x-user"],
-    // @ts-expect-error: HACK: the build server doesn't get SST types
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
     db: db(Config.DATABASE_URL as string),
   };
 }

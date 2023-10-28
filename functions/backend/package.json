@@ -29,7 +29,7 @@
     "serverless": "^3.18.1",
     "serverless-esbuild": "^1.39.0",
     "serverless-offline": "^12.0.4",
-    "sst": "^2.32.2",
+    "sst": "^2.29.2",
     "typescript": "^5.2.2",
     "vitest": "^0.34.6"
   },

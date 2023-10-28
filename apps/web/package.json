@@ -44,7 +44,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "postcss": "^8.4.31",
-    "sst": "^2.32.2",
+    "sst": "^2.29.2",
     "tailwindcss": "3.3.2",
     "typescript": "^5.2.2",
     "vite": "^4.4.5",

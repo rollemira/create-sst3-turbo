@@ -3,6 +3,7 @@ import { ApiStack } from "./ApiStack";
 
 export function WebSiteStack({ stack }: StackContext) {
   const { stageUrl: apiUrl } = use(ApiStack);
+  const deployed = ["test", "prod"].includes(stack.stage);
 
   // Define our React app
   const viteDomain = `${
@@ -13,9 +14,7 @@ export function WebSiteStack({ stack }: StackContext) {
     hostedZone: "rollemtech.app",
   };
   const viteSite = new StaticSite(stack, "WebSite", {
-    customDomain: ["test", "prod"].includes(stack.stage)
-      ? viteCustomDomain
-      : undefined,
+    customDomain: deployed ? viteCustomDomain : undefined,
     path: "apps/web",
     buildCommand: "pnpm run build",
     buildOutput: "dist",
@@ -33,9 +32,7 @@ export function WebSiteStack({ stack }: StackContext) {
     hostedZone: "rollemtech.app",
   };
   const nextSite = new NextjsSite(stack, "NextWebsite", {
-    customDomain: ["test", "prod"].includes(stack.stage)
-      ? nextCustomDomain
-      : undefined,
+    customDomain: deployed ? nextCustomDomain : undefined,
     path: "apps/nextjs",
     // Pass in our environment variables
     environment: {
@@ -44,8 +41,8 @@ export function WebSiteStack({ stack }: StackContext) {
   });
 
   // Show the url in the output
-  const viteStageUrl = `https://${viteDomain}`;
-  const nextStageUrl = `https://${nextDomain}`;
+  const viteStageUrl = deployed ? `https://${viteDomain}` : viteSite.url;
+  const nextStageUrl = deployed ? `https://${nextDomain}` : nextSite.url;
   stack.addOutputs({
     ViteHost: viteSite.url,
     ViteStageUrl: viteStageUrl,

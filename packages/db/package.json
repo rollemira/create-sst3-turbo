@@ -24,7 +24,6 @@
     "@acme/eslint-config": "0.2.0",
     "@acme/prettier-config": "^0.1.0",
     "@acme/tsconfig": "^0.1.0",
-    "@aws-sdk/client-rds-data": "^3.431.0",
     "@types/node": "^18.16.16",
     "@types/pg": "^8.10.7",
     "dotenv-cli": "^7.3.0",

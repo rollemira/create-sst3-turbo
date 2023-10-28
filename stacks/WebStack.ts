@@ -28,7 +28,7 @@ export function WebSiteStack({ stack }: StackContext) {
     stack.stage === "prod" ? "nextjs" : `${stack.stage}-next`
   }.rollemtech.app`;
   const nextCustomDomain = {
-    domainName: viteDomain,
+    domainName: nextDomain,
     hostedZone: "rollemtech.app",
   };
   const nextSite = new NextjsSite(stack, "NextWebsite", {

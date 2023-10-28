@@ -30,7 +30,7 @@
     "constructs": "10.3.0",
     "dotenv-cli": "^7.3.0",
     "prettier": "^3.0.3",
-    "sst": "^2.32.2",
+    "sst": "^2.29.2",
     "turbo": "^1.10.16",
     "typescript": "^5.2.2"
   },

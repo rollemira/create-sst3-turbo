@@ -33,7 +33,7 @@ importers:
         specifier: ^3.0.3
         version: 3.0.3
       sst:
-        specifier: ^2.32.2
+        specifier: ^2.29.2
         version: 2.32.2
       turbo:
         specifier: ^1.10.16

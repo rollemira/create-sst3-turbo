@@ -2,6 +2,8 @@ import { StackContext, Api, Config } from "sst/constructs";
 
 export function ApiStack({ stack }: StackContext) {
   const DATABASE_URL = new Config.Secret(stack, "DATABASE_URL");
+  const deployed = ["test", "prod"].includes(stack.stage);
+
   const domainName = `${
     stack.stage === "prod" ? "api" : `${stack.stage}-api`
   }.rollemtech.app`;
@@ -10,9 +12,7 @@ export function ApiStack({ stack }: StackContext) {
     hostedZone: "rollemtech.app",
   };
   const api = new Api(stack, "api", {
-    customDomain: ["test", "prod"].includes(stack.stage)
-      ? customDomain
-      : undefined,
+    customDomain: deployed ? customDomain : undefined,
     defaults: {
       function: {
         bind: [DATABASE_URL],
@@ -20,16 +20,16 @@ export function ApiStack({ stack }: StackContext) {
     },
     cors: {
       allowHeaders: ["*"],
-      allowOrigins: [
-        "http://localhost:5173",
-        "http://localhost:3000",
-        `https://${
-          stack.stage === "prod" ? "vite" : `${stack.stage}-vite`
-        }.rollemtech.app`,
-        `https://${
-          stack.stage === "prod" ? "next" : `${stack.stage}-next`
-        }.rollemtech.app`,
-      ],
+      allowOrigins: deployed
+        ? [
+            `https://${
+              stack.stage === "prod" ? "vite" : `${stack.stage}-vite`
+            }.rollemtech.app`,
+            `https://${
+              stack.stage === "prod" ? "next" : `${stack.stage}-next`
+            }.rollemtech.app`,
+          ]
+        : ["*"], // allow all origins in dev
       allowMethods: ["GET", "POST", "OPTIONS"],
     },
     routes: {
@@ -40,14 +40,14 @@ export function ApiStack({ stack }: StackContext) {
     },
   });
 
-  const apiUrl = `https://${domainName}`;
+  const stageUrl = deployed ? `https://${domainName}` : api.url;
   stack.addOutputs({
     ApiHost: api.url,
-    StageUrl: apiUrl,
+    StageUrl: stageUrl,
   });
 
   return {
     api,
-    stageUrl: apiUrl,
+    stageUrl: stageUrl,
   };
 }

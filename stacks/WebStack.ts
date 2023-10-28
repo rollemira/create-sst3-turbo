@@ -7,7 +7,7 @@ export function WebSiteStack({ stack }: StackContext) {
 
   // Define our React app
   const viteDomain = `${
-    stack.stage === "prod" ? "vite-react" : `${stack.stage}-vite`
+    stack.stage === "prod" ? "vite" : `${stack.stage}-vite`
   }.rollemtech.app`;
   const viteCustomDomain = {
     domainName: viteDomain,
@@ -25,7 +25,7 @@ export function WebSiteStack({ stack }: StackContext) {
   });
 
   const nextDomain = `${
-    stack.stage === "prod" ? "nextjs" : `${stack.stage}-next`
+    stack.stage === "prod" ? "next" : `${stack.stage}-next`
   }.rollemtech.app`;
   const nextCustomDomain = {
     domainName: nextDomain,

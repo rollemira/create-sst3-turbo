@@ -23,12 +23,16 @@ export function ApiStack({ stack }: StackContext) {
       allowOrigins: [
         "http://localhost:5173",
         "http://localhost:3000",
-        `https://${
-          stack.stage === "prod" ? "vite" : `${stack.stage}-vite`
-        }.rollemtech.app`,
-        `https://${
-          stack.stage === "prod" ? "next" : `${stack.stage}-next`
-        }.rollemtech.app`,
+        deployed
+          ? [
+              `https://${
+                stack.stage === "prod" ? "vite" : `${stack.stage}-vite`
+              }.rollemtech.app`,
+              `https://${
+                stack.stage === "prod" ? "next" : `${stack.stage}-next`
+              }.rollemtech.app`,
+            ].join(",")
+          : "*", // allow all origins in dev
       ],
       allowMethods: ["GET", "POST", "OPTIONS"],
     },

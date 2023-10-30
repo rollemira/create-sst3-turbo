@@ -5,7 +5,7 @@ export function ApiStack({ stack }: StackContext) {
   const deployed = ["test", "prod"].includes(stack.stage);
 
   const domainName = `${
-    stack.stage === "prod" ? "api" : `${stack.stage}-api`
+    stack.stage === "prod" ? "acme-api" : `acmeapi-${stack.stage}`
   }.rollemtech.app`;
   const customDomain = {
     domainName,

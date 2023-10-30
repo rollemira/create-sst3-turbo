@@ -38,7 +38,7 @@ export default function Layout(props: { children: React.ReactNode }) {
           <div className="navbar-start">
             <div className="dropdown">
               {/* eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/no-noninteractive-tabindex */}
-              <label tabIndex={0} className="btn btn-ghost lg:hidden">
+              <label tabIndex={0} className="btn-ghost btn lg:hidden">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
@@ -57,7 +57,7 @@ export default function Layout(props: { children: React.ReactNode }) {
               <ul
                 // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
                 tabIndex={0}
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                className="dropdown-content menu rounded-box menu-sm z-[1] mt-3 w-52 bg-base-100 p-2 shadow"
               >
                 <li>
                   <a href="#hello">Item 1</a>
@@ -78,7 +78,7 @@ export default function Layout(props: { children: React.ReactNode }) {
                 </li>
               </ul>
             </div>
-            <a href="#hello" className="btn btn-ghost text-xl normal-case">
+            <a href="#hello" className="btn-ghost btn text-xl normal-case">
               daisyUI
             </a>
           </div>
@@ -110,18 +110,18 @@ export default function Layout(props: { children: React.ReactNode }) {
         <TRPCReactProvider headers={headers()}>
           {props.children}
         </TRPCReactProvider>
-        <footer className="footer footer-center bg-base-200 text-base-content rounded p-10">
+        <footer className="footer footer-center rounded bg-base-200 p-10 text-base-content">
           <nav className="grid grid-flow-col gap-4">
-            <a href="#hello" className="link link-hover">
+            <a href="#hello" className="link-hover link">
               About us
             </a>
-            <a href="#hello" className="link link-hover">
+            <a href="#hello" className="link-hover link">
               Contact
             </a>
-            <a href="#hello" className="link link-hover">
+            <a href="#hello" className="link-hover link">
               Jobs
             </a>
-            <a href="#hello" className="link link-hover">
+            <a href="#hello" className="link-hover link">
               Press kit
             </a>
           </nav>

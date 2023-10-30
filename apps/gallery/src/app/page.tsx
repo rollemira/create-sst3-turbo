@@ -11,7 +11,7 @@ export default function HomePage() {
         }}
       >
         <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-neutral-content text-center">
+        <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
             <p className="mb-5">
@@ -19,14 +19,14 @@ export default function HomePage() {
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
               et a id nisi.
             </p>
-            <button className="btn btn-primary">Get Started</button>
+            <button className="btn-primary btn">Get Started</button>
           </div>
         </div>
       </div>
 
       <div className="px-8 py-12">
         <h2 className="mb-4 text-3xl font-medium">October - My Fun Gallery</h2>
-        <div className="carousel carousel-center bg-neutral rounded-box space-x-4 p-4">
+        <div className="carousel-center carousel rounded-box space-x-4 bg-neutral p-4">
           <div className="carousel-item">
             <Image
               title="Something great"

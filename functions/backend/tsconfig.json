@@ -8,7 +8,10 @@
     "strict": true,
     "moduleResolution": "node",
     "noEmit": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@acme": ["../../tooling", "../../packages"]
+    }
   },
   "include": ["*.ts", "src"],
   "exclude": ["node_modules"]

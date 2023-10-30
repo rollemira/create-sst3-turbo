@@ -6,7 +6,7 @@ import { leads } from "@acme/db/schema";
 
 import { pagedInput } from "../common/inputs";
 import { createdOutput } from "../common/outputs";
-import { insertLeadSchema, selectLeadSchema } from "../models";
+import { createLeadSchema, selectLeadSchema } from "../models";
 import { createTRPCRouter, publicProcedure } from "../trpc";
 
 export const leadsRouter = createTRPCRouter({
@@ -37,7 +37,7 @@ export const leadsRouter = createTRPCRouter({
       return lead;
     }),
   create: publicProcedure
-    .input(insertLeadSchema)
+    .input(createLeadSchema)
     // we can validate output too!!!
     // don't let passwords leak out please
     //.output(selectLeadSchema)

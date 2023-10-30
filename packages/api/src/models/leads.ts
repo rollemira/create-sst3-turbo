@@ -5,7 +5,10 @@ import type { z } from "zod";
 
 import { leads } from "@acme/db/schema";
 
-export const insertLeadSchema = createInsertSchema(leads);
+const createSchema = createInsertSchema(leads);
+export const createLeadSchema = createSchema.omit({
+  id: true,
+});
 
 export const selectLeadSchema = createSelectSchema(leads);
 

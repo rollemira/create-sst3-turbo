@@ -28,6 +28,9 @@ export function ApiStack({ stack }: StackContext) {
             `https://${
               stack.stage === "prod" ? "next" : `${stack.stage}-next`
             }.rollemtech.app`,
+            `https://${
+              stack.stage === "prod" ? "gallery" : `${stack.stage}-gallery`
+            }.rollemtech.app`,
           ]
         : ["*"], // allow all origins in dev
       allowMethods: ["GET", "POST", "OPTIONS"],

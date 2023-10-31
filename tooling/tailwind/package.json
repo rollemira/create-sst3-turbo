@@ -23,6 +23,8 @@
     "@acme/eslint-config": "^0.2.0",
     "@acme/prettier-config": "^0.1.0",
     "@acme/tsconfig": "^0.1.0",
+    "@tailwindcss/typography": "^0.5.9",
+    "daisyui": "^3.9.4",
     "eslint": "^8.50.0",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"

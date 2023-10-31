@@ -16,6 +16,7 @@ export function ApiStack({ stack }: StackContext) {
     defaults: {
       function: {
         bind: [DATABASE_URL],
+        runtime: "nodejs18.x",
       },
     },
     cors: {
@@ -23,10 +24,7 @@ export function ApiStack({ stack }: StackContext) {
       allowOrigins: deployed
         ? [
             `https://${
-              stack.stage === "prod" ? "vite" : `${stack.stage}-vite`
-            }.rollemtech.app`,
-            `https://${
-              stack.stage === "prod" ? "next" : `${stack.stage}-next`
+              stack.stage === "prod" ? "gallery" : `${stack.stage}-gallery`
             }.rollemtech.app`,
           ]
         : ["*"], // allow all origins in dev

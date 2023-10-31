@@ -5,7 +5,7 @@ import { WebSiteStack } from "./stacks/WebStack";
 export default {
   config(_input) {
     return {
-      name: "acme",
+      name: "rollemtech",
       region: "us-east-1",
     };
   },

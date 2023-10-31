@@ -1,36 +1,37 @@
+import Link from "next/link";
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 
 export default function SiteFooter() {
   return (
     <footer className="footer footer-center rounded bg-base-200 p-10 text-base-content">
       <nav className="grid grid-flow-col gap-4">
-        <a href="/" className="link-hover link">
+        <Link href="/" className="link-hover link">
           Home
-        </a>
-        <a href="/archive" className="link-hover link">
+        </Link>
+        <Link href="/archive" className="link-hover link">
           Archive
-        </a>
-        <a href="/about" className="link-hover link">
+        </Link>
+        <Link href="/about" className="link-hover link">
           About
-        </a>
-        <a href="/pricing" className="link-hover link">
+        </Link>
+        <Link href="/pricing" className="link-hover link">
           Pricing
-        </a>
+        </Link>
       </nav>
       <nav>
         <div className="fill-red grid grid-flow-col gap-4">
-          <a href="#hello">
+          <Link href="#hello">
             <Twitter />
-          </a>
-          <a href="#hello">
+          </Link>
+          <Link href="#hello">
             <Youtube />
-          </a>
-          <a href="#hello">
+          </Link>
+          <Link href="#hello">
             <Facebook />
-          </a>
-          <a href="#hello">
+          </Link>
+          <Link href="#hello">
             <Instagram />
-          </a>
+          </Link>
         </div>
       </nav>
       <aside>

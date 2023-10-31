@@ -3,6 +3,7 @@ import "~/styles/globals.css";
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { ClerkProvider } from "@clerk/nextjs";
+import { GeistMono, GeistSans } from "geist/font";
 
 import SiteFooter from "~/components/footer";
 import SiteHeader from "~/components/header";
@@ -34,8 +35,12 @@ export const metadata: Metadata = {
 export default function Layout(props: { children: React.ReactNode }) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body>
+      <html
+        lang="en"
+        className={`${GeistSans.variable} ${GeistMono.variable}`}
+        suppressHydrationWarning={true}
+      >
+        <body suppressHydrationWarning={true}>
           <SiteHeader />
           <TRPCReactProvider headers={headers()}>
             {props.children}

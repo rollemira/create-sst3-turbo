@@ -15,11 +15,12 @@ export default function SiteHeader() {
         <div className="flex flex-row">
           <Image
             alt="logo"
-            height={60}
+            height={50}
             src="/branding/logo-icon-512.png"
-            width={60}
+            width={50}
             quality={100}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="rounded-full"
           />
           <span className="my-auto ml-4 text-xl font-bold text-gray-700 dark:text-white">
             @RollemIra

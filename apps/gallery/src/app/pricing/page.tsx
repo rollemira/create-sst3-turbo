@@ -1,9 +1,4 @@
-{
-  /* <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-<stripe-pricing-table pricing-table-id="prctbl_1O74C5CBEtovZpANIkSUyeUV"
-publishable-key="pk_live_51M0UvCCBEtovZpANUlZxiwgx50WjO5D4Axyr8qB9uuXBgrzaKjAnCB4iSQwxqu6xK8AixNFyfBi69QdExkHAUQE800VFpdlMGT">
-</stripe-pricing-table> */
-}
+"use client";
 
 export default function PricingPage() {
   return (

@@ -6,8 +6,6 @@ import { Config } from "sst/node/config";
 import { appRouter } from "@acme/api";
 import { db } from "@acme/db";
 
-//import { headers } from "./cors";
-
 function createContext({
   event, //context,
 }: CreateAWSLambdaContextOptions<APIGatewayProxyEvent>) {

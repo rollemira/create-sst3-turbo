@@ -9,6 +9,7 @@ import { db } from "@acme/db";
 function createContext({
   event, //context,
 }: CreateAWSLambdaContextOptions<APIGatewayProxyEvent>) {
+  console.log(">>> authorizer", event.requestContext.authorizer);
   return {
     event: event,
     apiVersion: (event as { version?: string }).version ?? "1.0",

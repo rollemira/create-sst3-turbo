@@ -12,8 +12,19 @@ export function ApiStack({ stack }: StackContext) {
     hostedZone: "rollemtech.app",
   };
   const api = new Api(stack, "api", {
+    authorizers: {
+      clerk: {
+        type: "jwt",
+        //identitySource: ["$request.header.authorization"],
+        jwt: {
+          audience: ["https://api.rollemtech.app"], // <-- your custom aud claim
+          issuer: "https://native-bream-62.clerk.accounts.dev", // <-- your clerk issuer value
+        },
+      },
+    },
     customDomain: deployed ? customDomain : undefined,
     defaults: {
+      authorizer: "clerk",
       function: {
         bind: [DATABASE_URL],
         runtime: "nodejs18.x",
@@ -31,10 +42,24 @@ export function ApiStack({ stack }: StackContext) {
       allowMethods: ["GET", "POST", "OPTIONS"],
     },
     routes: {
-      "GET /health": "functions/backend/src/health.handler",
-      "OPTIONS /trpc/{proxy+}": "functions/backend/src/options.handler",
-      "GET /trpc/{proxy+}": "functions/backend/src/server.handler",
-      "POST /trpc/{proxy+}": "functions/backend/src/server.handler",
+      "GET /health": {
+        function: "functions/backend/src/health.handler",
+        authorizer: "none",
+      },
+      "OPTIONS /trpc/{proxy+}": {
+        function: "functions/backend/src/options.handler",
+        authorizer: "none",
+      },
+      "GET /trpc/{proxy+}": {
+        function: "functions/backend/src/server.handler",
+        authorizer: "none",
+      },
+      "POST /trpc/{proxy+}": {
+        function: "functions/backend/src/server.handler",
+        authorizer: "none",
+      },
+      "GET /secure/trpc/{proxy+}": "functions/backend/src/server.handler",
+      "POST /secure/trpc/{proxy+}": "functions/backend/src/server.handler",
     },
   });
 

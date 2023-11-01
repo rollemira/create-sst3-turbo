@@ -1,4 +1,6 @@
-import "~/styles/globals.css";
+import { headers } from "next/headers";
+
+import { TRPCReactProvider } from "../providers";
 
 /**Ï
  * Since we're passing `headers()` to the `TRPCReactProvider` we need to
@@ -8,5 +10,7 @@ import "~/styles/globals.css";
 export const dynamic = "force-dynamic";
 
 export default function Layout(props: { children: React.ReactNode }) {
-  return <div>{props.children}</div>;
+  return (
+    <TRPCReactProvider headers={headers()}>{props.children}</TRPCReactProvider>
+  );
 }

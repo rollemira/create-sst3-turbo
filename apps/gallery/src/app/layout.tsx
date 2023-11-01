@@ -1,13 +1,11 @@
 import "~/styles/globals.css";
 
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { ClerkProvider } from "@clerk/nextjs";
 import { GeistMono, GeistSans } from "geist/font";
 
 import SiteFooter from "~/components/footer";
 import SiteHeader from "~/components/header";
-import { TRPCReactProvider } from "./providers";
 
 /**Ï
  * Since we're passing `headers()` to the `TRPCReactProvider` we need to
@@ -42,9 +40,8 @@ export default function Layout(props: { children: React.ReactNode }) {
       >
         <body suppressHydrationWarning={true}>
           <SiteHeader />
-          <TRPCReactProvider headers={headers()}>
-            {props.children}
-          </TRPCReactProvider>
+
+          {props.children}
           <SiteFooter />
         </body>
       </html>

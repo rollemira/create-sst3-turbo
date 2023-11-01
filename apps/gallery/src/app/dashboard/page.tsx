@@ -3,7 +3,7 @@
 import { api } from "../../utils/api";
 
 export default function DashboardPage() {
-  const { data, error, isLoading } = api.pinger.ping.useQuery({
+  const { data, error, isLoading } = api.pinger.pingSecure.useQuery({
     name: "gallery",
   });
   if (isLoading) return <p className="text-center">Loading...</p>;

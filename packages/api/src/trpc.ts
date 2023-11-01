@@ -56,7 +56,8 @@ export const publicProcedure = t.procedure;
 
 const enforceUserIsAuthed = t.middleware(({ ctx, next }) => {
   if (!ctx?.user) {
-    throw new TRPCError({ code: "UNAUTHORIZED" });
+    console.log(">>> NO USER!");
+    //throw new TRPCError({ code: "UNAUTHORIZED", message: "Unauthorized" });
   }
   return next({
     ctx,

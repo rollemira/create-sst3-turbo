@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { SignedIn } from "@clerk/nextjs";
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 
 export default function SiteFooter() {
   return (
-    <footer className="footer footer-center rounded bg-base-200 p-10 text-base-content">
+    <footer className="footer footer-center mt-4 rounded bg-base-200 p-8 text-base-content">
       <nav className="grid grid-flow-col gap-4">
         <Link href="/" className="link-hover link">
           Home
@@ -17,20 +18,28 @@ export default function SiteFooter() {
         <Link href="/pricing" className="link-hover link">
           Pricing
         </Link>
+        <SignedIn>
+          <Link
+            className="text-gray-700 hover:text-gray-900 dark:text-white dark:hover:text-gray-200"
+            href="/dashboard"
+          >
+            Dashboard
+          </Link>
+        </SignedIn>
       </nav>
       <nav>
         <div className="fill-red grid grid-flow-col gap-4">
           <Link href="#hello">
-            <Twitter />
+            <Twitter height={32} width={32} />
           </Link>
           <Link href="#hello">
-            <Youtube />
+            <Youtube height={32} width={32} />
           </Link>
           <Link href="#hello">
-            <Facebook />
+            <Facebook height={32} width={32} />
           </Link>
           <Link href="#hello">
-            <Instagram />
+            <Instagram height={32} width={32} />
           </Link>
         </div>
       </nav>

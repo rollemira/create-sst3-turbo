@@ -53,12 +53,6 @@ export default function SiteHeader() {
           Pricing
         </Link>
         <SignedIn>
-          <Link
-            className="text-gray-700 hover:text-gray-900 dark:text-white dark:hover:text-gray-200"
-            href="/dashboard"
-          >
-            Dashboard
-          </Link>
           <UserButton afterSignOutUrl="/" />
         </SignedIn>
       </nav>

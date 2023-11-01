@@ -8,7 +8,7 @@ export default function HomePage() {
     <>
       <HeroSection />
 
-      <section className="px-8 py-12" id="gallery">
+      <section id="gallery">
         {Array(5)
           .fill({})
           .map((_, j) => (

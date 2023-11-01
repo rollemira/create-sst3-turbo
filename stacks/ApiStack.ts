@@ -18,7 +18,7 @@ export function ApiStack({ stack }: StackContext) {
         //identitySource: ["$request.header.authorization"],
         jwt: {
           audience: ["https://api.rollemtech.app"], // <-- your custom aud claim
-          issuer: "https://native-bream-62.clerk.accounts.dev", // <-- your clerk issuer value
+          issuer: "https://clerk.rollemtech.app", // <-- your clerk issuer value
         },
       },
     },

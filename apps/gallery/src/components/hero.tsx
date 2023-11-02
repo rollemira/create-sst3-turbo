@@ -11,7 +11,7 @@ export default function HeroSection() {
       className="hero min-h-screen"
       style={{
         backgroundImage:
-          "url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)",
+          "url(https://images.unsplash.com/photo-1579548122080-c35fd6820ecb)",
       }}
     >
       <div className="hero-overlay bg-opacity-60"></div>

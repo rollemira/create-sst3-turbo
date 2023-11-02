@@ -11,7 +11,7 @@ const config = {
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
   images: {
-    domains: ["localhost", "daisyui.com", "rollemtech.app"],
+    domains: ["localhost", "daisyui.com", "rollemtech.app", "unsplash.com"],
   },
 };
 

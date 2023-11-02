@@ -10,7 +10,7 @@ import { SignedIn, UserButton } from "@clerk/nextjs";
 
 export default function SiteHeader() {
   return (
-    <header className="justify flex w-full flex-col items-center justify-between bg-white px-6 py-4 md:flex-row">
+    <header className="justify sticky top-0 z-50 flex w-full flex-col items-center justify-between bg-teal-300 px-6 py-4 md:flex-row">
       <Link href="/">
         <div className="flex flex-row">
           <Image

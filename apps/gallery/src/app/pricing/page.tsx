@@ -12,7 +12,7 @@ export default function PricingPage() {
       <div className="p-12 text-center text-xl">
         All ready a customer?{" "}
         <a
-          className="link-primary link"
+          className="text-[#8d56fc] underline"
           href="https://billing.stripe.com/p/login/6oE29s1yv2B17iUfYY"
           target="_blank"
           rel="noreferrer"

@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export default function GalleryPreview() {
   return (
-    <div>
-      <h2 className="my-4 ml-2 text-3xl font-medium">My Fun Gallery</h2>
+    <div className="bg-[#131D47] text-white">
+      <h2 className="pb-4 pl-3 pt-5 text-3xl font-medium">My Fun Gallery</h2>
       <div className="px-2">
-        <div className="carousel-center carousel rounded-box space-x-4 bg-neutral p-2">
+        <div className="carousel-center carousel rounded-box space-x-4 bg-teal-300 p-2">
           <div className="carousel-item">
             <Image
               title="Something great"
@@ -78,7 +78,7 @@ export default function GalleryPreview() {
           </div>
         </div>
       </div>
-      <div className="mt-4 h-1 w-full bg-slate-800 shadow"></div>
+      <div className="mt-4 h-[2px] w-full bg-[#e5e5e5] shadow"></div>
     </div>
   );
 }

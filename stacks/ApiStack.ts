@@ -46,20 +46,21 @@ export function ApiStack({ stack }: StackContext) {
         function: "functions/backend/src/health.handler",
         authorizer: "none",
       },
-      "OPTIONS /trpc/{proxy+}": {
+      "OPTIONS /public/trpc/{proxy+}": {
         function: "functions/backend/src/options.handler",
         authorizer: "none",
       },
-      "GET /trpc/{proxy+}": {
+      "GET /public/trpc/{proxy+}": {
         function: "functions/backend/src/server.handler",
         authorizer: "none",
       },
-      "POST /trpc/{proxy+}": {
+      "POST /public/trpc/{proxy+}": {
         function: "functions/backend/src/server.handler",
         authorizer: "none",
       },
-      "GET /secure/trpc/{proxy+}": "functions/backend/src/server.handler",
-      "POST /secure/trpc/{proxy+}": "functions/backend/src/server.handler",
+      "OPTIONS /trpc/{proxy+}": "functions/backend/src/options.handler",
+      "GET /trpc/{proxy+}": "functions/backend/src/server.handler",
+      "POST /trpc/{proxy+}": "functions/backend/src/server.handler",
     },
   });
 

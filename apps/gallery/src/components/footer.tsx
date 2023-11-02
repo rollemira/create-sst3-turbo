@@ -4,27 +4,14 @@ import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 
 export default function SiteFooter() {
   return (
-    <footer className="footer footer-center mt-4 rounded bg-base-200 p-8 text-base-content">
+    <footer className="footer footer-center mt-4 rounded bg-base-200 px-4 py-8 font-semibold text-[#131D47]">
       <nav className="grid grid-flow-col gap-4">
-        <Link href="/" className="link-hover link">
-          Home
-        </Link>
-        <Link href="/archive" className="link-hover link">
-          Archive
-        </Link>
-        <Link href="/about" className="link-hover link">
-          About
-        </Link>
-        <Link href="/pricing" className="link-hover link">
-          Pricing
-        </Link>
+        <Link href="/">Home</Link>
+        <Link href="/archive">Archive</Link>
+        <Link href="/about">About</Link>
+        <Link href="/pricing">Pricing</Link>
         <SignedIn>
-          <Link
-            className="text-gray-700 hover:text-gray-900 dark:text-white dark:hover:text-gray-200"
-            href="/dashboard"
-          >
-            Dashboard
-          </Link>
+          <Link href="/dashboard">Dashboard</Link>
         </SignedIn>
       </nav>
       <nav>
@@ -45,8 +32,14 @@ export default function SiteFooter() {
       </nav>
       <aside>
         <p>
-          Copyright © {new Date().getFullYear()} - All right reserved by Rollem
-          Technologies Inc.
+          Copyright © {new Date().getFullYear()} - All right reserved by{" "}
+          <Link
+            className="text-[#8d56fc] underline"
+            href="https://rollemtech.com"
+            target="_blank"
+          >
+            Rollem Technologies Inc.
+          </Link>
         </p>
         <p className="text-xs">Made with ❤️ in St. Petersburg, Florida</p>
       </aside>

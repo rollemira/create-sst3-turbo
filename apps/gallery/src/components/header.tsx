@@ -20,36 +20,24 @@ export default function SiteHeader() {
             width={50}
             quality={100}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="rounded-full"
+            className="rounded-md"
           />
-          <span className="my-auto ml-4 text-xl font-bold text-gray-700 dark:text-white">
-            @RollemIra
-          </span>
+          <div className="ml-0.5 h-[50px] rounded-md bg-[#131D47] px-4 text-xl font-bold text-[#5EDADC]">
+            <div className="my-2.5">@RollemIra</div>
+          </div>
         </div>
       </Link>
-      <nav className="flex items-center space-x-6 pt-4 md:pt-0">
-        <Link
-          className="text-gray-700 hover:text-gray-900 dark:text-white dark:hover:text-gray-200"
-          href="/"
-        >
+      <nav className="flex items-center space-x-6 pt-4 font-semibold text-[#131D47] md:pt-0">
+        <Link className="hover:text-[#131d47ba]" href="/">
           Home
         </Link>
-        <Link
-          className="text-gray-700 hover:text-gray-900 dark:text-white dark:hover:text-gray-200"
-          href="/archive"
-        >
+        <Link className="hover:text-[#131d47ba]" href="/archive">
           Archive
         </Link>
-        <Link
-          className="text-gray-700 hover:text-gray-900 dark:text-white dark:hover:text-gray-200"
-          href="/about"
-        >
+        <Link className="hover:text-[#131d47ba]" href="/about">
           About
         </Link>
-        <Link
-          className="text-gray-700 hover:text-gray-900 dark:text-white dark:hover:text-gray-200"
-          href="/pricing"
-        >
+        <Link className="hover:text-[#131d47ba]" href="/pricing">
           Pricing
         </Link>
         <SignedIn>

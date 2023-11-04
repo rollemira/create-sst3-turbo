@@ -15,6 +15,7 @@ export function WebSiteStack({ stack }: StackContext) {
   const nextSite = new NextjsSite(stack, "NextWebsite", {
     customDomain: deployed ? nextCustomDomain : undefined,
     path: "apps/gallery",
+    runtime: "nodejs18.x",
     // Pass in our environment variables
     environment: {
       CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY!,

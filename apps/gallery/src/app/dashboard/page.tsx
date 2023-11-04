@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 import { AccessTokens } from "~/utils/tokens";
@@ -7,13 +8,13 @@ import { api } from "../../utils/api";
 
 export default function DashboardPage() {
   const router = useRouter();
+  const token = AccessTokens.get();
 
-  if (router) {
-    // if you got here without an access token, go back and get it
-    const token = AccessTokens.get();
-    if (!token || token.length === 0) router.replace("/callback");
-  }
+  useEffect(() => {
+    if (!token) router.replace("/callback");
+  }, [token, router]);
 
+  if (!token) return <></>;
   const { data, error, isLoading } = api.pinger.pingSecure.useQuery({
     name: "gallery",
   });

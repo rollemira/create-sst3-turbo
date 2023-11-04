@@ -7,13 +7,6 @@ import { GeistMono, GeistSans } from "geist/font";
 import SiteFooter from "~/components/footer";
 import SiteHeader from "~/components/header";
 
-/**Ï
- * Since we're passing `headers()` to the `TRPCReactProvider` we need to
- * make the entire app dynamic. You can move the `TRPCReactProvider` further
- * down the tree (e.g. /dashboard and onwards) to make part of the app statically rendered.
- */
-export const dynamic = "force-dynamic";
-
 export const metadata: Metadata = {
   title: "@RollemIra Image Gallery",
   description: "Image gallery of stunning photos",

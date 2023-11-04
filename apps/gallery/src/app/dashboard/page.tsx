@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 import { AccessTokens } from "~/utils/tokens";
@@ -9,7 +10,9 @@ export default function DashboardPage() {
   const router = useRouter();
   const token = AccessTokens.get();
 
-  if (!token || token.length === 0) router.replace("/callback");
+  useEffect(() => {
+    if (router && !token) router.replace("/callback");
+  }, [router, token]);
 
   if (!token) return <></>;
   const { data, error, isLoading } = api.pinger.pingSecure.useQuery({

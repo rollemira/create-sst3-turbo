@@ -15,7 +15,6 @@ export function ApiStack({ stack }: StackContext) {
     authorizers: {
       clerk: {
         type: "jwt",
-        //identitySource: ["$request.header.authorization"],
         jwt: {
           audience: ["https://api.rollemtech.app"], // <-- your custom aud claim
           issuer: process.env.CLERK_ISSUER!, // <-- your clerk issuer value
@@ -38,7 +37,7 @@ export function ApiStack({ stack }: StackContext) {
               stack.stage === "prod" ? "gallery" : `${stack.stage}-gallery`
             }.rollemtech.app`,
           ]
-        : ["*"], // allow all origins in dev
+        : ["http://localhost:3000"], // allow all origins in dev
       allowMethods: ["GET", "POST", "OPTIONS"],
     },
     routes: {
@@ -58,7 +57,10 @@ export function ApiStack({ stack }: StackContext) {
         function: "functions/backend/src/server.handler",
         authorizer: "none",
       },
-      "OPTIONS /trpc/{proxy+}": "functions/backend/src/options.handler",
+      "OPTIONS /trpc/{proxy+}": {
+        function: "functions/backend/src/options.handler",
+        authorizer: "none",
+      },
       "GET /trpc/{proxy+}": "functions/backend/src/server.handler",
       "POST /trpc/{proxy+}": "functions/backend/src/server.handler",
     },

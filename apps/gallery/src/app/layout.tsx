@@ -32,7 +32,9 @@ export const metadata: Metadata = {
 
 export default function Layout(props: { children: React.ReactNode }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY ?? ""}
+    >
       <html
         lang="en"
         className={`${GeistSans.variable} ${GeistMono.variable}`}
@@ -40,7 +42,6 @@ export default function Layout(props: { children: React.ReactNode }) {
       >
         <body suppressHydrationWarning={true}>
           <SiteHeader />
-
           {props.children}
           <SiteFooter />
         </body>

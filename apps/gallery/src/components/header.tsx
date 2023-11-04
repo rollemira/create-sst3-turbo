@@ -41,7 +41,7 @@ export default function SiteHeader() {
           Pricing
         </Link>
         <SignedIn>
-          <UserButton afterSignOutUrl="/" />
+          <UserButton afterSignOutUrl="/logout" />
         </SignedIn>
       </nav>
       {/* <div className="relative">

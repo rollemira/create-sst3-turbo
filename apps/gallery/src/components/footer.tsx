@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { SignedIn } from "@clerk/nextjs";
 import { Facebook, Github, Instagram, Twitter } from "lucide-react";
 
 export default function SiteFooter() {
@@ -10,9 +9,7 @@ export default function SiteFooter() {
         <Link href="/archive">Archive</Link>
         <Link href="/about">About</Link>
         <Link href="/pricing">Pricing</Link>
-        <SignedIn>
-          <Link href="/dashboard">Dashboard</Link>
-        </SignedIn>
+        <Link href="/dashboard">Dashboard</Link>
       </nav>
       <nav>
         <div className="fill-red grid grid-flow-col gap-4">

@@ -1,8 +1,17 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
+import { AccessTokens } from "~/utils/tokens";
 import { api } from "../../utils/api";
 
 export default function DashboardPage() {
+  const router = useRouter();
+
+  // if you got here without an access token, go back and get it
+  const token = AccessTokens.get();
+  if (!token || token.length === 0) router.replace("/callback");
+
   const { data, error, isLoading } = api.pinger.pingSecure.useQuery({
     name: "gallery",
   });

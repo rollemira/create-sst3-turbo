@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { useAuth } from "@clerk/nextjs";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 // import { ReactQueryStreamedHydration } from "@tanstack/react-query-next-experimental";
@@ -16,20 +15,6 @@ export function TRPCReactProvider(props: {
   children: React.ReactNode;
   headers?: Headers;
 }) {
-  const { getToken, isSignedIn } = useAuth();
-  if (isSignedIn) {
-    void getToken({ template: "api-gateway" }).then((token) => {
-      AccessTokens.store(token!);
-    });
-  }
-
-  useEffect(() => {
-    if (isSignedIn) {
-      void getToken({ template: "api-gateway" }).then((token) => {
-        AccessTokens.store(token!);
-      });
-    }
-  }, [getToken, isSignedIn]);
   // don't let queries happen before we're ready
   const [isLoading, setIsLoading] = useState(false);
   const [stateToken] = useState<string | null>(AccessTokens.get());

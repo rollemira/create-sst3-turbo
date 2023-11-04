@@ -23,7 +23,7 @@ export default function SiteHeader() {
             className="rounded-md"
           />
           <div className="ml-0.5 h-[50px] rounded-md bg-[#131D47] px-4 text-xl font-bold text-[#5EDADC]">
-            <div className="my-2.5">@RollemIra</div>
+            <div className="mt-3">@RollemIra</div>
           </div>
         </div>
       </Link>

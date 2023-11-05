@@ -22,6 +22,7 @@
     "@trpc/next": "^10.40.0",
     "@trpc/react-query": "^10.40.0",
     "@trpc/server": "^10.40.0",
+    "lucide-react": "^0.290.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.17.0",

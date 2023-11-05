@@ -1,12 +1,5 @@
 import { relations, sql } from "drizzle-orm";
-import {
-  boolean,
-  index,
-  int,
-  serial,
-  timestamp,
-  varchar,
-} from "drizzle-orm/mysql-core";
+import { index, int, serial, timestamp, varchar } from "drizzle-orm/mysql-core";
 
 import { tableCreator } from "./_table";
 
@@ -20,7 +13,7 @@ export const galleries = tableCreator(
     slug: varchar("slug", { length: 255 }),
     picture: varchar("picture", { length: 255 }),
     sortOrder: int("sortOrder").notNull().default(1),
-    active: boolean("active").notNull().default(true),
+    status: varchar("status", { length: 255 }).default("draft"),
     deletedAt: timestamp("deletedAt"),
     createdAt: timestamp("createdAt")
       .default(sql`CURRENT_TIMESTAMP`)
@@ -45,7 +38,7 @@ export const photos = tableCreator(
     description: varchar("description", { length: 255 }),
     url: varchar("url", { length: 512 }),
     sortOrder: int("sortOrder").notNull().default(1),
-    active: boolean("active").notNull().default(true),
+    status: varchar("status", { length: 255 }).default("draft"),
     galleryId: int("galleryId").notNull(),
     deletedAt: timestamp("deletedAt"),
     createdAt: timestamp("createdAt")

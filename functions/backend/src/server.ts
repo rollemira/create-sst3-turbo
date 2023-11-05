@@ -6,17 +6,24 @@ import { Config } from "sst/node/config";
 import { appRouter } from "@acme/api";
 import { db } from "@acme/db";
 
-//import { headers } from "./cors";
+// provide a type for jwt authorizer
+interface UserAuthorizer {
+  jwt: {
+    claims: Record<string, unknown>;
+  };
+}
 
 function createContext({
   event, //context,
 }: CreateAWSLambdaContextOptions<APIGatewayProxyEvent>) {
+  const authorizer = event.requestContext.authorizer as UserAuthorizer;
+  const user = authorizer ? JSON.stringify(authorizer.jwt.claims) : undefined;
   return {
-    event: event,
     apiVersion: (event as { version?: string }).version ?? "1.0",
-    user: event.headers["x-user"],
     // @ts-expect-error - HACK: the build server doesn't get SST types
     db: db(Config.DATABASE_URL as string),
+    event: event,
+    user,
   };
 }
 

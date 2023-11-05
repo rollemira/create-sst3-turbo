@@ -2,7 +2,7 @@
  * v0 by Vercel.
  * @see https://v0.dev/t/om7QitO0LP6
  */
-// import { SignedIn, UserButton } from "@clerk/nextjs";
+import { UserButton } from "@clerk/clerk-react";
 import { Link } from "react-router-dom";
 
 // import { Search } from "lucide-react";
@@ -39,9 +39,7 @@ export default function SiteHeader() {
         <Link className="hover:text-[#131d47ba]" to="/pricing">
           Pricing
         </Link>
-        {/* <SignedIn>
-          <UserButton afterSignOutUrl="/logout" />
-        </SignedIn> */}
+        <UserButton afterSignOutUrl="/" />
       </nav>
       {/* <div className="relative">
         <input

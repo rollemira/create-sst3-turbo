@@ -3,7 +3,7 @@ import { name } from "@acme/calcs";
 import { api } from "../../utils/api";
 
 export default function DashboardHomePage() {
-  const { data, error, isLoading } = api.pinger.ping.useQuery({
+  const { data, error, isLoading } = api.pinger.pingSecure.useQuery({
     name: "dashboard home",
   });
 

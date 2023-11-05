@@ -138,6 +138,9 @@ importers:
       postcss:
         specifier: ^8.4.31
         version: 8.4.31
+      sass:
+        specifier: ^1.69.5
+        version: 1.69.5
       sst:
         specifier: ^2.29.2
         version: 2.31.0(@types/react@18.2.28)
@@ -149,7 +152,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.5
-        version: 4.4.11(@types/node@18.18.5)
+        version: 4.4.11(@types/node@18.18.5)(sass@1.69.5)
       vite-plugin-top-level-await:
         specifier: ^1.3.1
         version: 1.3.1(vite@4.4.11)
@@ -309,7 +312,7 @@ importers:
         version: 10.40.0
       next:
         specifier: ^13.5.4
-        version: 13.5.6(@babel/core@7.23.2)(react-dom@18.2.0)(react@18.2.0)
+        version: 13.5.6(@babel/core@7.23.2)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -461,7 +464,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.5
-        version: 4.4.11(@types/node@18.18.5)
+        version: 4.4.11(@types/node@18.18.5)(sass@1.69.5)
       vite-plugin-top-level-await:
         specifier: ^1.3.1
         version: 1.3.1(vite@4.4.11)
@@ -8496,7 +8499,7 @@ packages:
       react-dom: ^18.0.0
     dependencies:
       '@tanstack/react-query': 4.36.1(react-dom@18.2.0)(react-native@0.72.5)(react@18.2.0)
-      next: 13.5.6(@babel/core@7.23.2)(react-dom@18.2.0)(react@18.2.0)
+      next: 13.5.6(@babel/core@7.23.2)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
@@ -8551,7 +8554,7 @@ packages:
       '@trpc/client': 10.40.0(@trpc/server@10.40.0)
       '@trpc/react-query': 10.40.0(@tanstack/react-query@4.36.1)(@trpc/client@10.40.0)(@trpc/server@10.40.0)(react-dom@18.2.0)(react@18.2.0)
       '@trpc/server': 10.40.0
-      next: 13.5.6(@babel/core@7.23.2)(react-dom@18.2.0)(react@18.2.0)
+      next: 13.5.6(@babel/core@7.23.2)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-ssr-prepass: 1.5.0(react@18.2.0)
@@ -9008,7 +9011,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.22.5(@babel/core@7.23.2)
       '@types/babel__core': 7.20.2
       react-refresh: 0.14.0
-      vite: 4.4.11(@types/node@18.18.5)
+      vite: 4.4.11(@types/node@18.18.5)(sass@1.69.5)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -13297,6 +13300,9 @@ packages:
   /immer@9.0.21:
     resolution: {integrity: sha512-bc4NBHqOqSfRW7POMkHd51LvClaeMXpm8dx0e8oE2GORbq5aRK7Bxl4FyzVLdGtLmvLKL7BTDBG5ACQm4HWjTA==}
 
+  /immutable@4.3.4:
+    resolution: {integrity: sha512-fsXeu4J4i6WNWSikpI88v/PcVflZz+6kMhUfIwc5SY+poQRPnaf5V7qds6SUyUN3cVxEzuCab7QIoLOQ+DQ1wA==}
+
   /import-fresh@2.0.0:
     resolution: {integrity: sha512-eZ5H8rcgYazHbKC3PG4ClHNykCSxtAhxSSEM+2mb+7evD2CKF5V7c0dNum7AdpDh0ZdICwZY9sRSn8f+KH96sg==}
     engines: {node: '>=4'}
@@ -15363,7 +15369,7 @@ packages:
     resolution: {integrity: sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==}
     dev: true
 
-  /next@13.5.6(@babel/core@7.23.2)(react-dom@18.2.0)(react@18.2.0):
+  /next@13.5.6(@babel/core@7.23.2)(react-dom@18.2.0)(react@18.2.0)(sass@1.69.5):
     resolution: {integrity: sha512-Y2wTcTbO4WwEsVb4A8VSnOsG1I9ok+h74q0ZdxkwM3EODqrs4pasq7O0iUxbcS9VtWMicG7f3+HAj0r1+NtKSw==}
     engines: {node: '>=16.14.0'}
     hasBin: true
@@ -15385,6 +15391,7 @@ packages:
       postcss: 8.4.31
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+      sass: 1.69.5
       styled-jsx: 5.1.1(@babel/core@7.23.2)(react@18.2.0)
       watchpack: 2.4.0
     optionalDependencies:
@@ -17235,6 +17242,15 @@ packages:
 
   /safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
+
+  /sass@1.69.5:
+    resolution: {integrity: sha512-qg2+UCJibLr2LCVOt3OlPhr/dqVHWOa9XtZf2OjbLs/T4VPSJ00udtgJxH3neXZm+QqX8B+3cU7RaLqp1iVfcQ==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.3.4
+      source-map-js: 1.0.2
 
   /sax@1.2.1:
     resolution: {integrity: sha512-8I2a3LovHTOpm7NV5yOyO8IHqgVsfK4+UuySrXU8YXkSRX7k6hCV9b3HrkKCr3nMpgj+0bmocaJJWpvp1oc7ZA==}
@@ -19258,7 +19274,7 @@ packages:
       mlly: 1.4.2
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 4.4.11(@types/node@18.18.5)
+      vite: 4.4.11(@types/node@18.18.5)(sass@1.69.5)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -19278,13 +19294,13 @@ packages:
       '@rollup/plugin-virtual': 3.0.2
       '@swc/core': 1.3.93
       uuid: 9.0.1
-      vite: 4.4.11(@types/node@18.18.5)
+      vite: 4.4.11(@types/node@18.18.5)(sass@1.69.5)
     transitivePeerDependencies:
       - '@swc/helpers'
       - rollup
     dev: true
 
-  /vite@4.4.11(@types/node@18.18.5):
+  /vite@4.4.11(@types/node@18.18.5)(sass@1.69.5):
     resolution: {integrity: sha512-ksNZJlkcU9b0lBwAGZGGaZHCMqHsc8OpgtoYhsQ4/I2v5cnpmmmqe5pM4nv/4Hn6G/2GhTdj0DhZh2e+Er1q5A==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -19316,6 +19332,7 @@ packages:
       esbuild: 0.18.20
       postcss: 8.4.31
       rollup: 3.29.4
+      sass: 1.69.5
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
@@ -19372,7 +19389,7 @@ packages:
       strip-literal: 1.3.0
       tinybench: 2.5.1
       tinypool: 0.7.0
-      vite: 4.4.11(@types/node@18.18.5)
+      vite: 4.4.11(@types/node@18.18.5)(sass@1.69.5)
       vite-node: 0.34.6(@types/node@18.18.5)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:

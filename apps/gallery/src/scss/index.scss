@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "base/_fonts.scss";
+
+html {
+  font-family: "GeistRegular";
+}

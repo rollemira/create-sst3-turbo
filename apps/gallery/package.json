@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "pnpm with-env sst bind vite",
+    "dev": "pnpm with-env vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
@@ -15,6 +15,7 @@
   "dependencies": {
     "@acme/api": "^0.1.0",
     "@acme/calcs": "^0.1.0",
+    "@clerk/clerk-react": "^4.27.2",
     "@t3-oss/env-core": "^0.7.0",
     "@tanstack/react-query": "^4.35.7",
     "@tanstack/react-query-devtools": "^4.35.7",

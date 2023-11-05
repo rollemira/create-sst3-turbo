@@ -15,7 +15,13 @@ export function TRPCReactProvider(props: {
 }) {
   // don't let queries happen before we're ready
   const [isLoading, setIsLoading] = useState(false);
-  const [stateToken] = useState<string | null>(AccessTokens.get());
+  const [stateToken, setStateToken] = useState<string | null>(
+    AccessTokens.get(),
+  );
+
+  setTimeout(() => {
+    setStateToken(AccessTokens.get());
+  }, 200);
 
   const createClient = useCallback(
     (token?: string | null) => {
@@ -68,7 +74,7 @@ export function TRPCReactProvider(props: {
 
   useEffect(() => {
     setIsLoading(true);
-    setTrpcClient(createClient(stateToken));
+    setTrpcClient(createClient(AccessTokens.get()));
     setIsLoading(false);
   }, [stateToken, createClient]);
 

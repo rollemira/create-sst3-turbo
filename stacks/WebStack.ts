@@ -1,39 +1,39 @@
-import { NextjsSite, StackContext, StaticSite, use } from "sst/constructs";
+import { StackContext, StaticSite, use } from "sst/constructs";
 import { ApiStack } from "./ApiStack";
 
 export function WebSiteStack({ stack }: StackContext) {
   const { stageUrl: apiUrl } = use(ApiStack);
   const deployed = ["test", "prod"].includes(stack.stage);
 
-  const nextDomain = `${
+  const domain = `${
     stack.stage === "prod" ? "gallery" : `${stack.stage}-gallery`
   }.rollemtech.app`;
-  const nextCustomDomain = {
-    domainName: nextDomain,
+  const customDomain = {
+    domainName: domain,
     hostedZone: "rollemtech.app",
   };
-  const nextSite = new NextjsSite(stack, "NextWebsite", {
-    customDomain: deployed ? nextCustomDomain : undefined,
+  const site = new StaticSite(stack, "GalleryWebSite", {
+    customDomain: deployed ? customDomain : undefined,
     path: "apps/gallery",
-    runtime: "nodejs18.x",
+    buildCommand: "pnpm run build",
+    buildOutput: "dist",
     // Pass in our environment variables
     environment: {
-      CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY!,
-      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:
-        process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY!,
-      NEXT_PUBLIC_API_URL: apiUrl,
+      VITE_CLERK_PUBLISHABLE_KEY: process.env.VITE_CLERK_PUBLISHABLE_KEY!,
+      VITE_STRIPE_PUBLISHABLE_KEY: process.env.VITE_STRIPE_PUBLISHABLE_KEY!,
+      VITE_API_URL: apiUrl,
     },
   });
 
   // Show the url in the output
-  const nextStageUrl = deployed ? `https://${nextDomain}` : nextSite.url;
+  const stageUrl = deployed ? `https://${domain}` : site.url;
   stack.addOutputs({
-    NextHost: nextSite.url,
-    NextStageurl: nextStageUrl,
+    NextHost: site.url,
+    NextStageurl: stageUrl,
   });
 
   return {
-    nextSite: nextSite,
-    nextStageUrl,
+    site,
+    stageUrl,
   };
 }

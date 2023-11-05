@@ -2,23 +2,22 @@
  * v0 by Vercel.
  * @see https://v0.dev/t/om7QitO0LP6
  */
-import Image from "next/image";
-import Link from "next/link";
-import { SignedIn, UserButton } from "@clerk/nextjs";
+// import { SignedIn, UserButton } from "@clerk/nextjs";
+import { Link } from "react-router-dom";
 
 // import { Search } from "lucide-react";
 
 export default function SiteHeader() {
   return (
     <header className="justify sticky top-0 z-50 flex w-full flex-col items-center justify-between bg-teal-300 px-6 py-4 md:flex-row">
-      <Link href="/">
+      <Link to="/">
         <div className="flex flex-row">
-          <Image
+          <img
             alt="logo"
             height={50}
             src="/branding/logo-icon-512.png"
             width={50}
-            quality={100}
+            // quality={100}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="rounded-md"
           />
@@ -28,21 +27,21 @@ export default function SiteHeader() {
         </div>
       </Link>
       <nav className="flex items-center space-x-6 pt-4 font-semibold text-[#131D47] md:pt-0">
-        <Link className="hover:text-[#131d47ba]" href="/">
+        <Link className="hover:text-[#131d47ba]" to="/">
           Home
         </Link>
-        <Link className="hover:text-[#131d47ba]" href="/archive">
+        <Link className="hover:text-[#131d47ba]" to="/archive">
           Archive
         </Link>
-        <Link className="hover:text-[#131d47ba]" href="/about">
+        <Link className="hover:text-[#131d47ba]" to="/about">
           About
         </Link>
-        <Link className="hover:text-[#131d47ba]" href="/pricing">
+        <Link className="hover:text-[#131d47ba]" to="/pricing">
           Pricing
         </Link>
-        <SignedIn>
+        {/* <SignedIn>
           <UserButton afterSignOutUrl="/logout" />
-        </SignedIn>
+        </SignedIn> */}
       </nav>
       {/* <div className="relative">
         <input

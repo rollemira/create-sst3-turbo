@@ -15,6 +15,8 @@ export function WebSiteStack({ stack }: StackContext) {
   const site = new StaticSite(stack, "GalleryWebSite", {
     customDomain: deployed ? customDomain : undefined,
     path: "apps/gallery",
+    buildCommand: "pnpm run build",
+    buildOutput: "dist",
     // Pass in our environment variables
     environment: {
       VITE_CLERK_PUBLISHABLE_KEY: process.env.VITE_CLERK_PUBLISHABLE_KEY!,

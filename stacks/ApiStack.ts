@@ -37,7 +37,7 @@ export function ApiStack({ stack }: StackContext) {
               stack.stage === "prod" ? "gallery" : `${stack.stage}-gallery`
             }.rollemtech.app`,
           ]
-        : ["http://localhost:3000"], // allow all origins in dev
+        : ["http://localhost:3000", "http://localhost:5173"], // allow all origins in dev
       allowMethods: ["GET", "POST", "OPTIONS"],
     },
     routes: {

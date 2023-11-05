@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function GalleryPreview() {
   return (
     <div className="bg-[#131D47] text-white">
@@ -7,7 +5,7 @@ export default function GalleryPreview() {
       <div className="px-2">
         <div className="carousel-center carousel rounded-box space-x-4 bg-teal-300 p-2">
           <div className="carousel-item">
-            <Image
+            <img
               title="Something great"
               alt="Some Alt Text"
               src="https://daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg"
@@ -17,7 +15,7 @@ export default function GalleryPreview() {
             />
           </div>
           <div className="carousel-item">
-            <Image
+            <img
               title="Something great"
               alt="Some Alt Text"
               src="https://daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.jpg"
@@ -27,7 +25,7 @@ export default function GalleryPreview() {
             />
           </div>
           <div className="carousel-item">
-            <Image
+            <img
               title="Something great"
               alt="Some Alt Text"
               src="https://daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg"
@@ -37,7 +35,7 @@ export default function GalleryPreview() {
             />
           </div>
           <div className="carousel-item">
-            <Image
+            <img
               title="Something great"
               alt="Some Alt Text"
               src="https://daisyui.com/images/stock/photo-1494253109108-2e30c049369b.jpg"
@@ -47,7 +45,7 @@ export default function GalleryPreview() {
             />
           </div>
           <div className="carousel-item">
-            <Image
+            <img
               title="Something great"
               alt="Some Alt Text"
               src="https://daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.jpg"
@@ -57,7 +55,7 @@ export default function GalleryPreview() {
             />
           </div>
           <div className="carousel-item">
-            <Image
+            <img
               title="Something great"
               alt="Some Alt Text"
               src="https://daisyui.com/images/stock/photo-1559181567-c3190ca9959b.jpg"
@@ -67,7 +65,7 @@ export default function GalleryPreview() {
             />
           </div>
           <div className="carousel-item">
-            <Image
+            <img
               title="Something great"
               alt="Some Alt Text"
               src="https://daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.jpg"

@@ -1,15 +1,13 @@
-"use client";
-
 import { useCallback, useEffect, useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-// import { ReactQueryStreamedHydration } from "@tanstack/react-query-next-experimental";
 import { httpBatchLink, loggerLink } from "@trpc/client";
 import superjson from "superjson";
 
-import { api } from "~/utils/api";
-import { unauthorizedLink } from "~/utils/links";
-import { AccessTokens } from "~/utils/tokens";
+//import { env } from "./env";
+import { api } from "./utils/api";
+import { unauthorizedLink } from "./utils/links";
+import { AccessTokens } from "./utils/tokens";
 
 export function TRPCReactProvider(props: {
   children: React.ReactNode;
@@ -32,7 +30,7 @@ export function TRPCReactProvider(props: {
           }),
           httpBatchLink({
             // if we have an accessToken, call secure endpoints
-            url: `${process.env.NEXT_PUBLIC_API_URL}${
+            url: `${import.meta.env.VITE_API_URL}${
               !token ? "/public" : ""
             }/trpc`,
             headers() {

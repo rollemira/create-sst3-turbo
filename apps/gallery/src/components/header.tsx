@@ -39,7 +39,7 @@ export default function SiteHeader() {
         <Link className="hover:text-[#131d47ba]" to="/pricing">
           Pricing
         </Link>
-        <UserButton afterSignOutUrl="/logout" />
+        <UserButton afterSignOutUrl="/" />
       </nav>
       {/* <div className="relative">
         <input

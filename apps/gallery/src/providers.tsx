@@ -4,24 +4,18 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { httpBatchLink, loggerLink } from "@trpc/client";
 import superjson from "superjson";
 
+import { useAccessToken } from "./hooks/access-token";
 //import { env } from "./env";
 import { api } from "./utils/api";
 import { unauthorizedLink } from "./utils/links";
-import { AccessTokens } from "./utils/tokens";
 
 export function TRPCReactProvider(props: {
   children: React.ReactNode;
   headers?: Headers;
 }) {
+  const accessToken = useAccessToken();
   // don't let queries happen before we're ready
   const [isLoading, setIsLoading] = useState(false);
-  const [stateToken, setStateToken] = useState<string | null>(
-    AccessTokens.get(),
-  );
-
-  setTimeout(() => {
-    setStateToken(AccessTokens.get());
-  }, 200);
 
   const createClient = useCallback(
     (token?: string | null) => {
@@ -70,13 +64,13 @@ export function TRPCReactProvider(props: {
       }),
   );
   // default public endpoints
-  const [trpcClient, setTrpcClient] = useState(() => createClient(stateToken));
+  const [trpcClient, setTrpcClient] = useState(() => createClient(accessToken));
 
   useEffect(() => {
     setIsLoading(true);
-    setTrpcClient(createClient(AccessTokens.get()));
+    setTrpcClient(createClient(accessToken));
     setIsLoading(false);
-  }, [stateToken, createClient]);
+  }, [accessToken, createClient]);
 
   if (isLoading) return <></>;
   return (

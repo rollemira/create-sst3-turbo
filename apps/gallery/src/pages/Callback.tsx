@@ -1,20 +1,16 @@
 import { useEffect } from "react";
-import { useAuth } from "@clerk/clerk-react";
 import { useNavigate } from "react-router-dom";
 
-import { AccessTokens } from "../utils/tokens";
+import { useAccessToken } from "../hooks/access-token";
 
 export default function CallbackPage() {
-  const { isSignedIn, getToken } = useAuth();
+  const accessToken = useAccessToken();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isSignedIn) {
-      getToken({ template: "rollemtech-api" }).then((token) => {
-        AccessTokens.store(token!);
-        navigate("/dashboard");
-      });
+    if (accessToken) {
+      navigate("/dashboard", { replace: true });
     }
-  }, [getToken, isSignedIn, navigate]);
+  }, [accessToken, navigate]);
   return <></>;
 }

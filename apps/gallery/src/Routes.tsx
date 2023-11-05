@@ -13,7 +13,6 @@ import ArchivePage from "./pages/Archive.tsx";
 import CallbackPage from "./pages/Callback.tsx";
 import DashboardHomePage from "./pages/dashboard/Index.tsx";
 import HomePage from "./pages/Home.tsx";
-import LogoutPage from "./pages/Logout.tsx";
 import NotFoundPage from "./pages/NotFound.tsx";
 import PricingPage from "./pages/Pricing.tsx";
 import { TRPCReactProvider } from "./providers.tsx";
@@ -33,7 +32,6 @@ export default function Links() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/archive" element={<ArchivePage />} />
           <Route path="/callback" element={<CallbackPage />} />
-          <Route path="/logout" element={<LogoutPage />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route
             path="/dashboard/*"

@@ -74,6 +74,9 @@ importers:
       '@trpc/server':
         specifier: ^10.40.0
         version: 10.40.0
+      clsx:
+        specifier: ^2.0.0
+        version: 2.0.0
       lucide-react:
         specifier: ^0.290.0
         version: 0.290.0(react@18.2.0)
@@ -89,6 +92,9 @@ importers:
       superjson:
         specifier: ^1.13.1
         version: 1.13.3
+      tailwind-merge:
+        specifier: ^2.0.0
+        version: 2.0.0
       zod:
         specifier: ^3.22.4
         version: 3.22.4
@@ -10458,6 +10464,11 @@ packages:
     engines: {node: '>=0.8'}
     dev: false
 
+  /clsx@2.0.0:
+    resolution: {integrity: sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q==}
+    engines: {node: '>=6'}
+    dev: false
+
   /code-excerpt@4.0.0:
     resolution: {integrity: sha512-xxodCmBen3iy2i0WtAK8FlFNrRzjUqjRsMfho58xT/wvZU1YTM3fCnRjcy1gJPMepaRlgm/0e6w8SpWHpn3/cA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
@@ -18497,6 +18508,12 @@ packages:
       slice-ansi: 4.0.0
       string-width: 4.2.3
       strip-ansi: 6.0.1
+
+  /tailwind-merge@2.0.0:
+    resolution: {integrity: sha512-WO8qghn9yhsldLSg80au+3/gY9E4hFxIvQ3qOmlpXnqpDKoMruKfi/56BbbMg6fHTQJ9QD3cc79PoWqlaQE4rw==}
+    dependencies:
+      '@babel/runtime': 7.23.2
+    dev: false
 
   /tailwindcss@3.3.2:
     resolution: {integrity: sha512-9jPkMiIBXvPc2KywkraqsUfbfj+dHDb+JPWtSJa9MLFdrPyazI7q6WX2sUrm7R9eVR7qqv3Pas7EvQFzxKnI6w==}

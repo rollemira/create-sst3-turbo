@@ -28,8 +28,8 @@ export function WebSiteStack({ stack }: StackContext) {
   // Show the url in the output
   const stageUrl = deployed ? `https://${domain}` : site.url;
   stack.addOutputs({
-    NextHost: site.url,
-    NextStageurl: stageUrl,
+    SiteHost: site.url,
+    Stageurl: stageUrl,
   });
 
   return {

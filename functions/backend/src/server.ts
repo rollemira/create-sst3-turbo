@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
 import { awsLambdaRequestHandler } from "@trpc/server/adapters/aws-lambda";
 import type { CreateAWSLambdaContextOptions } from "@trpc/server/adapters/aws-lambda";
 import type { APIGatewayProxyEvent } from "aws-lambda";
@@ -21,7 +22,7 @@ function createContext({
   return {
     apiVersion: (event as { version?: string }).version ?? "1.0",
     // @ts-expect-error - HACK: the build server doesn't get SST types
-    db: db(Config.DATABASE_URL),
+    db: db(Config.DATABASE_URL as string),
     event: event,
     user,
   };

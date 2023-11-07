@@ -1,5 +1,12 @@
 import { relations, sql } from "drizzle-orm";
-import { index, int, serial, timestamp, varchar } from "drizzle-orm/mysql-core";
+import {
+  index,
+  int,
+  json,
+  serial,
+  timestamp,
+  varchar,
+} from "drizzle-orm/mysql-core";
 
 import { tableCreator } from "./_table";
 
@@ -14,6 +21,7 @@ export const galleries = tableCreator(
     picture: varchar("picture", { length: 255 }),
     sortOrder: int("sortOrder").notNull().default(1),
     status: varchar("status", { length: 255 }).default("draft"),
+    tags: json("tags").default("[]"),
     deletedAt: timestamp("deletedAt"),
     createdAt: timestamp("createdAt")
       .default(sql`CURRENT_TIMESTAMP`)
@@ -39,6 +47,7 @@ export const photos = tableCreator(
     url: varchar("url", { length: 512 }),
     sortOrder: int("sortOrder").notNull().default(1),
     status: varchar("status", { length: 255 }).default("draft"),
+    tags: json("tags").default("[]"),
     galleryId: int("galleryId").notNull(),
     deletedAt: timestamp("deletedAt"),
     createdAt: timestamp("createdAt")

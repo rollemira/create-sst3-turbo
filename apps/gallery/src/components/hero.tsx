@@ -3,8 +3,6 @@
  * @see https://v0.dev/t/xua5Rc5mMLA
  */
 
-import { Link } from "react-router-dom";
-
 export default function HeroSection() {
   return (
     <section
@@ -23,9 +21,9 @@ export default function HeroSection() {
           <p className="mx-auto max-w-xl py-6 text-xl text-white">
             Explore a world of stunning images.
           </p>
-          <Link to="#gallery" className="btn-lg btn">
+          <a href="#gallery" className="btn-lg btn">
             Start Exploring
-          </Link>
+          </a>
         </div>
       </div>
     </section>

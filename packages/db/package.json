@@ -24,12 +24,11 @@
     "@acme/eslint-config": "0.2.0",
     "@acme/prettier-config": "^0.1.0",
     "@acme/tsconfig": "^0.1.0",
-    "@types/node": "^18.16.16",
-    "@types/pg": "^8.10.7",
+    "@types/node": "^18.18.8",
     "dotenv-cli": "^7.3.0",
     "drizzle-kit": "^0.19.13",
-    "eslint": "^8.50.0",
-    "mysql2": "^3.6.2",
+    "eslint": "^8.53.0",
+    "mysql2": "^3.6.3",
     "typescript": "^5.2.2"
   },
   "eslintConfig": {

@@ -20,8 +20,7 @@ function createContext({
   const user = authorizer ? JSON.stringify(authorizer.jwt.claims) : undefined;
   return {
     apiVersion: (event as { version?: string }).version ?? "1.0",
-    // @ts-expect-error - HACK: the build server doesn't get SST types
-    db: db(Config.DATABASE_URL as string),
+    db: db(Config.DATABASE_URL),
     event: event,
     user,
   };

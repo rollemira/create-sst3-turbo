@@ -28,7 +28,7 @@
     "dotenv-cli": "^7.3.0",
     "drizzle-kit": "^0.19.13",
     "eslint": "^8.53.0",
-    "mysql2": "^3.6.3",
+    "mysql2": "^3.6.5",
     "typescript": "^5.2.2"
   },
   "eslintConfig": {

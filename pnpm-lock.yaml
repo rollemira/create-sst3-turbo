@@ -592,7 +592,7 @@ importers:
         version: 1.11.0
       drizzle-orm:
         specifier: ^0.28.6
-        version: 0.28.6(@aws-sdk/client-rds-data@3.433.0)(@planetscale/database@1.11.0)(kysely@0.25.0)(mysql2@3.6.3)
+        version: 0.28.6(@aws-sdk/client-rds-data@3.433.0)(@planetscale/database@1.11.0)(kysely@0.25.0)(mysql2@3.6.5)
     devDependencies:
       '@acme/eslint-config':
         specifier: 0.2.0
@@ -616,8 +616,8 @@ importers:
         specifier: ^8.53.0
         version: 8.53.0
       mysql2:
-        specifier: ^3.6.3
-        version: 3.6.3
+        specifier: ^3.6.5
+        version: 3.6.5
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -10135,7 +10135,7 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.28.6(@aws-sdk/client-rds-data@3.433.0)(@planetscale/database@1.11.0)(kysely@0.25.0)(mysql2@3.6.3):
+  /drizzle-orm@0.28.6(@aws-sdk/client-rds-data@3.433.0)(@planetscale/database@1.11.0)(kysely@0.25.0)(mysql2@3.6.5):
     resolution: {integrity: sha512-yBe+F9htrlYER7uXgDJUQsTHFoIrI5yMm5A0bg0GiZ/kY5jNXTWoEy4KQtg35cE27sw1VbgzoMWHAgCckUUUww==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
@@ -10200,7 +10200,7 @@ packages:
       '@aws-sdk/client-rds-data': 3.433.0
       '@planetscale/database': 1.11.0
       kysely: 0.25.0
-      mysql2: 3.6.3
+      mysql2: 3.6.5
     dev: false
 
   /drizzle-zod@0.5.1(drizzle-orm@0.28.6)(zod@3.22.4):
@@ -10209,7 +10209,7 @@ packages:
       drizzle-orm: '>=0.23.13'
       zod: '*'
     dependencies:
-      drizzle-orm: 0.28.6(@aws-sdk/client-rds-data@3.433.0)(@planetscale/database@1.11.0)(kysely@0.25.0)(mysql2@3.6.3)
+      drizzle-orm: 0.28.6(@aws-sdk/client-rds-data@3.433.0)(@planetscale/database@1.11.0)(kysely@0.25.0)(mysql2@3.6.5)
       zod: 3.22.4
     dev: false
 
@@ -14148,8 +14148,8 @@ packages:
     dev: false
     optional: true
 
-  /mysql2@3.6.3:
-    resolution: {integrity: sha512-qYd/1CDuW1KYZjD4tzg2O8YS3X/UWuGH8ZMHyMeggMTXL3yOdMisbwZ5SNkHzDGlZXKYLAvV8tMrEH+NUMz3fw==}
+  /mysql2@3.6.5:
+    resolution: {integrity: sha512-pS/KqIb0xlXmtmqEuTvBXTmLoQ5LmAz5NW/r8UyQ1ldvnprNEj3P9GbmuQQ2J0A4LO+ynotGi6TbscPa8OUb+w==}
     engines: {node: '>= 8.0'}
     dependencies:
       denque: 2.1.0

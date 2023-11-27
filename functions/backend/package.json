@@ -20,7 +20,7 @@
     "@acme/eslint-config": "0.2.0",
     "@acme/prettier-config": "^0.1.0",
     "@acme/tsconfig": "^0.1.0",
-    "@types/aws-lambda": "^8.10.126",
+    "@types/aws-lambda": "^8.10.129",
     "@types/node": "^18.18.8",
     "esbuild": "^0.17.10",
     "eslint": "^8.53.0",

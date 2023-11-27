@@ -709,7 +709,7 @@ importers:
         specifier: ^0.1.0
         version: link:../typescript
       '@tailwindcss/typography':
-        specifier: ^0.5.9
+        specifier: ^0.5.10
         version: 0.5.10(tailwindcss@3.3.2)
       daisyui:
         specifier: ^3.9.4

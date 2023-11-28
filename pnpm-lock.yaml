@@ -90,7 +90,7 @@ importers:
         specifier: ^6.18.0
         version: 6.18.0(react-dom@18.2.0)(react@18.2.0)
       superjson:
-        specifier: ^1.13.1
+        specifier: ^1.13.3
         version: 1.13.3
       tailwind-merge:
         specifier: ^2.0.0
@@ -223,7 +223,7 @@ importers:
         specifier: ~3.22.1
         version: 3.22.1(react-native@0.72.7)(react@18.2.0)
       superjson:
-        specifier: ^1.13.1
+        specifier: ^1.13.3
         version: 1.13.3
       uuid:
         specifier: ^3.4.0
@@ -326,7 +326,7 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
       superjson:
-        specifier: ^1.13.1
+        specifier: ^1.13.3
         version: 1.13.3
       zod:
         specifier: ^3.22.4
@@ -408,7 +408,7 @@ importers:
         specifier: ^6.18.0
         version: 6.18.0(react-dom@18.2.0)(react@18.2.0)
       superjson:
-        specifier: ^1.13.1
+        specifier: ^1.13.3
         version: 1.13.3
       zod:
         specifier: ^3.22.4
@@ -545,7 +545,7 @@ importers:
         specifier: ^0.5.1
         version: 0.5.1(drizzle-orm@0.28.6)(zod@3.22.4)
       superjson:
-        specifier: ^1.13.1
+        specifier: ^1.13.3
         version: 1.13.3
       zod:
         specifier: ^3.22.4

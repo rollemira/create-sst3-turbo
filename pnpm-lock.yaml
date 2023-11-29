@@ -34,7 +34,7 @@ importers:
         version: 3.0.3
       sst:
         specifier: ^2.35.0
-        version: 2.35.0(@types/react@18.2.36)
+        version: 2.35.0(@types/react@18.2.39)
       turbo:
         specifier: ^1.10.16
         version: 1.10.16
@@ -112,11 +112,11 @@ importers:
         specifier: ^0.1.0
         version: link:../../tooling/typescript
       '@types/react':
-        specifier: ^18.2.36
-        version: 18.2.36
+        specifier: ^18.2.39
+        version: 18.2.39
       '@types/react-dom':
-        specifier: ^18.2.14
-        version: 18.2.14
+        specifier: ^18.2.17
+        version: 18.2.17
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.10.0
         version: 6.10.0(@typescript-eslint/parser@6.10.0)(eslint@8.53.0)(typescript@5.2.2)
@@ -149,7 +149,7 @@ importers:
         version: 1.69.5
       sst:
         specifier: ^2.35.0
-        version: 2.35.0(@types/react@18.2.36)
+        version: 2.35.0(@types/react@18.2.39)
       tailwindcss:
         specifier: 3.3.5
         version: 3.3.5
@@ -263,8 +263,8 @@ importers:
         specifier: ^7.20.5
         version: 7.20.5
       '@types/react':
-        specifier: ^18.2.36
-        version: 18.2.36
+        specifier: ^18.2.39
+        version: 18.2.39
       dotenv-cli:
         specifier: ^7.3.0
         version: 7.3.0
@@ -348,11 +348,11 @@ importers:
         specifier: ^18.18.13
         version: 18.18.13
       '@types/react':
-        specifier: ^18.2.36
-        version: 18.2.36
+        specifier: ^18.2.39
+        version: 18.2.39
       '@types/react-dom':
-        specifier: ^18.2.14
-        version: 18.2.14
+        specifier: ^18.2.17
+        version: 18.2.17
       dotenv-cli:
         specifier: ^7.3.0
         version: 7.3.0
@@ -427,11 +427,11 @@ importers:
         specifier: ^0.1.0
         version: link:../../tooling/typescript
       '@types/react':
-        specifier: ^18.2.36
-        version: 18.2.36
+        specifier: ^18.2.39
+        version: 18.2.39
       '@types/react-dom':
-        specifier: ^18.2.14
-        version: 18.2.14
+        specifier: ^18.2.17
+        version: 18.2.17
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.10.0
         version: 6.10.0(@typescript-eslint/parser@6.10.0)(eslint@8.53.0)(typescript@5.2.2)
@@ -461,7 +461,7 @@ importers:
         version: 8.4.31
       sst:
         specifier: ^2.35.0
-        version: 2.35.0(@types/react@18.2.36)
+        version: 2.35.0(@types/react@18.2.39)
       tailwindcss:
         specifier: 3.3.5
         version: 3.3.5
@@ -522,7 +522,7 @@ importers:
         version: 12.0.4(serverless@3.36.0)
       sst:
         specifier: ^2.35.0
-        version: 2.35.0(@types/react@18.2.36)
+        version: 2.35.0(@types/react@18.2.39)
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -7668,14 +7668,14 @@ packages:
     resolution: {integrity: sha512-u95svzDlTysU5xecFNTgfFG5RUWu1A9P0VzgpcIiGZA9iraHOdSzcxMxQ55DyeRaGCSxQi7LxXDI4rzq/MYfdg==}
     dev: false
 
-  /@types/react-dom@18.2.14:
-    resolution: {integrity: sha512-V835xgdSVmyQmI1KLV2BEIUgqEuinxp9O4G6g3FqO/SqLac049E53aysv0oEFD2kHfejeKU+ZqL2bcFWj9gLAQ==}
+  /@types/react-dom@18.2.17:
+    resolution: {integrity: sha512-rvrT/M7Df5eykWFxn6MYt5Pem/Dbyc1N8Y0S9Mrkw2WFCRiqUgw9P7ul2NpwsXCSM1DVdENzdG9J5SreqfAIWg==}
     dependencies:
-      '@types/react': 18.2.36
+      '@types/react': 18.2.39
     dev: true
 
-  /@types/react@18.2.36:
-    resolution: {integrity: sha512-o9XFsHYLLZ4+sb9CWUYwHqFVoG61SesydF353vFMMsQziiyRu8np4n2OYMUSDZ8XuImxDr9c5tR7gidlH29Vnw==}
+  /@types/react@18.2.39:
+    resolution: {integrity: sha512-Oiw+ppED6IremMInLV4HXGbfbG6GyziY3kqAwJYOR0PNbkYDmLWQA3a95EhdSmamsvbkJN96ZNN+YD+fGjzSBA==}
     dependencies:
       '@types/prop-types': 15.7.8
       '@types/scheduler': 0.16.4
@@ -12214,10 +12214,10 @@ packages:
       react: '>=18.0.0'
     dependencies:
       cli-spinners: 2.9.1
-      ink: 4.4.1(@types/react@18.2.36)(react@18.2.0)
+      ink: 4.4.1(@types/react@18.2.39)(react@18.2.0)
       react: 18.2.0
 
-  /ink@4.4.1(@types/react@18.2.36)(react@18.2.0):
+  /ink@4.4.1(@types/react@18.2.39)(react@18.2.0):
     resolution: {integrity: sha512-rXckvqPBB0Krifk5rn/5LvQGmyXwCUpBfmTwbkQNBY9JY8RSl3b8OftBNEYxg4+SWUhEKcPifgope28uL9inlA==}
     engines: {node: '>=14.16'}
     peerDependencies:
@@ -12231,7 +12231,7 @@ packages:
         optional: true
     dependencies:
       '@alcalzone/ansi-tokenize': 0.1.3
-      '@types/react': 18.2.36
+      '@types/react': 18.2.39
       ansi-escapes: 6.2.0
       auto-bind: 5.0.1
       chalk: 5.3.0
@@ -16612,7 +16612,7 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /sst@2.35.0(@types/react@18.2.36):
+  /sst@2.35.0(@types/react@18.2.39):
     resolution: {integrity: sha512-j8yzowKzu1XwYLz2rQfTENwJK3E8gm1renh8VLh2DKB1WnR+rNHOKeIy7rPgK4GGbg5xVrRoMuaJqT8Gh/d7yw==}
     hasBin: true
     peerDependencies:
@@ -16673,7 +16673,7 @@ packages:
       graphql: 16.8.1
       graphql-yoga: 3.9.1(graphql@16.8.1)
       immer: 9.0.21
-      ink: 4.4.1(@types/react@18.2.36)(react@18.2.0)
+      ink: 4.4.1(@types/react@18.2.39)(react@18.2.0)
       ink-spinner: 5.0.0(ink@4.4.1)(react@18.2.0)
       kysely: 0.25.0
       kysely-codegen: 0.10.1(kysely@0.25.0)

@@ -51,7 +51,7 @@
     "@babel/runtime": "^7.23.5",
     "@expo/config-plugins": "^7.2.5",
     "@types/babel__core": "^7.20.5",
-    "@types/react": "^18.2.36",
+    "@types/react": "^18.2.39",
     "dotenv-cli": "^7.3.0",
     "eslint": "^8.53.0",
     "prettier": "^3.0.3",

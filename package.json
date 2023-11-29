@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@acme/prettier-config": "^0.1.0",
-    "@manypkg/cli": "^0.21.0",
+    "@manypkg/cli": "^0.21.1",
     "@tsconfig/node18": "^18.2.2",
     "@turbo/gen": "^1.10.16",
     "aws-cdk-lib": "^2.101.1",

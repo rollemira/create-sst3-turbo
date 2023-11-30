@@ -22,10 +22,10 @@ importers:
         version: 1.10.16(@types/node@18.18.13)(typescript@5.2.2)
       aws-cdk-lib:
         specifier: ^2.111.0
-        version: 2.111.0(constructs@10.2.69)
+        version: 2.111.0(constructs@10.3.0)
       constructs:
-        specifier: 10.2.69
-        version: 10.2.69
+        specifier: 10.3.0
+        version: 10.3.0
       dotenv-cli:
         specifier: ^7.3.0
         version: 7.3.0
@@ -780,15 +780,15 @@ packages:
       constructs: 10.2.69
     dev: true
 
-  /@aws-cdk/aws-apigatewayv2-alpha@2.101.1-alpha.0(aws-cdk-lib@2.111.0)(constructs@10.2.69):
+  /@aws-cdk/aws-apigatewayv2-alpha@2.101.1-alpha.0(aws-cdk-lib@2.111.0)(constructs@10.3.0):
     resolution: {integrity: sha512-nDdxdcJ97jC80F8dxO+wH2ufkq0w2hfsZ3RZKrdGo913/BPO2ebBSowFykpKSl2cPqm4g5NwoUIGZcawvGcpGQ==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
       aws-cdk-lib: ^2.101.1
       constructs: ^10.0.0
     dependencies:
-      aws-cdk-lib: 2.111.0(constructs@10.2.69)
-      constructs: 10.2.69
+      aws-cdk-lib: 2.111.0(constructs@10.3.0)
+      constructs: 10.3.0
 
   /@aws-cdk/aws-apigatewayv2-authorizers-alpha@2.101.1-alpha.0(@aws-cdk/aws-apigatewayv2-alpha@2.101.1-alpha.0)(aws-cdk-lib@2.101.1)(constructs@10.2.69):
     resolution: {integrity: sha512-ileZB1et1dJazzF55P0o2UAwHG187SrKaqDUakipe+bsMUdecZkUKQKdH7v3HchzzdmJ2USO430F11ToU9D2Bg==}
@@ -798,7 +798,7 @@ packages:
       aws-cdk-lib: ^2.101.1
       constructs: ^10.0.0
     dependencies:
-      '@aws-cdk/aws-apigatewayv2-alpha': 2.101.1-alpha.0(aws-cdk-lib@2.111.0)(constructs@10.2.69)
+      '@aws-cdk/aws-apigatewayv2-alpha': 2.101.1-alpha.0(aws-cdk-lib@2.111.0)(constructs@10.3.0)
       aws-cdk-lib: 2.101.1(constructs@10.2.69)
       constructs: 10.2.69
 
@@ -810,7 +810,7 @@ packages:
       aws-cdk-lib: ^2.101.1
       constructs: ^10.0.0
     dependencies:
-      '@aws-cdk/aws-apigatewayv2-alpha': 2.101.1-alpha.0(aws-cdk-lib@2.111.0)(constructs@10.2.69)
+      '@aws-cdk/aws-apigatewayv2-alpha': 2.101.1-alpha.0(aws-cdk-lib@2.111.0)(constructs@10.3.0)
       aws-cdk-lib: 2.101.1(constructs@10.2.69)
       constructs: 10.2.69
 
@@ -8419,7 +8419,7 @@ packages:
       - table
       - yaml
 
-  /aws-cdk-lib@2.111.0(constructs@10.2.69):
+  /aws-cdk-lib@2.111.0(constructs@10.3.0):
     resolution: {integrity: sha512-E+uBDYRAwl/KFRcpTT2B4Fz50MvVqEIcOUDBo/xK8z5TWorRkqVQry7PCts3hb7dLcGgFVONes8dLuzmarx0mQ==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
@@ -8428,7 +8428,7 @@ packages:
       '@aws-cdk/asset-awscli-v1': 2.2.201
       '@aws-cdk/asset-kubectl-v20': 2.1.2
       '@aws-cdk/asset-node-proxy-agent-v6': 2.0.1
-      constructs: 10.2.69
+      constructs: 10.3.0
     bundledDependencies:
       - '@balena/dockerignore'
       - case
@@ -9491,6 +9491,10 @@ packages:
 
   /constructs@10.2.69:
     resolution: {integrity: sha512-0AiM/uQe5Uk6JVe/62oolmSN2MjbFQkOlYrM3fFGZLKuT+g7xlAI10EebFhyCcZwI2JAcWuWCmmCAyCothxjuw==}
+    engines: {node: '>= 16.14.0'}
+
+  /constructs@10.3.0:
+    resolution: {integrity: sha512-vbK8i3rIb/xwZxSpTjz3SagHn1qq9BChLEfy5Hf6fB3/2eFbrwt2n9kHwQcS0CPTRBesreeAcsJfMq2229FnbQ==}
     engines: {node: '>= 16.14.0'}
 
   /content-disposition@0.5.4:
@@ -16586,7 +16590,7 @@ packages:
       '@sls-next/lambda-at-edge':
         optional: true
     dependencies:
-      '@aws-cdk/aws-apigatewayv2-alpha': 2.101.1-alpha.0(aws-cdk-lib@2.111.0)(constructs@10.2.69)
+      '@aws-cdk/aws-apigatewayv2-alpha': 2.101.1-alpha.0(aws-cdk-lib@2.111.0)(constructs@10.3.0)
       '@aws-cdk/aws-apigatewayv2-authorizers-alpha': 2.101.1-alpha.0(@aws-cdk/aws-apigatewayv2-alpha@2.101.1-alpha.0)(aws-cdk-lib@2.101.1)(constructs@10.2.69)
       '@aws-cdk/aws-apigatewayv2-integrations-alpha': 2.101.1-alpha.0(@aws-cdk/aws-apigatewayv2-alpha@2.101.1-alpha.0)(aws-cdk-lib@2.101.1)(constructs@10.2.69)
       '@aws-cdk/cloud-assembly-schema': 2.101.1

@@ -27,7 +27,7 @@
     "@tsconfig/node18": "^18.2.2",
     "@turbo/gen": "^1.10.16",
     "aws-cdk-lib": "^2.111.0",
-    "constructs": "10.2.69",
+    "constructs": "10.3.0",
     "dotenv-cli": "^7.3.0",
     "prettier": "^3.0.3",
     "sst": "^2.35.0",

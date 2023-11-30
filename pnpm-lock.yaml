@@ -57,10 +57,10 @@ importers:
         specifier: ^0.7.1
         version: 0.7.1(typescript@5.2.2)(zod@3.22.4)
       '@tanstack/react-query':
-        specifier: ^4.35.7
+        specifier: ^4.36.1
         version: 4.36.1(react-dom@18.2.0)(react-native@0.72.7)(react@18.2.0)
       '@tanstack/react-query-devtools':
-        specifier: ^4.35.7
+        specifier: ^4.36.1
         version: 4.36.1(@tanstack/react-query@4.36.1)(react-dom@18.2.0)(react@18.2.0)
       '@trpc/client':
         specifier: ^10.43.1
@@ -172,7 +172,7 @@ importers:
         specifier: 1.4.3
         version: 1.4.3(@babel/runtime@7.23.5)(react-native@0.72.7)(react@18.2.0)
       '@tanstack/react-query':
-        specifier: ^4.35.7
+        specifier: ^4.36.1
         version: 4.36.1(react-dom@18.2.0)(react-native@0.72.7)(react@18.2.0)
       '@trpc/client':
         specifier: ^10.43.1
@@ -296,14 +296,14 @@ importers:
         specifier: ^0.7.1
         version: 0.7.1(typescript@5.2.2)(zod@3.22.4)
       '@tanstack/react-query':
-        specifier: ^4.35.7
+        specifier: ^4.36.1
         version: 4.36.1(react-dom@18.2.0)(react-native@0.72.7)(react@18.2.0)
       '@tanstack/react-query-devtools':
-        specifier: ^4.35.7
+        specifier: ^4.36.1
         version: 4.36.1(@tanstack/react-query@4.36.1)(react-dom@18.2.0)(react@18.2.0)
       '@tanstack/react-query-next-experimental':
-        specifier: ^5.7.2
-        version: 5.7.2(@tanstack/react-query@4.36.1)(next@13.5.6)(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^5.10.0
+        version: 5.10.0(@tanstack/react-query@4.36.1)(next@13.5.6)(react@18.2.0)
       '@trpc/client':
         specifier: ^10.43.1
         version: 10.43.1(@trpc/server@10.43.1)
@@ -381,10 +381,10 @@ importers:
         specifier: ^0.7.1
         version: 0.7.1(typescript@5.2.2)(zod@3.22.4)
       '@tanstack/react-query':
-        specifier: ^4.35.7
+        specifier: ^4.36.1
         version: 4.36.1(react-dom@18.2.0)(react-native@0.72.7)(react@18.2.0)
       '@tanstack/react-query-devtools':
-        specifier: ^4.35.7
+        specifier: ^4.36.1
         version: 4.36.1(@tanstack/react-query@4.36.1)(react-dom@18.2.0)(react@18.2.0)
       '@trpc/client':
         specifier: ^10.43.1
@@ -7364,18 +7364,16 @@ packages:
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 
-  /@tanstack/react-query-next-experimental@5.7.2(@tanstack/react-query@4.36.1)(next@13.5.6)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-Emqvta0rnQ2eSlBWjfCyGcJatnI97+JdsKyVAmthgFdyY1fJVYJIA3Jut1EXQw3ebZGXlxLIKJAyb3RotjVmCA==}
+  /@tanstack/react-query-next-experimental@5.10.0(@tanstack/react-query@4.36.1)(next@13.5.6)(react@18.2.0):
+    resolution: {integrity: sha512-ykpxgyDXivd4XXMgwT46YL7QZfENwCvnyVbrdEnVgLGfNyrhiILAl6Xh5/M7yYH1PdqLz7Ydy12Vi6vTyOgC1Q==}
     peerDependencies:
-      '@tanstack/react-query': ^5.7.2
+      '@tanstack/react-query': ^5.10.0
       next: ^13 || ^14
       react: ^18.0.0
-      react-dom: ^18.0.0
     dependencies:
       '@tanstack/react-query': 4.36.1(react-dom@18.2.0)(react-native@0.72.7)(react@18.2.0)
       next: 13.5.6(@babel/core@7.23.2)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /@tanstack/react-query@4.36.1(react-dom@18.2.0)(react-native@0.72.7)(react@18.2.0):

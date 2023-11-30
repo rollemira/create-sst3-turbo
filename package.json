@@ -26,7 +26,7 @@
     "@manypkg/cli": "^0.21.1",
     "@tsconfig/node18": "^18.2.2",
     "@turbo/gen": "^1.10.16",
-    "aws-cdk-lib": "^2.101.1",
+    "aws-cdk-lib": "^2.111.0",
     "constructs": "10.2.69",
     "dotenv-cli": "^7.3.0",
     "prettier": "^3.0.3",

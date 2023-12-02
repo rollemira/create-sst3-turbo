@@ -35,7 +35,7 @@ export function TRPCReactProvider(props: {
             }/trpc`,
             headers() {
               const headers = new Map(props.headers);
-              headers.set("x-trpc-source", "admin");
+              headers.set("x-trpc-source", "gallery");
               if (token) {
                 // add accessToken to headers
                 headers.set("authorization", `Bearer ${token}`);

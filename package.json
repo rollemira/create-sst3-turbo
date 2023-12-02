@@ -1,5 +1,5 @@
 {
-  "name": "rollemtech-sst3",
+  "name": "rollemtech",
   "version": "1.0.1",
   "private": true,
   "scripts": {
@@ -34,7 +34,7 @@
     "constructs": "10.2.69",
     "dotenv-cli": "^7.3.0",
     "prettier": "^3.0.3",
-    "sst": "^2.35.0",
+    "sst": "^2.36.8",
     "turbo": "^1.10.16",
     "typescript": "^5.2.2"
   },

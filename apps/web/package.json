@@ -25,7 +25,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.18.0",
-    "superjson": "^1.13.1",
+    "superjson": "^1.13.3",
     "zod": "^3.22.4"
   },
   "devDependencies": {
@@ -44,7 +44,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.4",
     "postcss": "^8.4.31",
-    "sst": "^2.35.0",
+    "sst": "^2.36.8",
     "tailwindcss": "3.3.2",
     "typescript": "^5.2.2",
     "vite": "^4.5.0",

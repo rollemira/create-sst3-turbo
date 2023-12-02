@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
 import { awsLambdaRequestHandler } from "@trpc/server/adapters/aws-lambda";
 import type { CreateAWSLambdaContextOptions } from "@trpc/server/adapters/aws-lambda";
 import type { APIGatewayProxyEvent } from "aws-lambda";
@@ -19,6 +18,7 @@ function createContext({
 }: CreateAWSLambdaContextOptions<APIGatewayProxyEvent>) {
   const authorizer = event.requestContext.authorizer as UserAuthorizer;
   const user = authorizer ? JSON.stringify(authorizer.jwt.claims) : undefined;
+  const source = event?.headers["x-trpc-source"] ?? "unknown";
   console.log(">>> tRPC Request from", source, "by", user ?? "anonymous");
   return {
     apiVersion: (event as { version?: string }).version ?? "1.0",

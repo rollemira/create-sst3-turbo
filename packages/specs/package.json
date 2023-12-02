@@ -24,15 +24,15 @@
   },
   "dependencies": {
     "@acme/api": "^0.1.0",
-    "@trpc/client": "^10.44.1",
-    "@trpc/server": "^10.44.1",
+    "@trpc/client": "^10.43.1",
+    "@trpc/server": "^10.43.1",
     "superjson": "^1.13.3"
   },
   "devDependencies": {
     "@acme/eslint-config": "0.2.0",
     "@acme/prettier-config": "^0.1.0",
     "@acme/tsconfig": "^0.1.0",
-    "eslint": "^8.50.0",
+    "eslint": "^8.53.0",
     "typescript": "^5.2.2",
     "vitest": "^0.34.6"
   },

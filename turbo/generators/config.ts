@@ -72,11 +72,11 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
          * Install deps and format everything
          */
         if ("name" in answers && typeof answers.name === "string") {
-          execSync("yarn manypkg fix", {
+          execSync("pnpm manypkg fix", {
             stdio: "inherit",
           });
           execSync(
-            `yarn prettier --write packages/${answers.name}/** --list-different`
+            `pnpm prettier --write packages/${answers.name}/** --list-different`
           );
           return "Package scaffolded";
         }

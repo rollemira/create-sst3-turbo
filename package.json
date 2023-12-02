@@ -15,10 +15,14 @@
     "down": "sst remove",
     "format": "turbo format --continue -- --cache --cache-location='node_modules/.cache/.prettiercache'",
     "format:fix": "turbo format --continue -- --write . --cache --cache-location='node_modules/.cache/.prettiercache'",
+    "gen": "turbo gen init",
     "lint": "turbo lint --continue -- --cache --cache-location 'node_modules/.cache/.eslintcache' && manypkg check",
     "lint:fix": "turbo lint --continue -- --fix --cache --cache-location 'node_modules/.cache/.eslintcache' && manypkg fix",
     "secrets": "ts-node ./secrets.ts",
+    "test": "turbo test",
+    "test:withenv": "pnpm with-env turbo test",
     "typecheck": "turbo typecheck",
+    "up:workspaces": "pnpm up -r --workspace",
     "with-env": "dotenv -e .env --"
   },
   "dependencies": {

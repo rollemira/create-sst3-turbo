@@ -19,6 +19,7 @@ function createContext({
 }: CreateAWSLambdaContextOptions<APIGatewayProxyEvent>) {
   const authorizer = event.requestContext.authorizer as UserAuthorizer;
   const user = authorizer ? JSON.stringify(authorizer.jwt.claims) : undefined;
+  console.log(">>> tRPC Request from", source, "by", user ?? "anonymous");
   return {
     apiVersion: (event as { version?: string }).version ?? "1.0",
     // @ts-expect-error - HACK: the build server doesn't get SST types

@@ -526,9 +526,6 @@ importers:
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
-      vitest:
-        specifier: ^0.34.6
-        version: 0.34.6
 
   packages/api:
     dependencies:
@@ -621,6 +618,40 @@ importers:
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
+
+  packages/specs:
+    dependencies:
+      '@acme/api':
+        specifier: ^0.1.0
+        version: link:../api
+      '@trpc/client':
+        specifier: ^10.44.1
+        version: 10.44.1(@trpc/server@10.44.1)
+      '@trpc/server':
+        specifier: ^10.44.1
+        version: 10.44.1
+      superjson:
+        specifier: ^1.13.3
+        version: 1.13.3
+    devDependencies:
+      '@acme/eslint-config':
+        specifier: 0.2.0
+        version: link:../../tooling/eslint
+      '@acme/prettier-config':
+        specifier: ^0.1.0
+        version: link:../../tooling/prettier
+      '@acme/tsconfig':
+        specifier: ^0.1.0
+        version: link:../../tooling/typescript
+      eslint:
+        specifier: ^8.50.0
+        version: 8.53.0
+      typescript:
+        specifier: ^5.2.2
+        version: 5.2.2
+      vitest:
+        specifier: ^0.34.6
+        version: 0.34.6
 
   tooling/eslint:
     dependencies:
@@ -7139,6 +7170,14 @@ packages:
       '@trpc/server': 10.43.1
     dev: false
 
+  /@trpc/client@10.44.1(@trpc/server@10.44.1):
+    resolution: {integrity: sha512-vTWsykNcgz1LnwePVl2fKZnhvzP9N3GaaLYPkfGINo314ZOS0OBqe9x0ytB2LLUnRVTAAZ2WoONzARd8nHiqrA==}
+    peerDependencies:
+      '@trpc/server': 10.44.1
+    dependencies:
+      '@trpc/server': 10.44.1
+    dev: false
+
   /@trpc/next@10.43.1(@tanstack/react-query@4.36.1)(@trpc/client@10.43.1)(@trpc/react-query@10.43.1)(@trpc/server@10.43.1)(next@13.5.6)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-8Gmt5FaYR6Cb2KLPBUC3sc9xm2YOjJwJG+qUGZsmqnD0AstKr4D3K8dcrP+b7zjiyTIha2Lb3hGaXqyl1Z9X6g==}
     peerDependencies:
@@ -7178,6 +7217,11 @@ packages:
 
   /@trpc/server@10.43.1:
     resolution: {integrity: sha512-rKOSCpJOb1MdTyJFqdf3QNNESDfPkbP+yBOZBM2x6iIOS4VlCfJqxsaSrb3uLPR6s8Ni7DhTu+cu/q1r0xOGcw==}
+    engines: {node: '>=18.0.0'}
+    dev: false
+
+  /@trpc/server@10.44.1:
+    resolution: {integrity: sha512-mF7B+K6LjuboX8I1RZgKE5GA/fJhsJ8tKGK2UBt3Bwik7hepEPb4NJgNr7vO6BK5IYwPdBLRLTctRw6XZx0sRg==}
     engines: {node: '>=18.0.0'}
     dev: false
 
@@ -7428,7 +7472,7 @@ packages:
   /@types/through@0.0.32:
     resolution: {integrity: sha512-7XsfXIsjdfJM2wFDRAtEWp3zb2aVPk5QeyZxGlVK57q4u26DczMHhJmlhr0Jqv0THwxam/L8REXkj8M2I/lcvw==}
     dependencies:
-      '@types/node': 20.8.10
+      '@types/node': 18.18.8
     dev: false
 
   /@types/tinycolor2@1.4.5:

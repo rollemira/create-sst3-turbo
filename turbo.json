@@ -7,7 +7,15 @@
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**", ".open-next/**", "!.open-next/cache/**", "next-env.d.ts", ".expo/**", "web/dist/**"]
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**",
+        ".open-next/**",
+        "!.open-next/cache/**",
+        "next-env.d.ts",
+        ".expo/**",
+        "web/dist/**"
+      ]
     },
     "dev": {
       "persistent": true,
@@ -20,6 +28,10 @@
     "lint": {
       "dependsOn": ["^topo"],
       "outputs": ["node_modules/.cache/.eslintcache"]
+    },
+    "test": {
+      "dependsOn": ["^topo"],
+      "outputs": ["node_modules/.cache/.vitestcache"]
     },
     "typecheck": {
       "dependsOn": ["^topo"],

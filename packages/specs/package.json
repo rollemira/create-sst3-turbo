@@ -1,37 +1,42 @@
 {
-  "name": "@acme/backend",
+  "name": "@acme/specs",
   "private": true,
   "license": "UNLICENSED",
   "version": "0.1.0",
-  "type": "module",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "src/*"
+      ]
+    }
+  },
   "scripts": {
     "clean": "git clean -xdf .turbo node_modules",
+    "coverage": "vitest run --coverage",
     "lint": "eslint .",
     "format": "prettier --check \"**/*.{mjs,ts,md,json}\"",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@acme/api": "^0.1.0",
-    "@acme/db": "^0.1.0",
-    "@trpc/server": "^10.43.1"
+    "@trpc/client": "^10.44.1",
+    "@trpc/server": "^10.44.1",
+    "superjson": "^1.13.3"
   },
   "devDependencies": {
     "@acme/eslint-config": "0.2.0",
     "@acme/prettier-config": "^0.1.0",
     "@acme/tsconfig": "^0.1.0",
-    "@types/aws-lambda": "^8.10.126",
-    "@types/node": "^18.18.8",
-    "esbuild": "^0.17.10",
-    "eslint": "^8.53.0",
-    "prettier": "^3.0.3",
-    "serverless": "^3.36.0",
-    "serverless-esbuild": "^1.39.0",
-    "serverless-offline": "^12.0.4",
-    "sst": "^2.35.0",
-    "typescript": "^5.2.2"
+    "eslint": "^8.50.0",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.6"
   },
   "eslintConfig": {
-    "root": true,
     "extends": [
       "@acme/eslint-config/base"
     ]

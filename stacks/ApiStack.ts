@@ -26,7 +26,7 @@ export function ApiStack({ stack }: StackContext) {
       authorizer: "clerk",
       function: {
         bind: [DATABASE_URL],
-        runtime: "nodejs18.x",
+        runtime: "nodejs20.x",
       },
     },
     cors: {

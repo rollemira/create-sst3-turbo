@@ -17,9 +17,7 @@ const createUserContext = (authId?: string, permissions?: string[]) => {
 };
 
 test("Pinger pongs", async () => {
-  const ctx = await createTRPCContext({
-    ctx: createUserContext(),
-  });
+  const ctx = await createTRPCContext({});
   const api = appRouter.createCaller(ctx);
   const name = "Bruce Wayne";
   const res = await api.pinger.ping({ name });

@@ -14,7 +14,7 @@ export default {
   out: "./migrations",
   driver: "mysql2",
   dbCredentials: {
-    connectionString: dbUrl,
+    uri: dbUrl,
   },
   tablesFilter: ["acme_*"],
 } satisfies Config;

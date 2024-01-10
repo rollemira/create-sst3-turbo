@@ -14,23 +14,23 @@
   "dependencies": {
     "@acme/api": "^0.1.0",
     "@acme/db": "^0.1.0",
-    "@trpc/server": "^10.40.0"
+    "@trpc/server": "^10.45.0"
   },
   "devDependencies": {
     "@acme/eslint-config": "0.2.0",
     "@acme/prettier-config": "^0.1.0",
     "@acme/tsconfig": "^0.1.0",
-    "@types/aws-lambda": "^8.10.124",
-    "@types/node": "^18.16.16",
-    "esbuild": "^0.17.10",
-    "eslint": "^8.50.0",
-    "prettier": "^3.0.3",
-    "serverless": "^3.18.1",
-    "serverless-esbuild": "^1.39.0",
+    "@types/aws-lambda": "^8.10.131",
+    "@types/node": "^20.10.8",
+    "esbuild": "^0.17.19",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "serverless": "^3.38.0",
+    "serverless-esbuild": "^1.50.1",
     "serverless-offline": "^12.0.4",
-    "sst": "^2.29.2",
-    "typescript": "^5.2.2",
-    "vitest": "^0.34.6"
+    "sst": "^2.39.2",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.3"
   },
   "eslintConfig": {
     "root": true,

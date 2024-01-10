@@ -13,18 +13,18 @@
   },
   "dependencies": {
     "@acme/db": "^0.1.0",
-    "@trpc/client": "^10.40.0",
-    "@trpc/server": "^10.40.0",
+    "@trpc/client": "^10.45.0",
+    "@trpc/server": "^10.45.0",
     "drizzle-zod": "^0.5.1",
-    "superjson": "^1.13.1",
+    "superjson": "^1.13.3",
     "zod": "^3.22.4"
   },
   "devDependencies": {
     "@acme/eslint-config": "0.2.0",
     "@acme/prettier-config": "^0.1.0",
     "@acme/tsconfig": "^0.1.0",
-    "eslint": "^8.50.0",
-    "typescript": "^5.2.2"
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
   },
   "eslintConfig": {
     "extends": [

@@ -35,3 +35,12 @@ test("Secure pinger pongs", async () => {
   const res = await api.pinger.pingSecure({ name });
   expect(res.reply).toBe(`Pong Secure! ${name}`);
 });
+
+test("Secure pinger fails without ", async () => {
+  const ctx = await createTRPCContext({});
+  const api = appRouter.createCaller(ctx);
+  const name = "Bruce Wayne";
+  void expect(
+    async () => await api.pinger.pingSecure({ name }),
+  ).rejects.toThrowError(/UNAUTHORIZED/);
+});

@@ -36,7 +36,7 @@ test("Secure pinger pongs", async () => {
   expect(res.reply).toBe(`Pong Secure! ${name}`);
 });
 
-test("Secure pinger fails without ", async () => {
+test("Secure pinger fails without user", async () => {
   const ctx = await createTRPCContext({});
   const api = appRouter.createCaller(ctx);
   const name = "Bruce Wayne";

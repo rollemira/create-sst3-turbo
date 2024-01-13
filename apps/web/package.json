@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "pnpm with-env sst bind vite",
+    "dev": "pnpm with-env vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
@@ -15,7 +15,7 @@
   "dependencies": {
     "@acme/api": "^0.1.0",
     "@acme/calcs": "^0.1.0",
-    "@t3-oss/env-core": "^0.7.1",
+    "@t3-oss/env-core": "^0.7.3",
     "@tanstack/react-query": "^4.36.1",
     "@tanstack/react-query-devtools": "^4.36.1",
     "@trpc/client": "^10.45.0",
@@ -24,7 +24,7 @@
     "@trpc/server": "^10.45.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.1",
+    "react-router-dom": "^6.21.2",
     "superjson": "^1.13.3",
     "zod": "^3.22.4"
   },
@@ -44,8 +44,8 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "postcss": "^8.4.33",
-    "sst": "^2.39.2",
-    "tailwindcss": "3.4.1",
+    "sst": "^2.39.5",
+    "tailwindcss": "3.3.2",
     "typescript": "^5.3.3",
     "vite": "^5.0.11",
     "vite-plugin-top-level-await": "^1.4.1"

@@ -6,8 +6,6 @@ import { Config } from "sst/node/config";
 import { appRouter } from "@acme/api";
 import { db } from "@acme/db";
 
-//import { headers } from "./cors";
-
 // provide a type for jwt authorizer
 interface UserAuthorizer {
   jwt: {
@@ -23,11 +21,11 @@ function createContext({
   const source = event?.headers["x-trpc-source"] ?? "unknown";
   console.log(">>> tRPC Request from", source, "by", user ?? "anonymous");
   return {
-    event: event,
     apiVersion: (event as { version?: string }).version ?? "1.0",
-    user: event.headers["x-user"],
     // @ts-expect-error - HACK: the build server doesn't get SST types
     db: db(Config.DATABASE_URL as string),
+    event: event,
+    user,
   };
 }
 

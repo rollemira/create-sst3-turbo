@@ -27,14 +27,14 @@
   },
   "dependencies": {
     "@acme/prettier-config": "^0.1.0",
-    "@manypkg/cli": "^0.21.1",
+    "@manypkg/cli": "^0.21.2",
     "@tsconfig/node18": "^18.2.2",
     "@turbo/gen": "^1.11.3",
     "aws-cdk-lib": "2.95.1",
     "constructs": "10.2.69",
     "dotenv-cli": "^7.3.0",
-    "prettier": "^3.2.1",
-    "sst": "^2.39.5",
+    "prettier": "^3.2.2",
+    "sst": "^2.39.6",
     "turbo": "^1.11.3",
     "typescript": "^5.3.3"
   },

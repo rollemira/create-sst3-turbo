@@ -16,7 +16,7 @@ export function ApiStack({ stack }: StackContext) {
     defaults: {
       function: {
         bind: [DATABASE_URL],
-        runtime: "nodejs18.x",
+        runtime: "nodejs20.x",
       },
     },
     cors: {

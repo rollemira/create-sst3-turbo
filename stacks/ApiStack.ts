@@ -2,6 +2,7 @@ import { StackContext, Api, Config } from "sst/constructs";
 
 export function ApiStack({ stack }: StackContext) {
   const DATABASE_URL = new Config.Secret(stack, "DATABASE_URL");
+  const DATABASE_AUTH_TOKEN = new Config.Secret(stack, "DATABASE_AUTH_TOKEN");
   const deployed = ["test", "prod"].includes(stack.stage);
 
   const domainName = `${
@@ -15,7 +16,7 @@ export function ApiStack({ stack }: StackContext) {
     customDomain: deployed ? customDomain : undefined,
     defaults: {
       function: {
-        bind: [DATABASE_URL],
+        bind: [DATABASE_URL, DATABASE_AUTH_TOKEN],
         runtime: "nodejs20.x",
       },
     },

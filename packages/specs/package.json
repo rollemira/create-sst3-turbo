@@ -14,13 +14,14 @@
     }
   },
   "scripts": {
-    "clean": "git clean -xdf .turbo node_modules",
+    "clean": "rm -rf .turbo node_modules",
     "coverage": "vitest run --coverage",
     "lint": "eslint .",
     "format": "prettier --check \"**/*.{mjs,ts,md,json}\"",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "typecheck": "tsc --noEmit"
+    "test": "pnpm with-env vitest run",
+    "test:watch": "pnpm with-env vitest",
+    "typecheck": "tsc --noEmit",
+    "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
     "@acme/api": "^0.1.0",

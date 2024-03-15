@@ -5,6 +5,7 @@
 Make the real readme file explaining how to get the project started from a fresh `git cone` command.
 
 ## More docs
+
 [You can find more docs in Notion here](https://www.notion.so/rollemira/Create-SST3-Turbo-55cb58971dcf40cd8371ca3de24aebef?pvs=4)
 
 ## Install nvm pnpm aws-cli
@@ -61,13 +62,13 @@ pnpm i
 
 ## Database Setup (if needed)
 
-Make a database at [PlanetScale](https://planetscale.com/)
-Go to Settings -> Passwords -> New Password
+Make a database at [Turso](https://turso.tech/)
+Click your database to get your URL
 Set your DATABASE_URL in .env
+Go to Databases -> Database -> Get Token to get your token
+Set your DATABASE_TOKEN in .env
 
-Don't want a 3rd party service? Use Lightsail instances on AWS.
-
-PlanetScale is free to start.
+Turso is free to start.
 
 ## Secrets
 
@@ -75,7 +76,7 @@ Some lambda functions require secrets. ([more about them here](https://sst.dev/c
 To setup secrets, once you've filled in your .env file you can run the command below to set them in your AWS environment.
 
 ```
-pnpm secrets
+pnpm run secrets
 ```
 
 ## Running

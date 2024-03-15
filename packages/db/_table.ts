@@ -1,4 +1,4 @@
-import { mysqlTableCreator } from "drizzle-orm/mysql-core";
+import { sqliteTableCreator } from "drizzle-orm/sqlite-core";
 
 /**
  * This is an example of how to use the multi-project schema feature of Drizzle ORM. Use the same
@@ -6,4 +6,4 @@ import { mysqlTableCreator } from "drizzle-orm/mysql-core";
  *
  * @see https://orm.drizzle.team/docs/goodies#multi-project-schema
  */
-export const tableCreator = mysqlTableCreator((name) => `acme_${name}`);
+export const tableCreator = sqliteTableCreator((name) => `acme_${name}`);

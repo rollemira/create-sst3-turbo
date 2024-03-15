@@ -10,8 +10,9 @@ export interface Session {
 }
 
 interface CreateContextOptions {
-  event?: APIGatewayProxyEvent;
   apiVersion?: string;
+  event?: APIGatewayProxyEvent;
+  source?: string;
   user?: string;
 }
 

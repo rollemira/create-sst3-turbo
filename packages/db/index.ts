@@ -1,5 +1,6 @@
-import { Client } from "@planetscale/database";
-import { drizzle } from "drizzle-orm/planetscale-serverless";
+import type { Client } from "@libsql/client";
+import { drizzle } from "drizzle-orm/libsql";
+import { createClient } from "libsql-stateless-easy";
 
 import * as schema from "./schema";
 
@@ -7,18 +8,14 @@ export * from "drizzle-orm";
 
 let client: Client;
 
-export const db = (connectionString?: string) => {
-  if (!client && connectionString) {
-    client = new Client({
-      url: connectionString,
-    });
-  } else {
-    // try the env
-    if (!client) {
-      client = new Client({
-        url: process.env.DATABASE_URL,
-      });
-    }
-  }
-  return drizzle(client.connection(), { schema });
+export const db = (credentials?: { url: string; authToken: string }) => {
+  client = client
+    ? client
+    : credentials
+      ? createClient(credentials)
+      : createClient({
+          url: process.env.DATABASE_URL ?? "https://example.com",
+          authToken: process.env.DATABASE_AUTH_TOKEN ?? "invalid_token",
+        });
+  return drizzle(client, { schema });
 };

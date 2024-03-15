@@ -9,27 +9,26 @@
     "clean": "git clean -xdf .turbo node_modules",
     "lint": "eslint .",
     "format": "prettier --check \"**/*.{mjs,ts,md,json}\"",
-    "db:check": "drizzle-kit check:mysql",
-    "db:generate": "drizzle-kit generate:mysql",
-    "db:pull": "drizzle-kit introspect:mysql",
-    "db:push": "drizzle-kit push:mysql",
+    "db:check": "drizzle-kit check:sqlite",
+    "db:generate": "drizzle-kit generate:sqlite",
+    "db:pull": "drizzle-kit introspect:sqlite",
+    "db:push": "drizzle-kit push:sqlite",
     "db:studio": "drizzle-kit studio --port 1337",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@planetscale/database": "^1.16.0",
-    "drizzle-orm": "^0.29.4"
+    "@libsql/client": "^0.5.2",
+    "drizzle-orm": "^0.29.4",
+    "libsql-stateless-easy": "^1.5.4"
   },
   "devDependencies": {
     "@acme/eslint-config": "0.2.0",
     "@acme/prettier-config": "^0.1.0",
     "@acme/tsconfig": "^0.1.0",
     "@types/node": "^20.11.24",
-    "@types/pg": "^8.11.2",
     "dotenv-cli": "^7.3.0",
     "drizzle-kit": "^0.20.14",
     "eslint": "^8.57.0",
-    "mysql2": "^3.9.2",
     "typescript": "^5.3.3"
   },
   "eslintConfig": {

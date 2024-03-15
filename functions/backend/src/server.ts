@@ -22,10 +22,13 @@ function createContext({
   console.log(">>> tRPC Request from", source, "by", user ?? "anonymous");
   return {
     apiVersion: (event as { version?: string }).version ?? "1.0",
-    // @ts-expect-error - HACK: the build server doesn't get SST types
-    db: db(Config.DATABASE_URL as string),
-    event: event,
+    event,
+    source,
     user,
+    db: db({
+      url: Config.DATABASE_URL,
+      authToken: Config.DATABASE_AUTH_TOKEN,
+    }),
   };
 }
 

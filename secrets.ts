@@ -16,6 +16,9 @@ const options = {
   remove: {
     type: "boolean",
   },
+  fallback: {
+    type: "boolean",
+  },
 };
 const { values } = parseArgs({
   args,
@@ -24,21 +27,7 @@ const { values } = parseArgs({
 });
 
 console.log("Setting up secrets...");
-const keys = ["DATABASE_URL"];
-
-if (values["remove"]) {
-  keys.forEach((key) =>
-    execSync(
-      `
-npx sst secrets remove${stage ? ` --stage${stage}` : ""} --fallback ${key}
-`,
-      {
-        stdio: "inherit",
-      }
-    )
-  );
-  exit(0);
-}
+const keys = ["DATABASE_URL", "DATABASE_AUTH_TOKEN"];
 
 const envFile = values["env"] ?? ".env";
 console.log(`Loading from ${envFile}`);
@@ -46,16 +35,31 @@ dotenv.config({
   path: `./${envFile}`,
 });
 const stage = values["stage"] ?? undefined;
+const fallback = values["fallback"];
+
+if (values["remove"]) {
+  keys.forEach((key) =>
+    execSync(
+      `
+npx sst secrets remove${stage ? ` --stage ${stage}` : ""} ${key}
+`,
+      {
+        stdio: "inherit",
+      },
+    ),
+  );
+  exit(0);
+}
 
 keys.forEach((key) =>
   execSync(
     `
-npx sst secrets set${stage ? ` --stage${stage}` : ""} --fallback ${key} '${
-      process.env.DATABASE_URL
+npx sst secrets set${stage ? ` --stage ${stage}` : ""}${fallback ? " --fallback" : ""} ${key} '${
+      process.env[key]
     }'
 `,
     {
       stdio: "inherit",
-    }
-  )
+    },
+  ),
 );

@@ -6,15 +6,18 @@ dotenv.config({
 });
 
 const dbUrl = process.env.DATABASE_URL;
+const dbToken = process.env.DATABASE_AUTH_TOKEN;
 if (!dbUrl) throw new Error("DATABASE_URL is not set");
+if (!dbToken) throw new Error("DATABASE_AUTH_TOKEN is not set");
 //console.log("Using DB URL: ", dbUrl);
 
 export default {
   schema: "./schema.ts",
   out: "./migrations",
-  driver: "mysql2",
+  driver: "turso",
   dbCredentials: {
-    uri: dbUrl,
+    url: dbUrl,
+    authToken: dbToken,
   },
   tablesFilter: ["acme_*"],
 } satisfies Config;

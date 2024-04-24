@@ -20,7 +20,7 @@ export default function HomePage() {
       <h2 className="text-xl">Loaded package</h2>
       <p>{name}</p>
       <h2 className="text-xl">tRPC Query</h2>
-      <pre>{data.reply}</pre>
+      <pre>{data?.reply}</pre>
     </div>
   );
 }

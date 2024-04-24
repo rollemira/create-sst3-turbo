@@ -18,9 +18,12 @@ function Home() {
       <h2 className="text-xl">Loaded package</h2>
       <p>{name}</p>
       <h2 className="text-xl">tRPC Query</h2>
-      <pre>{data.reply}</pre>
+      <pre>{data?.reply}</pre>
       <p>
         <Link to="/about">Go to About</Link>
+      </p>
+      <p>
+        <Link to="/create">Create a Lead</Link>
       </p>
     </div>
   );

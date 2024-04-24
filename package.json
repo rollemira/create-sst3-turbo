@@ -1,9 +1,12 @@
 {
-  "name": "rollemtech-sst3",
+  "name": "create-sst3-turbo",
   "version": "1.0.1",
   "private": true,
   "scripts": {
     "dev": "sst dev",
+    "dev:mobile": "npm run dev --workspace @acme/mobile",
+    "dev:next": "npm run dev --workspace @acme/nextjs",
+    "dev:web": "npm run dev --workspace @acme/web",
     "cdk:bootstrap": "npx cdk bootstrap",
     "build": "sst build",
     "check": "sst build --stage ci && turbo build lint format typecheck test",
@@ -31,16 +34,16 @@
   },
   "dependencies": {
     "@acme/prettier-config": "^0.1.0",
-    "@manypkg/cli": "^0.21.2",
-    "@tsconfig/node18": "^18.2.2",
-    "@turbo/gen": "^1.12.4",
-    "aws-cdk-lib": "2.131.0",
+    "@manypkg/cli": "^0.21.4",
+    "@tsconfig/node18": "^18.2.4",
+    "@turbo/gen": "^1.13.2",
+    "aws-cdk-lib": "2.132.1",
     "constructs": "10.3.0",
-    "dotenv-cli": "^7.3.0",
+    "dotenv-cli": "^7.4.1",
     "prettier": "^3.2.5",
-    "sst": "2.40.6",
-    "turbo": "^1.12.4",
-    "typescript": "^5.3.3"
+    "sst": "2.41.4",
+    "turbo": "^1.13.2",
+    "typescript": "^5.4.5"
   },
   "workspaces": [
     "apps/*",

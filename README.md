@@ -100,7 +100,7 @@ Terminal_2: Start your frontend of choice
 - [Expo iOS Simulator Docs](https://docs.expo.dev/workflow/ios-simulator)
 - [Expo Android Emulator Docs](https://docs.expo.dev/workflow/android-studio-emulator)
 
-## Databese management
+## Database management
 
 You can use the built in Drizzle-kit Studio to view your data
 

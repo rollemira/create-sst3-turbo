@@ -29,10 +29,16 @@ const Index = () => {
         )}
         {data && <Text className="text-center text-white">{data.reply}</Text>}
         <Link
-          href="/hello"
+          href="/about"
           className="m-5 bg-slate-600 p-2 text-center text-gray-100"
         >
           Go to About
+        </Link>
+        <Link
+          href="/create"
+          className="m-5 bg-slate-600 p-2 text-center text-gray-100"
+        >
+          Create a Lead
         </Link>
       </View>
     </SafeAreaView>

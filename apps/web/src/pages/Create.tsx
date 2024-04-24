@@ -42,7 +42,6 @@ export const CreateForm = () => {
       lastName: true,
       email: true,
       phone: true,
-      // duration: true,
     });
 
   type FormData = z.infer<typeof schema>;

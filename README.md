@@ -1,8 +1,9 @@
-# Make a real readme please.
+# Make a real readme please
 
 ## TODO
 
-Make the real readme file explaining how to get the project started from a fresh `git cone` command.
+Make the real readme file explaining how to get the project started from
+a fresh `git cone` command.
 
 ## More docs
 
@@ -10,13 +11,13 @@ Make the real readme file explaining how to get the project started from a fresh
 
 ## Install nvm pnpm aws-cli
 
-```
+```bash
 brew install nvm pnpm awscli
 ```
 
 ### If you have them maybe upgrade?
 
-```
+```bash
 brew upgrade nvm pnpm awscli
 ```
 
@@ -28,7 +29,7 @@ brew upgrade nvm pnpm awscli
 
 ### Check your AWS profile (skip if single AWS account)
 
-```
+```bash
 code ~/.aws/credentials # set a default and profiles
 ```
 
@@ -36,7 +37,7 @@ code ~/.aws/credentials # set a default and profiles
 
 To set a profile to be used in your shell you can use the command below
 
-```
+```bash
 export AWS_PROFILE=<profile_name>
 ```
 
@@ -44,19 +45,19 @@ export AWS_PROFILE=<profile_name>
 
 Use the command below to make a .env and fill it in with the correct settings
 
-```
+```bash
 cp .env.example .env
 ```
 
 ## Setup your node version
 
-```
+```bash
 nvm use
 ```
 
 ## Install deps
 
-```
+```bash
 pnpm i
 ```
 
@@ -73,9 +74,10 @@ Turso is free to start.
 ## Secrets
 
 Some lambda functions require secrets. ([more about them here](https://sst.dev/chapters/handling-secrets-in-sst.html))
-To setup secrets, once you've filled in your .env file you can run the command below to set them in your AWS environment.
+To setup secrets, once you've filled in your .env file you
+can run the command below to set them in your AWS environment.
 
-```
+```bash
 pnpm run secrets
 ```
 
@@ -83,13 +85,13 @@ pnpm run secrets
 
 Terminal_1: Start backend server
 
-```
+```bash
 <wsroot>$ pnpm run dev
 ```
 
 Terminal_2: Start your frontend of choice
 
-```
+```bash
 <wsroot>/apps/<appname>$ pnpm run dev
 ```
 
@@ -97,7 +99,7 @@ Terminal_2: Start your frontend of choice
 
 Use the scripts in packages/db
 
-```
+```bash
 cd <wsroot>/packages/db
 pnpm db:pull
 pnpm db:studio

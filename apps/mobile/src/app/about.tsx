@@ -9,16 +9,16 @@ import { api } from "~/utils/api";
 
 const Hello = () => {
   const { data, error, isLoading } = api.pinger.ping.useQuery({
-    name: "hello",
+    name: "about",
   });
 
   return (
     <SafeAreaView className="bg-[#1F104A]">
       {/* Changes page title visible on the header */}
-      <Stack.Screen options={{ title: "Hello" }} />
+      <Stack.Screen options={{ title: "About" }} />
       <View className="h-full w-full p-4">
         <Text className="mx-auto pb-2 text-5xl font-bold text-white">
-          Hello
+          About
         </Text>
         <Text className="text-center text-white">Imported package {name}</Text>
         {isLoading && (

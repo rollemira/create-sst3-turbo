@@ -3,6 +3,7 @@ import { Pressable, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Stack } from "expo-router";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { UserPlus } from "lucide-react-native";
 import { Controller, useForm } from "react-hook-form";
 import PhoneInput from "react-phone-number-input/react-native-input";
 import * as z from "zod";
@@ -150,7 +151,7 @@ const CreateLead = () => {
                     borderWidth: 2,
                     borderRadius: 8,
                     borderColor: "#94a3b8",
-                    paddingHorizontal: 16,
+                    paddingHorizontal: 8,
                     lineHeight: undefined,
                     backgroundColor: "#42496C",
                     height: 50,
@@ -175,7 +176,10 @@ const CreateLead = () => {
               onPress={handleSubmit(onSubmit)}
               disabled={isSubmitting || createLead.isLoading}
             >
-              <Text className="text-center text-xl text-gray-100">Submit</Text>
+              <Text className="text-center text-xl text-gray-100">
+                Sign Up
+                <UserPlus className="ml-2" size={20} color="white" />
+              </Text>
             </Pressable>
           </>
         )}

@@ -1,87 +1,84 @@
-# Make a real readme please
+# create-sst3-turbo
 
-## TODO
+A starter repository based on [create-t3-turbo](https://github.com/t3-oss/create-t3-turbo) with some modifications to deploy to [AWS using SST](https://sst.dev).
 
-Make the real readme file explaining how to get the project started from
-a fresh `git cone` command.
+[You can find more docs in Notion here](https://rollemira.notion.site/Create-SST3-Turbo-55cb58971dcf40cd8371ca3de24aebef?pvs=4)
 
-## More docs
+What's in the box?
 
-[You can find more docs in Notion here](https://www.notion.so/rollemira/Create-SST3-Turbo-55cb58971dcf40cd8371ca3de24aebef?pvs=4)
+- Expo mobile app
+- NextJS web site
+- Vite web site
+- API using tRPC
 
-## Install nvm pnpm aws-cli
+## Prerequisites
 
 ```bash
 brew install nvm pnpm awscli
 ```
 
-### If you have them maybe upgrade?
-
-```bash
-brew upgrade nvm pnpm awscli
-```
-
 ## Configure aws-cli
 
-[Create an IAM user](https://sst.dev/chapters/create-an-iam-user.html)
+1. [Create an AWS account](https://aws.amazon.com)
 
-[Configure the aws-cli](https://sst.dev/chapters/configure-the-aws-cli.html#add-your-access-key-to-aws-cli)
+2. [Create an IAM user](https://sst.dev/chapters/create-an-iam-user.html)
 
-### Check your AWS profile (skip if single AWS account)
+3. [Configure the aws-cli](https://sst.dev/chapters/configure-the-aws-cli.html#add-your-access-key-to-aws-cli)
+
+### Check your AWS profile
 
 ```bash
-code ~/.aws/credentials # set a default and profiles
+code ~/.aws/credentials
 ```
 
-### Setting profiles in a shell
-
-To set a profile to be used in your shell you can use the command below
+> **Note** If you are using multiple profiles you can use the following command to set your profile.
 
 ```bash
 export AWS_PROFILE=<profile_name>
 ```
 
-## Environment variables
+## Get Started
 
-Use the command below to make a .env and fill it in with the correct settings
+This repository uses [Turso for database](https://turso.tech) storage. You could easily use something else such as Supabase or Amazon RDS but it would require making changes to the `packages/db` project.
 
-```bash
-cp .env.example .env
-```
+> In this template, @acme is used as a placeholder for package names. As a user, you might want to replace it with your own organization or project name. You can use find-and-replace to change all the instances of @acme to something like @my-company or @project-name
 
-## Setup your node version
+## Database Setup
 
-```bash
-nvm use
-```
-
-## Install deps
-
-```bash
-pnpm i
-```
-
-## Database Setup (if needed)
-
-Make a database at [Turso](https://turso.tech/)
-Click your database to get your URL
-Set your DATABASE_URL in .env
-Go to Databases -> Database -> Get Token to get your token
-Set your DATABASE_TOKEN in .env
+- Make a database at [Turso](https://turso.tech/)
+- Click your database to get your URL
+- Set your DATABASE_URL in .env
+- Go to Databases -> Database -> Get Token to get your token
+- Set your DATABASE_TOKEN in .env
 
 Turso is free to start.
 
-## Secrets
+## Quick Start
 
-Some lambda functions require secrets. ([more about them here](https://sst.dev/chapters/handling-secrets-in-sst.html))
-To setup secrets, once you've filled in your .env file you
-can run the command below to set them in your AWS environment.
+Use the command below to make a .env and fill it in with the correct settings.
 
 ```bash
+# configure environment variables
+cp .env.example .env
+
+# use node version
+nvm use
+
+# install dependencies
+pnpm i
+
+# setup SST secrets
 pnpm run secrets
+
+# push Drizzle schema to db
+pnpm run db:push
 ```
 
-## Running
+> **Note** Some lambda functions require secrets. ([more about them here](https://sst.dev/chapters/handling-secrets-in-sst.html))
+> To setup secrets, once you've filled in your .env file you
+> can run the `pnpm run secrets` to set them in your AWS environment.
+
+## Developing
 
 Terminal_1: Start backend server
 
@@ -92,15 +89,29 @@ Terminal_1: Start backend server
 Terminal_2: Start your frontend of choice
 
 ```bash
-<wsroot>/apps/<appname>$ pnpm run dev
+# mobile
+<wsroot>$ pnpm run dev:mobile
+# web (vite)
+<wsroot>$ pnpm run dev:web
 ```
+
+## Running mobile apps iOS or Android
+
+- [Expo iOS Simulator Docs](https://docs.expo.dev/workflow/ios-simulator)
+- [Expo Android Emulator Docs](https://docs.expo.dev/workflow/android-studio-emulator)
 
 ## Databese management
 
-Use the scripts in packages/db
+You can use the built in Drizzle-kit Studio to view your data
 
 ```bash
-cd <wsroot>/packages/db
-pnpm db:pull
-pnpm db:studio
+<wsroot>$ pnpm run db:studio
+```
+
+## Deploying
+
+```bash
+# Mobile apps can be deployed using EAS
+# Deploy API and web using SST
+<wsroot>$ pnpm run deploy --stage prod
 ```

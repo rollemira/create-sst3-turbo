@@ -21,7 +21,7 @@ const RootLayout = () => {
             headerStyle: {
               //backgroundColor: "#f472b6",
               //backgroundColor: "#333333",
-              backgroundColor: "#F471B7",
+              backgroundColor: "#5EEAD4",
             },
             headerBackTitleVisible: false,
           }}

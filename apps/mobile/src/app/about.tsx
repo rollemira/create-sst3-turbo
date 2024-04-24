@@ -13,7 +13,7 @@ const Hello = () => {
   });
 
   return (
-    <SafeAreaView className="bg-[#1F104A]">
+    <SafeAreaView className="bg-[#131D47]">
       {/* Changes page title visible on the header */}
       <Stack.Screen options={{ title: "About" }} />
       <View className="h-full w-full p-4">

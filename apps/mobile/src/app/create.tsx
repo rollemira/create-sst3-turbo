@@ -60,7 +60,7 @@ const CreateLead = () => {
     });
   };
   return (
-    <SafeAreaView className="bg-[#1F104A]">
+    <SafeAreaView className="bg-[#131D47]">
       {/* Changes page title visible on the header */}
       <Stack.Screen options={{ title: "Create an Account" }} />
       <View className="h-full w-full px-4">
@@ -74,7 +74,7 @@ const CreateLead = () => {
               }}
               render={({ field: { onChange, onBlur, value } }) => (
                 <TextInput
-                  className="text-gray rounded-md border-2 border-slate-400 bg-[#796F92] p-2 text-xl text-white"
+                  className="text-gray rounded-md border-2 border-slate-400 bg-[#42496C] p-2 text-xl text-white"
                   placeholderTextColor={"#CCCCCC"}
                   placeholder="First name"
                   onBlur={onBlur}
@@ -97,7 +97,7 @@ const CreateLead = () => {
               }}
               render={({ field: { onChange, onBlur, value } }) => (
                 <TextInput
-                  className="text-gray mt-2 rounded-md border-2 border-slate-400 bg-[#796F92] p-2 text-xl text-white"
+                  className="text-gray mt-2 rounded-md border-2 border-slate-400 bg-[#42496C] p-2 text-xl text-white"
                   placeholderTextColor={"#CCCCCC"}
                   placeholder="Last name"
                   onBlur={onBlur}
@@ -120,7 +120,7 @@ const CreateLead = () => {
               }}
               render={({ field: { onChange, onBlur, value } }) => (
                 <TextInput
-                  className="text-gray mt-2 rounded-md border-2 border-slate-400 bg-[#796F92] p-2 text-xl text-white"
+                  className="text-gray mt-2 rounded-md border-2 border-slate-400 bg-[#42496C] p-2 text-xl text-white"
                   placeholderTextColor={"#CCCCCC"}
                   placeholder="Email"
                   autoCapitalize="none"
@@ -152,7 +152,7 @@ const CreateLead = () => {
                     borderColor: "#94a3b8",
                     paddingHorizontal: 16,
                     lineHeight: undefined,
-                    backgroundColor: "#796F92",
+                    backgroundColor: "#42496C",
                     height: 50,
                     fontSize: 20,
                   }}

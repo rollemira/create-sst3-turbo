@@ -13,9 +13,6 @@ env:
   TURBO_API: ${{ secrets.TURBO_API }} # optional
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-  AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
-  AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
-  AWS_DEFAULT_REGION: us-east-1
 
 jobs:
   build-lint:

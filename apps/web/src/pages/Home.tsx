@@ -22,6 +22,9 @@ function Home() {
       <p>
         <Link to="/about">Go to About</Link>
       </p>
+      <p>
+        <Link to="/create">Create a Lead</Link>
+      </p>
     </div>
   );
 }

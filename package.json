@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "sst dev",
     "dev:mobile": "npm run dev --workspace @acme/mobile",
+    "dev:next": "npm run dev --workspace @acme/nextjs",
     "dev:web": "npm run dev --workspace @acme/web",
     "cdk:bootstrap": "npx cdk bootstrap",
     "build": "sst build",

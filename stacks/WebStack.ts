@@ -8,10 +8,10 @@ export function WebSiteStack({ stack }: StackContext) {
   // Define our React app
   const viteDomain = `${
     stack.stage === "prod" ? "vite" : `${stack.stage}-vite`
-  }.rollemtech.app`;
+  }.acme.com`;
   const viteCustomDomain = {
     domainName: viteDomain,
-    hostedZone: "rollemtech.app",
+    hostedZone: "acme.com",
   };
   const viteSite = new StaticSite(stack, "WebSite", {
     customDomain: deployed ? viteCustomDomain : undefined,
@@ -26,10 +26,10 @@ export function WebSiteStack({ stack }: StackContext) {
 
   const nextDomain = `${
     stack.stage === "prod" ? "next" : `${stack.stage}-next`
-  }.rollemtech.app`;
+  }.acme.com`;
   const nextCustomDomain = {
     domainName: nextDomain,
-    hostedZone: "rollemtech.app",
+    hostedZone: "acme.com",
   };
   const nextSite = new NextjsSite(stack, "NextWebsite", {
     customDomain: deployed ? nextCustomDomain : undefined,
